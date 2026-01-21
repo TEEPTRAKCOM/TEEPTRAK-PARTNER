@@ -141,6 +141,28 @@ function teeptrak_is_portal_page() {
 }
 
 /**
+ * Get the partner application URL
+ *
+ * @return string URL for the partner application page
+ */
+function teeptrak_get_application_url() {
+    // Check for a dedicated application page first
+    $application_page = get_page_by_path('apply');
+    if ($application_page) {
+        return get_permalink($application_page);
+    }
+
+    // Check for customizer setting
+    $custom_url = get_theme_mod('partner_application_url');
+    if ($custom_url) {
+        return $custom_url;
+    }
+
+    // Fall back to registration URL
+    return wp_registration_url();
+}
+
+/**
  * Get current partner data
  */
 function teeptrak_get_current_partner() {
