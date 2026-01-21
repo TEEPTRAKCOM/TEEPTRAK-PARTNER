@@ -1,5 +1,5 @@
 import React, { useState, useEffect, createContext, useContext } from 'react';
-import { LayoutDashboard, GraduationCap, FolderOpen, FileQuestion, FileSignature, Calendar, Settings, LogOut, Bell, Search, ChevronRight, CheckCircle, Circle, Play, Download, Award, MapPin, User, Globe, Menu, X, TrendingUp, Users, Target, Clock, ArrowRight, Star, Zap, Shield, FileText, DollarSign, BarChart3, ChevronDown, ExternalLink, Mail, Phone, Building, Briefcase, Filter, Eye, BookOpen, Trophy, CreditCard, PieChart, Activity, MessageCircle, Key, Lock, Copy, Check } from 'lucide-react';
+import { LayoutDashboard, GraduationCap, FolderOpen, FileQuestion, FileSignature, Calendar, Settings, LogOut, Bell, Search, ChevronRight, CheckCircle, Circle, Play, Download, Award, MapPin, User, Globe, Menu, X, TrendingUp, Users, Target, Clock, ArrowRight, Star, Zap, Shield, FileText, DollarSign, BarChart3, ChevronDown, ExternalLink, Mail, Phone, Building, Briefcase, Filter, Eye, BookOpen, Trophy, CreditCard, PieChart, Activity, MessageCircle, Key, Lock, Copy, Check, Link, Unlink, RefreshCw, AlertCircle, Palette } from 'lucide-react';
 
 // ============================================
 // TRANSLATIONS - Scalable i18n System
@@ -19,7 +19,8 @@ const translations = {
     commissions: { title: 'Commission Center', subtitle: 'Track your earnings and payouts', balance: 'Available Balance', pending: 'Pending', paid: 'Total Paid', history: 'Payment History', withdraw: 'Request Withdrawal' },
     chat: { title: 'Chat with Teepy', subtitle: 'Your AI assistant for all TeepTrak questions', placeholder: 'Ask Teepy anything about TeepTrak...', send: 'Send' },
     tiers: { bronze: 'Bronze', silver: 'Silver', gold: 'Gold', platinum: 'Platinum' },
-    onboarding: { application: 'Application', welcome: 'Welcome Video', training: 'Product Training', quiz: 'Certification', agreement: 'Sign Agreement', kickoff: 'Kickoff Call', firstDeal: 'First Deal' }
+    onboarding: { application: 'Application', welcome: 'Welcome Video', training: 'Product Training', quiz: 'Certification', agreement: 'Sign Agreement', kickoff: 'Kickoff Call', firstDeal: 'First Deal' },
+    settings: { title: 'Settings', subtitle: 'Manage your account and integrations', integrations: 'Integrations', figma: { title: 'Figma Connection', description: 'Connect your Figma account to sync design assets and collaborate on projects', connect: 'Connect Figma', disconnect: 'Disconnect', connected: 'Connected', notConnected: 'Not Connected', connectedAs: 'Connected as', handle: 'Handle', expiresAt: 'Token expires', reconnect: 'Reconnect', connecting: 'Connecting...', error: 'Connection failed', success: 'Successfully connected!' } }
   },
   fr: {
     common: { search: 'Rechercher...', save: 'Enregistrer', cancel: 'Annuler', submit: 'Soumettre', download: 'Télécharger', view: 'Voir', edit: 'Modifier', delete: 'Supprimer', loading: 'Chargement...', noData: 'Aucune donnée', copied: 'Copié!', copy: 'Copier' },
@@ -35,7 +36,8 @@ const translations = {
     commissions: { title: 'Centre de Commissions', subtitle: 'Suivez vos gains et paiements', balance: 'Solde Disponible', pending: 'En Attente', paid: 'Total Payé', history: 'Historique des Paiements', withdraw: 'Demander un Retrait' },
     chat: { title: 'Discuter avec Teepy', subtitle: 'Votre assistant IA pour toutes vos questions TeepTrak', placeholder: 'Posez une question à Teepy...', send: 'Envoyer' },
     tiers: { bronze: 'Bronze', silver: 'Argent', gold: 'Or', platinum: 'Platine' },
-    onboarding: { application: 'Candidature', welcome: 'Vidéo de Bienvenue', training: 'Formation Produit', quiz: 'Certification', agreement: 'Signature Contrat', kickoff: 'Appel Kickoff', firstDeal: 'Premier Deal' }
+    onboarding: { application: 'Candidature', welcome: 'Vidéo de Bienvenue', training: 'Formation Produit', quiz: 'Certification', agreement: 'Signature Contrat', kickoff: 'Appel Kickoff', firstDeal: 'Premier Deal' },
+    settings: { title: 'Paramètres', subtitle: 'Gérez votre compte et vos intégrations', integrations: 'Intégrations', figma: { title: 'Connexion Figma', description: 'Connectez votre compte Figma pour synchroniser les assets design et collaborer sur les projets', connect: 'Connecter Figma', disconnect: 'Déconnecter', connected: 'Connecté', notConnected: 'Non Connecté', connectedAs: 'Connecté en tant que', handle: 'Identifiant', expiresAt: 'Expire le', reconnect: 'Reconnecter', connecting: 'Connexion...', error: 'Échec de connexion', success: 'Connexion réussie!' } }
   },
   zh: {
     common: { search: '搜索...', save: '保存', cancel: '取消', submit: '提交', download: '下载', view: '查看', edit: '编辑', delete: '删除', loading: '加载中...', noData: '暂无数据', copied: '已复制!', copy: '复制' },
@@ -361,7 +363,8 @@ const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen }) => {
     { id: 'quiz', icon: Trophy, label: t('nav.quiz') },
     { id: 'agreement', icon: FileSignature, label: t('nav.agreement') },
     { id: 'kickoff', icon: Calendar, label: t('nav.kickoff') },
-    { id: 'commissions', icon: DollarSign, label: t('nav.commissions') }
+    { id: 'commissions', icon: DollarSign, label: t('nav.commissions') },
+    { id: 'settings', icon: Settings, label: t('nav.settings') }
   ];
 
   return (
@@ -977,6 +980,233 @@ const KickoffPage = () => {
   );
 };
 
+// Figma Connection Component
+const FigmaConnection = () => {
+  const t = useT();
+  const [status, setStatus] = useState({ loading: true, connected: false, connection: null, expired: false });
+  const [actionLoading, setActionLoading] = useState(false);
+  const [message, setMessage] = useState(null);
+
+  // Check URL params for OAuth result
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('figma_connected') === 'true') {
+        setMessage({ type: 'success', text: t('settings.figma.success') });
+        // Clean URL
+        window.history.replaceState({}, '', window.location.pathname);
+      } else if (params.get('figma_error')) {
+        setMessage({ type: 'error', text: params.get('figma_error') });
+        window.history.replaceState({}, '', window.location.pathname);
+      }
+    }
+  }, [t]);
+
+  // Fetch Figma connection status
+  useEffect(() => {
+    fetchStatus();
+  }, []);
+
+  const fetchStatus = async () => {
+    try {
+      const response = await fetch('/api/auth/figma/status');
+      if (response.ok) {
+        const data = await response.json();
+        setStatus({ loading: false, ...data });
+      } else {
+        setStatus({ loading: false, connected: false, connection: null });
+      }
+    } catch (error) {
+      console.error('Failed to fetch Figma status:', error);
+      setStatus({ loading: false, connected: false, connection: null });
+    }
+  };
+
+  const handleConnect = () => {
+    setActionLoading(true);
+    // Redirect to Figma OAuth
+    window.location.href = '/api/auth/figma';
+  };
+
+  const handleDisconnect = async () => {
+    setActionLoading(true);
+    try {
+      const response = await fetch('/api/auth/figma/disconnect', { method: 'POST' });
+      if (response.ok) {
+        setStatus({ loading: false, connected: false, connection: null });
+        setMessage({ type: 'success', text: 'Figma disconnected successfully' });
+      } else {
+        throw new Error('Failed to disconnect');
+      }
+    } catch (error) {
+      setMessage({ type: 'error', text: 'Failed to disconnect Figma account' });
+    } finally {
+      setActionLoading(false);
+    }
+  };
+
+  const formatDate = (dateString) => {
+    if (!dateString) return '';
+    return new Date(dateString).toLocaleDateString(undefined, {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric'
+    });
+  };
+
+  if (status.loading) {
+    return (
+      <Card className="p-6">
+        <div className="flex items-center gap-4">
+          <div className="w-14 h-14 bg-gray-100 rounded-xl animate-pulse" />
+          <div className="flex-1 space-y-2">
+            <div className="h-5 bg-gray-100 rounded w-32 animate-pulse" />
+            <div className="h-4 bg-gray-100 rounded w-48 animate-pulse" />
+          </div>
+        </div>
+      </Card>
+    );
+  }
+
+  return (
+    <Card className="p-6">
+      {/* Header */}
+      <div className="flex items-start gap-4">
+        <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center">
+          <Palette className="w-7 h-7 text-white" />
+        </div>
+        <div className="flex-1">
+          <div className="flex items-center gap-2">
+            <h3 className="text-lg font-semibold text-[#232120]">{t('settings.figma.title')}</h3>
+            {status.connected ? (
+              <span className="px-2 py-0.5 bg-green-100 text-green-700 text-xs font-medium rounded-full flex items-center gap-1">
+                <CheckCircle className="w-3 h-3" />
+                {t('settings.figma.connected')}
+              </span>
+            ) : (
+              <span className="px-2 py-0.5 bg-gray-100 text-gray-600 text-xs font-medium rounded-full">
+                {t('settings.figma.notConnected')}
+              </span>
+            )}
+          </div>
+          <p className="text-sm text-gray-500 mt-1">{t('settings.figma.description')}</p>
+        </div>
+      </div>
+
+      {/* Message */}
+      {message && (
+        <div className={`mt-4 p-3 rounded-xl flex items-center gap-3 ${
+          message.type === 'success' ? 'bg-green-50 text-green-700' : 'bg-red-50 text-red-700'
+        }`}>
+          {message.type === 'success' ? (
+            <CheckCircle className="w-5 h-5" />
+          ) : (
+            <AlertCircle className="w-5 h-5" />
+          )}
+          <span className="text-sm font-medium">{message.text}</span>
+          <button
+            onClick={() => setMessage(null)}
+            className="ml-auto p-1 hover:bg-black/5 rounded-lg transition-colors"
+          >
+            <X className="w-4 h-4" />
+          </button>
+        </div>
+      )}
+
+      {/* Connection Details */}
+      {status.connected && status.connection && (
+        <div className="mt-4 p-4 bg-gray-50 rounded-xl space-y-3">
+          <div className="flex items-center justify-between">
+            <span className="text-sm text-gray-600">{t('settings.figma.connectedAs')}</span>
+            <span className="text-sm font-medium text-[#232120]">{status.connection.email}</span>
+          </div>
+          {status.connection.handle && (
+            <div className="flex items-center justify-between">
+              <span className="text-sm text-gray-600">{t('settings.figma.handle')}</span>
+              <span className="text-sm font-medium text-[#232120]">@{status.connection.handle}</span>
+            </div>
+          )}
+          <div className="flex items-center justify-between">
+            <span className="text-sm text-gray-600">{t('settings.figma.expiresAt')}</span>
+            <span className={`text-sm font-medium ${status.expired ? 'text-red-600' : 'text-[#232120]'}`}>
+              {formatDate(status.connection.expiresAt)}
+              {status.expired && ' (Expired)'}
+            </span>
+          </div>
+        </div>
+      )}
+
+      {/* Actions */}
+      <div className="mt-6 flex gap-3">
+        {status.connected ? (
+          <>
+            {status.expired ? (
+              <button
+                onClick={handleConnect}
+                disabled={actionLoading}
+                className="flex-1 py-3 bg-[#eb352b] text-white rounded-xl font-medium hover:bg-[#d42d24] transition-colors flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {actionLoading ? (
+                  <RefreshCw className="w-5 h-5 animate-spin" />
+                ) : (
+                  <RefreshCw className="w-5 h-5" />
+                )}
+                {t('settings.figma.reconnect')}
+              </button>
+            ) : (
+              <button
+                onClick={handleDisconnect}
+                disabled={actionLoading}
+                className="flex-1 py-3 bg-gray-100 text-gray-700 rounded-xl font-medium hover:bg-gray-200 transition-colors flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {actionLoading ? (
+                  <RefreshCw className="w-5 h-5 animate-spin" />
+                ) : (
+                  <Unlink className="w-5 h-5" />
+                )}
+                {t('settings.figma.disconnect')}
+              </button>
+            )}
+          </>
+        ) : (
+          <button
+            onClick={handleConnect}
+            disabled={actionLoading}
+            className="flex-1 py-3 bg-[#eb352b] text-white rounded-xl font-medium hover:bg-[#d42d24] transition-colors flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            {actionLoading ? (
+              <RefreshCw className="w-5 h-5 animate-spin" />
+            ) : (
+              <Link className="w-5 h-5" />
+            )}
+            {actionLoading ? t('settings.figma.connecting') : t('settings.figma.connect')}
+          </button>
+        )}
+      </div>
+    </Card>
+  );
+};
+
+// Settings Page
+const SettingsPage = () => {
+  const t = useT();
+
+  return (
+    <div className="max-w-3xl mx-auto space-y-8">
+      <div>
+        <h1 className="text-2xl font-bold text-[#232120]">{t('settings.title')}</h1>
+        <p className="text-gray-500 mt-1">{t('settings.subtitle')}</p>
+      </div>
+
+      {/* Integrations Section */}
+      <div>
+        <h2 className="text-lg font-semibold text-[#232120] mb-4">{t('settings.integrations')}</h2>
+        <FigmaConnection />
+      </div>
+    </div>
+  );
+};
+
 // Main App
 export default function App() {
   const [lang, setLang] = useState('en');
@@ -1004,7 +1234,8 @@ export default function App() {
     quiz: QuizPage,
     agreement: AgreementPage,
     kickoff: KickoffPage,
-    commissions: CommissionsPage
+    commissions: CommissionsPage,
+    settings: SettingsPage
   };
 
   const CurrentPage = pages[currentPage] || (() => <DashboardPage setCurrentPage={setCurrentPage} />);

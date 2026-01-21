@@ -593,3 +593,45 @@ INSERT INTO resources (category_id, title, description, file_url, file_type, fil
 -- Insert sample quiz
 INSERT INTO quizzes (title, description, passing_score, time_limit_minutes, max_attempts) VALUES
   ('TeepTrak Certification', 'Core certification for all partners', 80, 30, 3);
+
+-- ============================================
+-- FIGMA INTEGRATION
+-- ============================================
+
+-- Figma OAuth Connections
+CREATE TABLE figma_connections (
+  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  profile_id UUID REFERENCES profiles(id) ON DELETE CASCADE UNIQUE,
+  figma_user_id TEXT NOT NULL,
+  figma_email TEXT,
+  figma_handle TEXT,
+  access_token_encrypted TEXT NOT NULL,
+  refresh_token_encrypted TEXT NOT NULL,
+  token_expires_at TIMESTAMPTZ NOT NULL,
+  scopes TEXT[],
+  connected_at TIMESTAMPTZ DEFAULT NOW(),
+  updated_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- Enable RLS for Figma connections
+ALTER TABLE figma_connections ENABLE ROW LEVEL SECURITY;
+
+-- Figma connection policies
+CREATE POLICY "Users can view own Figma connection" ON figma_connections
+  FOR SELECT USING (profile_id = auth.uid());
+
+CREATE POLICY "Users can insert own Figma connection" ON figma_connections
+  FOR INSERT WITH CHECK (profile_id = auth.uid());
+
+CREATE POLICY "Users can update own Figma connection" ON figma_connections
+  FOR UPDATE USING (profile_id = auth.uid());
+
+CREATE POLICY "Users can delete own Figma connection" ON figma_connections
+  FOR DELETE USING (profile_id = auth.uid());
+
+-- Index for faster lookups
+CREATE INDEX idx_figma_connections_profile ON figma_connections(profile_id);
+
+-- Update trigger for figma_connections
+CREATE TRIGGER update_figma_connections_updated_at BEFORE UPDATE ON figma_connections
+  FOR EACH ROW EXECUTE FUNCTION update_updated_at();

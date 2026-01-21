@@ -80,3 +80,17 @@ export type Commission = {
   created_at: string;
   updated_at: string;
 };
+
+export type FigmaConnection = {
+  id: string;
+  profile_id: string;
+  figma_user_id: string;
+  figma_email: string | null;
+  figma_handle: string | null;
+  access_token_encrypted: string;
+  refresh_token_encrypted: string;
+  token_expires_at: string;
+  scopes: string[] | null;
+  connected_at: string;
+  updated_at: string;
+};
