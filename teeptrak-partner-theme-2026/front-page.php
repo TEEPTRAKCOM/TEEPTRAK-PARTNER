@@ -19,7 +19,7 @@ $tiers = teeptrak_get_tier_config();
                 <?php esc_html_e('Join our partner ecosystem and help manufacturers achieve 5-30% productivity gains with proven Industrial IoT solutions deployed in 360+ plants worldwide.', 'teeptrak-partner'); ?>
             </p>
             <div class="tt-hero-actions">
-                <a href="<?php echo esc_url(wp_registration_url()); ?>" class="tt-btn tt-btn-primary tt-btn-xl">
+                <a href="<?php echo esc_url(teeptrak_get_application_url()); ?>" class="tt-btn tt-btn-primary tt-btn-xl">
                     <?php esc_html_e('Apply Now', 'teeptrak-partner'); ?>
                 </a>
                 <a href="<?php echo esc_url(wp_login_url(home_url('/dashboard/'))); ?>" class="tt-btn tt-btn-outline tt-btn-xl">
@@ -111,35 +111,64 @@ $tiers = teeptrak_get_tier_config();
     </div>
 </section>
 
-<!-- Partner Tiers Section -->
-<section id="tiers" class="tt-section tt-section-alt">
+<!-- Partner Tiers Section - Modern Redesign -->
+<section id="tiers" class="tt-section tt-tiers-section">
     <div class="tt-container">
         <div class="tt-section-header">
-            <h2 class="tt-section-title"><?php esc_html_e('Partner Tiers', 'teeptrak-partner'); ?></h2>
-            <p class="tt-section-subtitle"><?php esc_html_e('Grow with us and unlock more benefits at every level', 'teeptrak-partner'); ?></p>
+            <span class="tt-section-tag"><?php esc_html_e('Niveaux Partenaires', 'teeptrak-partner'); ?></span>
+            <h2 class="tt-section-title"><?php esc_html_e('Evoluez avec nous', 'teeptrak-partner'); ?></h2>
+            <p class="tt-section-subtitle"><?php esc_html_e("Debloquez plus d'avantages en progressant dans notre programme", 'teeptrak-partner'); ?></p>
         </div>
 
-        <div class="tt-tiers-grid">
-            <?php foreach ($tiers as $tier_key => $tier) : ?>
-                <div class="tt-tier-card <?php echo !empty($tier['featured']) ? 'is-featured' : ''; ?>">
-                    <div class="tt-tier-card-header" style="background: <?php echo esc_attr($tier['gradient']); ?>;">
-                        <div class="tt-tier-name"><?php echo esc_html($tier['name']); ?></div>
-                        <div class="tt-tier-rate"><?php echo esc_html($tier['commission_rate']); ?>%</div>
+        <div class="tt-tiers-modern">
+            <?php
+            $tiers = teeptrak_get_tier_config();
+            foreach ($tiers as $tier_key => $tier) :
+            ?>
+                <div class="tt-tier-modern <?php echo !empty($tier['featured']) ? 'is-featured' : ''; ?>" data-tier="<?php echo esc_attr($tier_key); ?>">
+                    <?php if (!empty($tier['featured'])) : ?>
+                        <div class="tt-tier-badge"><?php esc_html_e('Populaire', 'teeptrak-partner'); ?></div>
+                    <?php endif; ?>
+
+                    <div class="tt-tier-header" style="--tier-color: <?php echo esc_attr($tier['color']); ?>; background: <?php echo esc_attr($tier['gradient']); ?>;">
+                        <span class="tt-tier-name"><?php echo esc_html($tier['name']); ?></span>
+                        <div class="tt-tier-commission">
+                            <span class="tt-tier-rate"><?php echo esc_html($tier['commission_rate']); ?></span>
+                            <span class="tt-tier-percent">%</span>
+                        </div>
+                        <span class="tt-tier-label"><?php esc_html_e('commission', 'teeptrak-partner'); ?></span>
                     </div>
-                    <div class="tt-tier-card-body">
-                        <p class="tt-tier-requirement"><?php echo esc_html($tier['requirements']); ?></p>
-                        <ul class="tt-tier-benefits">
+
+                    <div class="tt-tier-body">
+                        <p class="tt-tier-requirement">
+                            <?php echo teeptrak_icon('flag', 16); ?>
+                            <?php echo esc_html($tier['requirements']); ?>
+                        </p>
+
+                        <ul class="tt-tier-features">
                             <?php foreach ($tier['benefits'] as $benefit) : ?>
                                 <li>
-                                    <?php echo teeptrak_icon('check', 16); ?>
+                                    <span class="tt-check"><?php echo teeptrak_icon('check', 16); ?></span>
                                     <?php echo esc_html($benefit); ?>
                                 </li>
                             <?php endforeach; ?>
                         </ul>
                     </div>
+
+                    <div class="tt-tier-footer">
+                        <a href="<?php echo esc_url(teeptrak_get_application_url()); ?>" class="tt-btn <?php echo !empty($tier['featured']) ? 'tt-btn-primary' : 'tt-btn-outline'; ?>">
+                            <?php esc_html_e('Postuler', 'teeptrak-partner'); ?>
+                        </a>
+                    </div>
                 </div>
             <?php endforeach; ?>
         </div>
+
+        <!-- Comparison hint -->
+        <p class="tt-tiers-hint">
+            <?php echo teeptrak_icon('info', 16); ?>
+            <?php esc_html_e('Tous les partenaires demarrent au niveau Bronze et progressent automatiquement', 'teeptrak-partner'); ?>
+        </p>
     </div>
 </section>
 
@@ -272,7 +301,7 @@ $tiers = teeptrak_get_tier_config();
     <div class="tt-container">
         <h2 class="tt-cta-title"><?php esc_html_e('Ready to Partner with TeepTrak?', 'teeptrak-partner'); ?></h2>
         <p class="tt-cta-subtitle"><?php esc_html_e('Join 50+ partners across 30+ countries helping manufacturers achieve operational excellence.', 'teeptrak-partner'); ?></p>
-        <a href="<?php echo esc_url(wp_registration_url()); ?>" class="tt-btn tt-btn-white tt-btn-xl">
+        <a href="<?php echo esc_url(teeptrak_get_application_url()); ?>" class="tt-btn tt-btn-white tt-btn-xl">
             <?php esc_html_e('Apply to Become a Partner', 'teeptrak-partner'); ?>
         </a>
         <p class="tt-cta-secondary">

@@ -16,26 +16,35 @@ Tags: partner-portal, industrial, iot, lms, learnpress
    ========================================================================== */
 
 :root {
+    /* =====================================================
+       TEEPTRAK BRAND COLORS (from Canva Brand Kit)
+       ===================================================== */
+
     /* Primary Brand Colors */
-    --tt-red: #E63946;
-    --tt-red-hover: #D42F26;
-    --tt-red-light: #FEE2E2;
-    --tt-coral: #FF6B6B;
-    --tt-dark: #1D3557;
+    --tt-red: #eb352b;
+    --tt-red-light: #ff674c;
+    --tt-red-dark: #c42d25;
+    --tt-red-hover: #c42d25;
+    --tt-red-bg: #FEE2E2;
+    --tt-coral: #ff674c;
+
+    /* Dark/Neutral Colors */
+    --tt-dark: #232120;
+    --tt-dark-alt: #272222;
     --tt-charcoal: #272222;
 
-    /* Neutral Colors */
-    --tt-gray-900: #1F2937;
-    --tt-gray-800: #374151;
-    --tt-gray-700: #4B5563;
-    --tt-gray-600: #4B5563;
-    --tt-gray-500: #6B7280;
-    --tt-gray-400: #9CA3AF;
-    --tt-gray-300: #D1D5DB;
-    --tt-gray-200: #E5E7EB;
-    --tt-gray-100: #F3F4F6;
-    --tt-gray-50: #F9FAFB;
-    --tt-white: #FFFFFF;
+    /* Gray Scale */
+    --tt-gray-900: #232120;
+    --tt-gray-800: #272222;
+    --tt-gray-700: #4b4846;
+    --tt-gray-600: #5f5b59;
+    --tt-gray-500: #7a7775;
+    --tt-gray-400: #dad9d6;
+    --tt-gray-300: #d9dbd6;
+    --tt-gray-200: #ebebeb;
+    --tt-gray-100: #f5f6f5;
+    --tt-gray-50: #f4f9fd;
+    --tt-white: #ffffff;
 
     /* Semantic Colors */
     --tt-success: #22C55E;
@@ -44,7 +53,7 @@ Tags: partner-portal, industrial, iot, lms, learnpress
     --tt-warning-light: #FEF3C7;
     --tt-info: #3B82F6;
     --tt-info-light: #DBEAFE;
-    --tt-error: #DC2626;
+    --tt-error: #EF4444;
     --tt-error-light: #FEE2E2;
     --tt-purple: #9333EA;
     --tt-purple-light: #F3E8FF;
@@ -56,9 +65,9 @@ Tags: partner-portal, industrial, iot, lms, learnpress
     --tt-bronze-gradient: linear-gradient(135deg, #CD7F32 0%, #8B4513 100%);
     --tt-silver: #A8A8A8;
     --tt-silver-gradient: linear-gradient(135deg, #C0C0C0 0%, #A8A8A8 100%);
-    --tt-gold: #FFA500;
+    --tt-gold: #FFD700;
     --tt-gold-gradient: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
-    --tt-platinum: #6B7280;
+    --tt-platinum: #E5E4E2;
     --tt-platinum-gradient: linear-gradient(135deg, #E5E4E2 0%, #B4B4B4 100%);
 
     /* Typography */
@@ -2519,4 +2528,827 @@ a:hover {
     border-radius: var(--tt-radius-xl);
     overflow: hidden;
     border: 1px solid var(--tt-gray-100);
+}
+
+/* ==========================================================================
+   LEARNPRESS OVERRIDES - Hide "Student" terminology
+   ========================================================================== */
+
+/* Hide the "Student: X Students" meta */
+.course-meta .course-students,
+.lp-course-students,
+.course-sidebar .course-students,
+.learn-press-course-results-progress .items-progress__students {
+    display: none !important;
+}
+
+/* Restyle course sidebar for partner context */
+.lp-single-course .course-sidebar {
+    background: var(--tt-gray-50);
+    border-radius: 16px;
+    padding: 24px;
+    border: 1px solid var(--tt-gray-200);
+}
+
+.lp-single-course .course-sidebar .course-price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--tt-success);
+}
+
+.lp-single-course .course-sidebar .lp-button {
+    background: var(--tt-red) !important;
+    border-color: var(--tt-red) !important;
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+    padding: 14px 24px !important;
+    width: 100%;
+    text-align: center;
+}
+
+.lp-single-course .course-sidebar .lp-button:hover {
+    background: var(--tt-red-dark) !important;
+    border-color: var(--tt-red-dark) !important;
+}
+
+/* Better course meta styling */
+.lp-single-course .course-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.lp-single-course .course-meta > div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--tt-gray-200);
+}
+
+.lp-single-course .course-meta > div:last-child {
+    border-bottom: none;
+}
+
+/* ==========================================================================
+   PARTNER APPLICATION PAGE STYLES
+   ========================================================================== */
+
+.tt-application-hero {
+    background: linear-gradient(135deg, var(--tt-red) 0%, var(--tt-red-dark) 100%);
+    color: var(--tt-white);
+    padding: 80px 0 60px;
+    text-align: center;
+}
+
+.tt-application-hero h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+    margin-bottom: 16px;
+    color: var(--tt-white);
+}
+
+.tt-application-hero p {
+    font-size: 1.125rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.tt-application-content {
+    padding: 60px 0 100px;
+    background: var(--tt-gray-50);
+}
+
+.tt-application-grid {
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+@media (max-width: 968px) {
+    .tt-application-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tt-application-sidebar {
+        order: 2;
+    }
+}
+
+.tt-application-sidebar {
+    background: var(--tt-white);
+    border-radius: 16px;
+    padding: 32px;
+    height: fit-content;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+}
+
+.tt-application-sidebar h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: var(--tt-dark);
+}
+
+.tt-benefit-item {
+    display: flex;
+    gap: 16px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--tt-gray-100);
+}
+
+.tt-benefit-item:last-of-type {
+    border-bottom: none;
+}
+
+.tt-benefit-icon-small {
+    width: 40px;
+    height: 40px;
+    background: var(--tt-red-bg);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--tt-red);
+    flex-shrink: 0;
+}
+
+.tt-benefit-item strong {
+    display: block;
+    font-weight: 600;
+    color: var(--tt-dark);
+    margin-bottom: 4px;
+}
+
+.tt-benefit-item p {
+    font-size: 0.875rem;
+    color: var(--tt-gray-600);
+    margin: 0;
+}
+
+.tt-trust-badges {
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid var(--tt-gray-200);
+    text-align: center;
+}
+
+.tt-trust-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: var(--tt-gray-500);
+    margin-bottom: 16px;
+}
+
+.tt-trust-logos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+.tt-trust-logos span {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--tt-gray-400);
+    padding: 6px 12px;
+    background: var(--tt-gray-50);
+    border-radius: 6px;
+}
+
+.tt-trust-stat {
+    font-size: 0.8125rem;
+    color: var(--tt-gray-600);
+    margin: 0;
+}
+
+/* Application Form */
+.tt-application-form-wrapper {
+    background: var(--tt-white);
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+}
+
+.tt-application-form fieldset {
+    border: none;
+    padding: 0;
+    margin: 0 0 32px 0;
+}
+
+.tt-application-form legend {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--tt-dark);
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--tt-gray-100);
+    width: 100%;
+}
+
+.tt-form-section {
+    margin-bottom: 32px;
+}
+
+.tt-form-row {
+    margin-bottom: 20px;
+}
+
+.tt-form-row-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+@media (max-width: 600px) {
+    .tt-form-row-2 {
+        grid-template-columns: 1fr;
+    }
+}
+
+.tt-form-group {
+    margin-bottom: 20px;
+}
+
+.tt-form-group label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--tt-dark);
+    margin-bottom: 8px;
+}
+
+.tt-form-group label .required {
+    color: var(--tt-red);
+}
+
+.tt-form-control {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 1rem;
+    font-family: inherit;
+    border: 2px solid var(--tt-gray-200);
+    border-radius: 10px;
+    background: var(--tt-white);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tt-form-control:focus {
+    outline: none;
+    border-color: var(--tt-red);
+    box-shadow: 0 0 0 3px rgba(235, 53, 43, 0.1);
+}
+
+.tt-form-control::placeholder {
+    color: var(--tt-gray-400);
+}
+
+textarea.tt-form-control {
+    resize: vertical;
+    min-height: 100px;
+}
+
+select.tt-form-control {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%234b4846' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    padding-right: 44px;
+}
+
+.tt-form-hint {
+    font-size: 0.8125rem;
+    color: var(--tt-gray-500);
+    margin-top: 6px;
+}
+
+/* Radio Cards */
+.tt-radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.tt-radio-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 16px 20px;
+    background: var(--tt-gray-50);
+    border: 2px solid var(--tt-gray-200);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.tt-radio-card:hover {
+    border-color: var(--tt-gray-300);
+    background: var(--tt-white);
+}
+
+.tt-radio-card input[type="radio"] {
+    margin-top: 4px;
+    accent-color: var(--tt-red);
+    width: 18px;
+    height: 18px;
+}
+
+.tt-radio-card input[type="radio"]:checked + .tt-radio-content {
+    color: var(--tt-dark);
+}
+
+.tt-radio-card:has(input:checked) {
+    border-color: var(--tt-red);
+    background: rgba(235, 53, 43, 0.03);
+}
+
+.tt-radio-content {
+    flex: 1;
+}
+
+.tt-radio-content strong {
+    display: block;
+    font-weight: 600;
+    color: var(--tt-dark);
+    margin-bottom: 4px;
+}
+
+.tt-radio-content span {
+    font-size: 0.875rem;
+    color: var(--tt-gray-600);
+}
+
+/* Checkbox Grid */
+.tt-checkbox-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 12px;
+}
+
+.tt-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    padding: 10px 14px;
+    background: var(--tt-gray-50);
+    border-radius: 8px;
+    transition: background 0.2s ease;
+}
+
+.tt-checkbox:hover {
+    background: var(--tt-gray-100);
+}
+
+.tt-checkbox input[type="checkbox"] {
+    accent-color: var(--tt-red);
+    width: 16px;
+    height: 16px;
+}
+
+.tt-checkbox span {
+    font-size: 0.9375rem;
+    color: var(--tt-dark);
+}
+
+/* Form Submit Section */
+.tt-form-submit-section {
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid var(--tt-gray-200);
+}
+
+.tt-terms-checkbox {
+    margin-bottom: 24px;
+    padding: 0;
+    background: none;
+}
+
+.tt-terms-checkbox a {
+    color: var(--tt-red);
+    text-decoration: underline;
+}
+
+.tt-btn-full {
+    width: 100%;
+}
+
+.tt-form-footer-text {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9375rem;
+    color: var(--tt-gray-600);
+}
+
+.tt-form-footer-text a {
+    color: var(--tt-red);
+    font-weight: 600;
+}
+
+/* Alerts */
+.tt-alert {
+    padding: 16px 20px;
+    border-radius: 10px;
+    margin-bottom: 24px;
+}
+
+.tt-alert-error {
+    background: var(--tt-error-light);
+    border: 1px solid rgba(239, 68, 68, 0.2);
+    color: var(--tt-error);
+}
+
+.tt-alert-error strong {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.tt-alert-error ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.tt-alert-error li {
+    margin-bottom: 4px;
+}
+
+/* Success State */
+.tt-application-success {
+    text-align: center;
+    padding: 60px 40px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.tt-success-icon {
+    width: 80px;
+    height: 80px;
+    background: var(--tt-success-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px;
+    color: var(--tt-success);
+}
+
+.tt-application-success h2 {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--tt-dark);
+    margin-bottom: 16px;
+}
+
+.tt-application-success p {
+    color: var(--tt-gray-600);
+    margin-bottom: 32px;
+}
+
+/* ==========================================================================
+   PARTNER TIERS - Modern Redesign (TopSolid-inspired)
+   ========================================================================== */
+
+.tt-tiers-section {
+    background: linear-gradient(180deg, var(--tt-gray-50) 0%, var(--tt-white) 100%);
+    padding: 100px 0;
+}
+
+.tt-section-tag {
+    display: inline-block;
+    background: var(--tt-red-bg);
+    color: var(--tt-red);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.tt-tiers-modern {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-top: 48px;
+}
+
+@media (max-width: 1200px) {
+    .tt-tiers-modern {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .tt-tiers-modern {
+        grid-template-columns: 1fr;
+    }
+}
+
+.tt-tier-modern {
+    background: var(--tt-white);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid transparent;
+}
+
+.tt-tier-modern:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+.tt-tier-modern.is-featured {
+    border-color: var(--tt-red);
+    transform: scale(1.02);
+}
+
+.tt-tier-modern.is-featured:hover {
+    transform: scale(1.02) translateY(-8px);
+}
+
+.tt-tier-badge {
+    position: absolute;
+    top: -1px;
+    right: 20px;
+    background: var(--tt-red);
+    color: white;
+    padding: 6px 16px;
+    border-radius: 0 0 10px 10px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.tt-tier-header {
+    background: var(--tier-color);
+    padding: 32px 24px;
+    text-align: center;
+    color: white;
+}
+
+/* Bronze tier header needs dark text */
+.tt-tier-modern[data-tier="bronze"] .tt-tier-header {
+    color: var(--tt-dark);
+}
+
+.tt-tier-name {
+    display: block;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+    opacity: 0.9;
+}
+
+.tt-tier-commission {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 4px;
+}
+
+.tt-tier-rate {
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.tt-tier-percent {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.tt-tier-label {
+    display: block;
+    font-size: 0.875rem;
+    margin-top: 8px;
+    opacity: 0.8;
+}
+
+.tt-tier-body {
+    padding: 24px;
+    flex: 1;
+}
+
+.tt-tier-requirement {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.875rem;
+    color: var(--tt-gray-700);
+    background: var(--tt-gray-50);
+    padding: 12px 16px;
+    border-radius: 10px;
+    margin-bottom: 24px;
+}
+
+.tt-tier-requirement svg {
+    color: var(--tt-red);
+    flex-shrink: 0;
+}
+
+.tt-tier-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.tt-tier-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 10px 0;
+    font-size: 0.9375rem;
+    color: var(--tt-dark);
+    border-bottom: 1px solid var(--tt-gray-100);
+}
+
+.tt-tier-features li:last-child {
+    border-bottom: none;
+}
+
+.tt-tier-features .tt-check {
+    width: 20px;
+    height: 20px;
+    background: var(--tt-success-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--tt-success);
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.tt-tier-footer {
+    padding: 0 24px 24px;
+}
+
+.tt-tier-footer .tt-btn {
+    width: 100%;
+    justify-content: center;
+}
+
+.tt-tiers-hint {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 32px;
+    font-size: 0.875rem;
+    color: var(--tt-gray-700);
+}
+
+.tt-tiers-hint svg {
+    color: var(--tt-red);
+}
+
+/* ==========================================================================
+   RESPONSIVE ENHANCEMENTS
+   ========================================================================== */
+
+/* Hero Responsive */
+@media (max-width: 768px) {
+    .tt-hero {
+        min-height: auto;
+        padding: 100px 0 60px;
+    }
+
+    .tt-hero-title {
+        font-size: 2rem;
+    }
+
+    .tt-hero-actions {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .tt-hero-actions .tt-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .tt-hero-stats {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+/* Section Responsive */
+@media (max-width: 768px) {
+    .tt-section {
+        padding: 60px 0;
+    }
+
+    .tt-section-title {
+        font-size: 1.75rem;
+    }
+
+    .tt-section-header {
+        margin-bottom: 32px;
+    }
+}
+
+/* Benefits Grid Responsive */
+@media (max-width: 1024px) {
+    .tt-benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .tt-benefits-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Process Grid Responsive */
+@media (max-width: 1024px) {
+    .tt-process-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .tt-process-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .tt-process-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Partners Grid Responsive */
+@media (max-width: 900px) {
+    .tt-partners-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Stats Grid Responsive */
+@media (max-width: 900px) {
+    .tt-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .tt-stats-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Mobile Menu Toggle */
+.tt-mobile-menu-toggle {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--tt-dark);
+}
+
+@media (max-width: 768px) {
+    .tt-header-nav {
+        display: none;
+    }
+
+    .tt-mobile-menu-toggle {
+        display: flex;
+    }
+}
+
+/* Container Responsive */
+@media (max-width: 768px) {
+    .tt-container {
+        padding: 0 16px;
+    }
+}
+
+/* CTA Section Responsive */
+@media (max-width: 768px) {
+    .tt-cta-section {
+        padding: 60px 0;
+    }
+
+    .tt-cta-title {
+        font-size: 1.75rem;
+    }
 }

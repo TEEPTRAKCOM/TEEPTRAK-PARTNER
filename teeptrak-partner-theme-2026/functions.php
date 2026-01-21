@@ -1029,3 +1029,315 @@ function teeptrak_auto_setup_demo($user_id) {
     }
 }
 add_action('user_register', 'teeptrak_auto_setup_demo');
+
+/**
+ * =====================================================
+ * PARTNER REGISTRATION SYSTEM
+ * =====================================================
+ */
+
+/**
+ * Get partner application URL
+ */
+function teeptrak_get_application_url() {
+    $page = get_page_by_path('partner-application');
+    if ($page) {
+        return get_permalink($page->ID);
+    }
+    return home_url('/partner-application/');
+}
+
+/**
+ * Process partner application form
+ */
+function teeptrak_process_application() {
+    if (!isset($_POST['teeptrak_application_nonce']) ||
+        !wp_verify_nonce($_POST['teeptrak_application_nonce'], 'teeptrak_application')) {
+        return;
+    }
+
+    // Sanitize inputs
+    $first_name    = sanitize_text_field($_POST['first_name'] ?? '');
+    $last_name     = sanitize_text_field($_POST['last_name'] ?? '');
+    $email         = sanitize_email($_POST['email'] ?? '');
+    $company       = sanitize_text_field($_POST['company_name'] ?? '');
+    $job_title     = sanitize_text_field($_POST['job_title'] ?? '');
+    $phone         = sanitize_text_field($_POST['phone'] ?? '');
+    $country       = sanitize_text_field($_POST['country'] ?? '');
+    $partner_type  = sanitize_text_field($_POST['partner_type'] ?? '');
+    $industries    = array_map('sanitize_text_field', (array)($_POST['target_industries'] ?? array()));
+    $experience    = sanitize_textarea_field($_POST['manufacturing_experience'] ?? '');
+    $password      = $_POST['password'] ?? '';
+
+    // Validation
+    $errors = array();
+
+    if (empty($first_name)) $errors[] = __('Prénom requis.', 'teeptrak-partner');
+    if (empty($last_name)) $errors[] = __('Nom requis.', 'teeptrak-partner');
+    if (empty($email) || !is_email($email)) $errors[] = __('Email valide requis.', 'teeptrak-partner');
+    if (email_exists($email)) $errors[] = __('Cet email est déjà enregistré.', 'teeptrak-partner');
+    if (empty($company)) $errors[] = __('Nom de société requis.', 'teeptrak-partner');
+    if (empty($password) || strlen($password) < 8) $errors[] = __('Mot de passe minimum 8 caractères.', 'teeptrak-partner');
+
+    if (!empty($errors)) {
+        set_transient('teeptrak_application_errors', $errors, 300);
+        set_transient('teeptrak_application_data', $_POST, 300);
+        wp_redirect(add_query_arg('application', 'error', teeptrak_get_application_url()));
+        exit;
+    }
+
+    // Create username
+    $username = sanitize_user(strtolower($first_name . '.' . $last_name));
+    $i = 1;
+    while (username_exists($username)) {
+        $username = sanitize_user(strtolower($first_name . '.' . $last_name . $i));
+        $i++;
+    }
+
+    // Create user
+    $user_id = wp_create_user($username, $password, $email);
+
+    if (is_wp_error($user_id)) {
+        $errors[] = $user_id->get_error_message();
+        set_transient('teeptrak_application_errors', $errors, 300);
+        wp_redirect(add_query_arg('application', 'error', teeptrak_get_application_url()));
+        exit;
+    }
+
+    // Update user data
+    wp_update_user(array(
+        'ID'           => $user_id,
+        'first_name'   => $first_name,
+        'last_name'    => $last_name,
+        'display_name' => $first_name . ' ' . $last_name,
+        'role'         => 'subscriber',
+    ));
+
+    // Store partner application meta
+    update_user_meta($user_id, 'teeptrak_company_name', $company);
+    update_user_meta($user_id, 'teeptrak_job_title', $job_title);
+    update_user_meta($user_id, 'teeptrak_phone', $phone);
+    update_user_meta($user_id, 'teeptrak_country', $country);
+    update_user_meta($user_id, 'teeptrak_partner_type', $partner_type);
+    update_user_meta($user_id, 'teeptrak_target_industries', $industries);
+    update_user_meta($user_id, 'teeptrak_manufacturing_experience', $experience);
+    update_user_meta($user_id, 'teeptrak_application_date', current_time('mysql'));
+    update_user_meta($user_id, 'teeptrak_application_status', 'pending');
+
+    // Set initial partner tier
+    update_user_meta($user_id, 'teeptrak_partner_tier', 'bronze');
+    update_user_meta($user_id, 'teeptrak_commission_rate', 15);
+    update_user_meta($user_id, 'teeptrak_partner_score', 0);
+    update_user_meta($user_id, 'teeptrak_onboarding_step', 1);
+
+    // Send emails
+    teeptrak_notify_admin_new_application($user_id);
+    teeptrak_send_application_confirmation($user_id);
+
+    wp_redirect(add_query_arg('application', 'success', teeptrak_get_application_url()));
+    exit;
+}
+add_action('admin_post_nopriv_teeptrak_partner_application', 'teeptrak_process_application');
+add_action('admin_post_teeptrak_partner_application', 'teeptrak_process_application');
+
+/**
+ * Notify admin of new application
+ */
+function teeptrak_notify_admin_new_application($user_id) {
+    $user = get_userdata($user_id);
+    $company = get_user_meta($user_id, 'teeptrak_company_name', true);
+
+    $subject = sprintf('[TeepTrak] Nouvelle candidature partenaire: %s (%s)', $user->display_name, $company);
+    $message = sprintf(
+        "Nouvelle candidature partenaire reçue.\n\n" .
+        "Nom: %s\nSociété: %s\nEmail: %s\nType: %s\nPays: %s\n\n" .
+        "Gérer: %s",
+        $user->display_name, $company, $user->user_email,
+        get_user_meta($user_id, 'teeptrak_partner_type', true),
+        get_user_meta($user_id, 'teeptrak_country', true),
+        admin_url('user-edit.php?user_id=' . $user_id)
+    );
+
+    wp_mail(get_option('admin_email'), $subject, $message);
+    wp_mail('partners@teeptrak.com', $subject, $message);
+}
+
+/**
+ * Send confirmation email to applicant
+ */
+function teeptrak_send_application_confirmation($user_id) {
+    $user = get_userdata($user_id);
+
+    $subject = __('Votre candidature TeepTrak Partner', 'teeptrak-partner');
+    $message = sprintf(
+        "Bonjour %s,\n\n" .
+        "Merci pour votre candidature au programme partenaires TeepTrak !\n\n" .
+        "Notre équipe examinera votre dossier sous 2-3 jours ouvrés.\n" .
+        "Vous recevrez une notification dès que votre candidature sera traitée.\n\n" .
+        "Questions ? Contactez-nous : partners@teeptrak.com\n\n" .
+        "L'équipe TeepTrak",
+        $user->first_name
+    );
+
+    wp_mail($user->user_email, $subject, $message);
+}
+
+/**
+ * Admin: Add partner status column
+ */
+function teeptrak_add_partner_status_column($columns) {
+    $columns['partner_status'] = __('Statut Partenaire', 'teeptrak-partner');
+    return $columns;
+}
+add_filter('manage_users_columns', 'teeptrak_add_partner_status_column');
+
+function teeptrak_show_partner_status_column($val, $column_name, $user_id) {
+    if ($column_name === 'partner_status') {
+        $status = get_user_meta($user_id, 'teeptrak_application_status', true);
+        $tier = get_user_meta($user_id, 'teeptrak_partner_tier', true);
+
+        if ($status === 'pending') {
+            return '<span style="color: #F59E0B;">⏳ En attente</span>';
+        } elseif ($status === 'approved') {
+            return '<span style="color: #22C55E;">✓ ' . ucfirst($tier ?: 'bronze') . '</span>';
+        } elseif ($status === 'rejected') {
+            return '<span style="color: #EF4444;">✗ Refusé</span>';
+        }
+        return '—';
+    }
+    return $val;
+}
+add_filter('manage_users_custom_column', 'teeptrak_show_partner_status_column', 10, 3);
+
+/**
+ * Admin: Quick approve/reject actions
+ */
+function teeptrak_user_row_actions($actions, $user_object) {
+    $status = get_user_meta($user_object->ID, 'teeptrak_application_status', true);
+
+    if ($status === 'pending') {
+        $approve_url = wp_nonce_url(
+            admin_url('admin-post.php?action=teeptrak_approve_partner&user_id=' . $user_object->ID),
+            'approve_partner_' . $user_object->ID
+        );
+        $reject_url = wp_nonce_url(
+            admin_url('admin-post.php?action=teeptrak_reject_partner&user_id=' . $user_object->ID),
+            'reject_partner_' . $user_object->ID
+        );
+
+        $actions['approve_partner'] = '<a href="' . esc_url($approve_url) . '" style="color: #22C55E;">Approuver</a>';
+        $actions['reject_partner'] = '<a href="' . esc_url($reject_url) . '" style="color: #EF4444;">Refuser</a>';
+    }
+
+    return $actions;
+}
+add_filter('user_row_actions', 'teeptrak_user_row_actions', 10, 2);
+
+/**
+ * Handle partner approval
+ */
+function teeptrak_approve_partner() {
+    if (!current_user_can('manage_options')) wp_die('Unauthorized');
+
+    $user_id = intval($_GET['user_id'] ?? 0);
+    if (!wp_verify_nonce($_GET['_wpnonce'] ?? '', 'approve_partner_' . $user_id)) wp_die('Invalid request');
+
+    update_user_meta($user_id, 'teeptrak_application_status', 'approved');
+
+    $user = get_userdata($user_id);
+    $login_url = wp_login_url(home_url('/dashboard/'));
+
+    $subject = __('Bienvenue dans le programme partenaires TeepTrak !', 'teeptrak-partner');
+    $message = sprintf(
+        "Félicitations %s !\n\n" .
+        "Votre candidature a été approuvée.\n\n" .
+        "Accédez à votre portail partenaire :\n%s\n\n" .
+        "Vous démarrez au niveau Bronze avec 15%% de commission.\n" .
+        "Complétez votre certification et closez des deals pour progresser !\n\n" .
+        "L'équipe TeepTrak",
+        $user->first_name, $login_url
+    );
+
+    wp_mail($user->user_email, $subject, $message);
+    wp_redirect(admin_url('users.php?partner_approved=1'));
+    exit;
+}
+add_action('admin_post_teeptrak_approve_partner', 'teeptrak_approve_partner');
+
+/**
+ * Handle partner rejection
+ */
+function teeptrak_reject_partner() {
+    if (!current_user_can('manage_options')) wp_die('Unauthorized');
+
+    $user_id = intval($_GET['user_id'] ?? 0);
+    if (!wp_verify_nonce($_GET['_wpnonce'] ?? '', 'reject_partner_' . $user_id)) wp_die('Invalid request');
+
+    update_user_meta($user_id, 'teeptrak_application_status', 'rejected');
+
+    $user = get_userdata($user_id);
+    $subject = __('Mise à jour de votre candidature TeepTrak', 'teeptrak-partner');
+    $message = sprintf(
+        "Bonjour %s,\n\n" .
+        "Après examen de votre candidature, nous ne pouvons pas la retenir pour le moment.\n\n" .
+        "N'hésitez pas à repostuler dans 6 mois ou à nous contacter : partners@teeptrak.com\n\n" .
+        "L'équipe TeepTrak",
+        $user->first_name
+    );
+
+    wp_mail($user->user_email, $subject, $message);
+    wp_redirect(admin_url('users.php?partner_rejected=1'));
+    exit;
+}
+add_action('admin_post_teeptrak_reject_partner', 'teeptrak_reject_partner');
+
+/**
+ * =====================================================
+ * LEARNPRESS TERMINOLOGY FIXES
+ * Replace "Student" with "Participant" for B2B context
+ * =====================================================
+ */
+
+/**
+ * Filter LearnPress strings
+ */
+function teeptrak_learnpress_translations($translation, $text, $domain) {
+    if ($domain !== 'learnpress') {
+        return $translation;
+    }
+
+    $replacements = array(
+        'Student'       => 'Participant',
+        'Students'      => 'Participants',
+        'student'       => 'participant',
+        'students'      => 'participants',
+        'Enroll'        => "S'inscrire",
+        'Start Now'     => 'Commencer',
+        'Continue'      => 'Continuer',
+        'Lesson'        => 'Module',
+        'Lessons'       => 'Modules',
+        'Quiz'          => 'Quiz',
+        'Quizzes'       => 'Quiz',
+        'Course'        => 'Formation',
+        'Courses'       => 'Formations',
+    );
+
+    foreach ($replacements as $find => $replace) {
+        if (strpos($translation, $find) !== false) {
+            $translation = str_replace($find, $replace, $translation);
+        }
+    }
+
+    return $translation;
+}
+add_filter('gettext', 'teeptrak_learnpress_translations', 20, 3);
+add_filter('ngettext', 'teeptrak_learnpress_translations', 20, 3);
+
+/**
+ * Custom LearnPress course sidebar
+ */
+function teeptrak_customize_learnpress_sidebar() {
+    // Remove default "Students" count or replace with custom
+    remove_action('learn-press/course-meta-secondary-left', 'learn_press_course_students', 10);
+}
+add_action('wp', 'teeptrak_customize_learnpress_sidebar');
