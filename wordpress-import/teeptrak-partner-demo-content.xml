@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0"
+	xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:wp="http://wordpress.org/export/1.2/">
+
+<channel>
+	<title>TeepTrak Partner Portal</title>
+	<link>https://partner.teeptrak.com</link>
+	<description>TeepTrak Partner Portal Demo Content</description>
+	<pubDate>Tue, 21 Jan 2025 00:00:00 +0000</pubDate>
+	<language>en-US</language>
+	<wp:wxr_version>1.2</wp:wxr_version>
+	<wp:base_site_url>https://partner.teeptrak.com</wp:base_site_url>
+	<wp:base_blog_url>https://partner.teeptrak.com</wp:base_blog_url>
+
+	<!-- Categories -->
+	<wp:category>
+		<wp:term_id>1</wp:term_id>
+		<wp:category_nicename>sales-materials</wp:category_nicename>
+		<wp:category_parent></wp:category_parent>
+		<wp:cat_name><![CDATA[Sales Materials]]></wp:cat_name>
+	</wp:category>
+	<wp:category>
+		<wp:term_id>2</wp:term_id>
+		<wp:category_nicename>technical-docs</wp:category_nicename>
+		<wp:category_parent></wp:category_parent>
+		<wp:cat_name><![CDATA[Technical Documentation]]></wp:cat_name>
+	</wp:category>
+	<wp:category>
+		<wp:term_id>3</wp:term_id>
+		<wp:category_nicename>marketing-assets</wp:category_nicename>
+		<wp:category_parent></wp:category_parent>
+		<wp:cat_name><![CDATA[Marketing Assets]]></wp:cat_name>
+	</wp:category>
+
+	<!-- Tags -->
+	<wp:tag>
+		<wp:term_id>4</wp:term_id>
+		<wp:tag_slug>bronze</wp:tag_slug>
+		<wp:tag_name><![CDATA[Bronze Tier]]></wp:tag_name>
+	</wp:tag>
+	<wp:tag>
+		<wp:term_id>5</wp:term_id>
+		<wp:tag_slug>silver</wp:tag_slug>
+		<wp:tag_name><![CDATA[Silver Tier]]></wp:tag_name>
+	</wp:tag>
+	<wp:tag>
+		<wp:term_id>6</wp:term_id>
+		<wp:tag_slug>gold</wp:tag_slug>
+		<wp:tag_name><![CDATA[Gold Tier]]></wp:tag_name>
+	</wp:tag>
+	<wp:tag>
+		<wp:term_id>7</wp:term_id>
+		<wp:tag_slug>platinum</wp:tag_slug>
+		<wp:tag_name><![CDATA[Platinum Tier]]></wp:tag_name>
+	</wp:tag>
+
+	<!-- Authors -->
+	<wp:author>
+		<wp:author_id>1</wp:author_id>
+		<wp:author_login><![CDATA[admin]]></wp:author_login>
+		<wp:author_email><![CDATA[admin@teeptrak.com]]></wp:author_email>
+		<wp:author_display_name><![CDATA[TeepTrak Admin]]></wp:author_display_name>
+		<wp:author_first_name><![CDATA[TeepTrak]]></wp:author_first_name>
+		<wp:author_last_name><![CDATA[Admin]]></wp:author_last_name>
+	</wp:author>
+
+	<!-- Pages -->
+
+	<!-- Home Page -->
+	<item>
+		<title>Partner Portal Home</title>
+		<link>https://partner.teeptrak.com/</link>
+		<pubDate>Tue, 21 Jan 2025 00:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<guid isPermaLink="false">https://partner.teeptrak.com/?page_id=2</guid>
+		<description></description>
+		<content:encoded><![CDATA[<!-- wp:paragraph -->
+<p>Welcome to the TeepTrak Partner Portal. Access your dashboard, manage deals, track commissions, and explore resources.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2>Quick Links</h2>
+<!-- /wp:heading -->
+
+<!-- wp:list -->
+<ul>
+<li><a href="/dashboard">Partner Dashboard</a></li>
+<li><a href="/deals">Deal Registration</a></li>
+<li><a href="/resources">Resource Center</a></li>
+<li><a href="/training">Training &amp; Certification</a></li>
+</ul>
+<!-- /wp:list -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>2</wp:post_id>
+		<wp:post_date><![CDATA[2025-01-21 00:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2025-01-21 00:00:00]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2025-01-21 00:00:00]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-01-21 00:00:00]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[home]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[page]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
+			<wp:meta_value><![CDATA[front-page.php]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+
+	<!-- Dashboard Page -->
+	<item>
+		<title>Partner Dashboard</title>
+		<link>https://partner.teeptrak.com/dashboard/</link>
+		<pubDate>Tue, 21 Jan 2025 00:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<guid isPermaLink="false">https://partner.teeptrak.com/?page_id=3</guid>
+		<description></description>
+		<content:encoded><![CDATA[<!-- wp:paragraph -->
+<p>Your personalized partner dashboard with KPIs, deal tracking, and commission overview.</p>
+<!-- /wp:paragraph -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>3</wp:post_id>
+		<wp:post_date><![CDATA[2025-01-21 00:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2025-01-21 00:00:00]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2025-01-21 00:00:00]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-01-21 00:00:00]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[dashboard]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>1</wp:menu_order>
+		<wp:post_type><![CDATA[page]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
+			<wp:meta_value><![CDATA[page-dashboard.php]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+
+	<!-- Deal Registration Page -->
+	<item>
+		<title>Deal Registration</title>
+		<link>https://partner.teeptrak.com/deals/</link>
+		<pubDate>Tue, 21 Jan 2025 00:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<guid isPermaLink="false">https://partner.teeptrak.com/?page_id=4</guid>
+		<description></description>
+		<content:encoded><![CDATA[<!-- wp:paragraph -->
+<p>Register and track your sales opportunities. Get deal protection and maximize your commissions.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:shortcode -->
+[teeptrak_deal_list]
+<!-- /wp:shortcode -->
+
+<!-- wp:shortcode -->
+[teeptrak_deal_form]
+<!-- /wp:shortcode -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>4</wp:post_id>
+		<wp:post_date><![CDATA[2025-01-21 00:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2025-01-21 00:00:00]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2025-01-21 00:00:00]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-01-21 00:00:00]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[deals]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>2</wp:menu_order>
+		<wp:post_type><![CDATA[page]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+	</item>
+
+	<!-- Commissions Page -->
+	<item>
+		<title>Commissions</title>
+		<link>https://partner.teeptrak.com/commissions/</link>
+		<pubDate>Tue, 21 Jan 2025 00:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<guid isPermaLink="false">https://partner.teeptrak.com/?page_id=5</guid>
+		<description></description>
+		<content:encoded><![CDATA[<!-- wp:paragraph -->
+<p>Track your earned commissions, pending payments, and commission history.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:shortcode -->
+[teeptrak_commission_summary]
+<!-- /wp:shortcode -->
+
+<!-- wp:shortcode -->
+[teeptrak_commission_list]
+<!-- /wp:shortcode -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>5</wp:post_id>
+		<wp:post_date><![CDATA[2025-01-21 00:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2025-01-21 00:00:00]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2025-01-21 00:00:00]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-01-21 00:00:00]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[commissions]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>3</wp:menu_order>
+		<wp:post_type><![CDATA[page]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+	</item>
+
+	<!-- Resource Center Page -->
+	<item>
+		<title>Resource Center</title>
+		<link>https://partner.teeptrak.com/resources/</link>
+		<pubDate>Tue, 21 Jan 2025 00:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<guid isPermaLink="false">https://partner.teeptrak.com/?page_id=6</guid>
+		<description></description>
+		<content:encoded><![CDATA[<!-- wp:paragraph -->
+<p>Access sales materials, technical documentation, marketing assets, and more.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3>Sales Materials</h3>
+<!-- /wp:heading -->
+
+<!-- wp:shortcode -->
+[teeptrak_resources category="sales"]
+<!-- /wp:shortcode -->
+
+<!-- wp:heading {"level":3} -->
+<h3>Technical Documentation</h3>
+<!-- /wp:heading -->
+
+<!-- wp:shortcode -->
+[teeptrak_resources category="technical"]
+<!-- /wp:shortcode -->
+
+<!-- wp:heading {"level":3} -->
+<h3>Marketing Assets</h3>
+<!-- /wp:heading -->
+
+<!-- wp:shortcode -->
+[teeptrak_resources category="marketing"]
+<!-- /wp:shortcode -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>6</wp:post_id>
+		<wp:post_date><![CDATA[2025-01-21 00:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2025-01-21 00:00:00]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2025-01-21 00:00:00]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-01-21 00:00:00]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[resources]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>4</wp:menu_order>
+		<wp:post_type><![CDATA[page]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+	</item>
+
+	<!-- Training Page -->
+	<item>
+		<title>Training &amp; Certification</title>
+		<link>https://partner.teeptrak.com/training/</link>
+		<pubDate>Tue, 21 Jan 2025 00:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<guid isPermaLink="false">https://partner.teeptrak.com/?page_id=7</guid>
+		<description></description>
+		<content:encoded><![CDATA[<!-- wp:paragraph -->
+<p>Complete certification courses and earn badges to advance your partner tier.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3>Your Certifications</h3>
+<!-- /wp:heading -->
+
+<!-- wp:shortcode -->
+[teeptrak_badges]
+<!-- /wp:shortcode -->
+
+<!-- wp:heading {"level":3} -->
+<h3>Available Courses</h3>
+<!-- /wp:heading -->
+
+<!-- wp:shortcode -->
+[teeptrak_courses]
+<!-- /wp:shortcode -->
+
+<!-- wp:paragraph -->
+<p>Access the full TeepTrak Academy at <a href="https://academy.teeptrak.net">academy.teeptrak.net</a></p>
+<!-- /wp:paragraph -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>7</wp:post_id>
+		<wp:post_date><![CDATA[2025-01-21 00:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2025-01-21 00:00:00]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2025-01-21 00:00:00]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-01-21 00:00:00]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[training]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>5</wp:menu_order>
+		<wp:post_type><![CDATA[page]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+	</item>
+
+	<!-- Partner Registration Page -->
+	<item>
+		<title>Partner Registration</title>
+		<link>https://partner.teeptrak.com/register/</link>
+		<pubDate>Tue, 21 Jan 2025 00:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<guid isPermaLink="false">https://partner.teeptrak.com/?page_id=8</guid>
+		<description></description>
+		<content:encoded><![CDATA[<!-- wp:paragraph -->
+<p>Join the TeepTrak Partner Program and start earning commissions today.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:shortcode -->
+[teeptrak_partner_registration]
+<!-- /wp:shortcode -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>8</wp:post_id>
+		<wp:post_date><![CDATA[2025-01-21 00:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2025-01-21 00:00:00]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2025-01-21 00:00:00]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-01-21 00:00:00]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[register]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>6</wp:menu_order>
+		<wp:post_type><![CDATA[page]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+	</item>
+
+	<!-- Partner Profile Page -->
+	<item>
+		<title>My Profile</title>
+		<link>https://partner.teeptrak.com/profile/</link>
+		<pubDate>Tue, 21 Jan 2025 00:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<guid isPermaLink="false">https://partner.teeptrak.com/?page_id=9</guid>
+		<description></description>
+		<content:encoded><![CDATA[<!-- wp:paragraph -->
+<p>Manage your partner profile and company information.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:shortcode -->
+[teeptrak_partner_profile]
+<!-- /wp:shortcode -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>9</wp:post_id>
+		<wp:post_date><![CDATA[2025-01-21 00:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2025-01-21 00:00:00]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2025-01-21 00:00:00]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-01-21 00:00:00]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[profile]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>7</wp:menu_order>
+		<wp:post_type><![CDATA[page]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+	</item>
+
+	<!-- Support Page -->
+	<item>
+		<title>Partner Support</title>
+		<link>https://partner.teeptrak.com/support/</link>
+		<pubDate>Tue, 21 Jan 2025 00:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<guid isPermaLink="false">https://partner.teeptrak.com/?page_id=10</guid>
+		<description></description>
+		<content:encoded><![CDATA[<!-- wp:paragraph -->
+<p>Get help with the partner portal, deals, or technical questions.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3>Contact Your Partner Success Manager</h3>
+<!-- /wp:heading -->
+
+<!-- wp:shortcode -->
+[teeptrak_psm_contact]
+<!-- /wp:shortcode -->
+
+<!-- wp:heading {"level":3} -->
+<h3>Schedule a Call</h3>
+<!-- /wp:heading -->
+
+<!-- wp:shortcode -->
+[teeptrak_schedule_call]
+<!-- /wp:shortcode -->
+
+<!-- wp:heading {"level":3} -->
+<h3>FAQ</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p><strong>How do I register a deal?</strong></p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph -->
+<p>Navigate to the Deal Registration page and fill out the form with your opportunity details. Your deal will be reviewed within 24-48 hours.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>What are the partner tier requirements?</strong></p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph -->
+<p>Bronze: Entry level | Silver: 5+ deals, 60+ score | Gold: 15+ deals, 75+ score | Platinum: 30+ deals, 90+ score</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>How are commissions calculated?</strong></p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph -->
+<p>Commission rates vary by tier: Bronze 10%, Silver 12%, Gold 15%, Platinum 20%. Commissions are paid after deals close and payment is received.</p>
+<!-- /wp:paragraph -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>10</wp:post_id>
+		<wp:post_date><![CDATA[2025-01-21 00:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2025-01-21 00:00:00]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2025-01-21 00:00:00]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-01-21 00:00:00]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[support]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>8</wp:menu_order>
+		<wp:post_type><![CDATA[page]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+	</item>
+
+	<!-- Navigation Menu -->
+	<item>
+		<title>Partner Portal Menu</title>
+		<link>https://partner.teeptrak.com/nav-menu/</link>
+		<pubDate>Tue, 21 Jan 2025 00:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<guid isPermaLink="false">https://partner.teeptrak.com/?p=100</guid>
+		<description></description>
+		<content:encoded><![CDATA[]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>100</wp:post_id>
+		<wp:post_date><![CDATA[2025-01-21 00:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2025-01-21 00:00:00]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2025-01-21 00:00:00]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-01-21 00:00:00]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[partner-portal-menu]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+	</item>
+
+</channel>
+</rss>
