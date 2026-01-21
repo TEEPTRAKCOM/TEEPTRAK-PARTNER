@@ -4,10 +4,56 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
+/* =====================================================
+   TEEPTRAK BRAND COLORS (from Canva Brand Kit)
+   ===================================================== */
+
 :root {
-  --teeptrak-red: #eb352b;
-  --teeptrak-coral: #ff674c;
-  --teeptrak-dark: #232120;
+    /* Primary Brand Colors */
+    --tt-red: #eb352b;
+    --tt-red-light: #ff674c;
+    --tt-red-dark: #c42d25;
+
+    /* Dark/Neutral */
+    --tt-dark: #232120;
+    --tt-dark-alt: #272222;
+    --tt-gray-700: #4b4846;
+    --tt-gray-600: #5f5b59;
+    --tt-gray-500: #7a7775;
+
+    /* Light Colors */
+    --tt-white: #ffffff;
+    --tt-gray-50: #f4f9fd;
+    --tt-gray-100: #f5f6f5;
+    --tt-gray-200: #ebebeb;
+    --tt-gray-300: #d9dbd6;
+    --tt-gray-400: #dad9d6;
+
+    /* Tier Colors */
+    --tt-bronze: #CD7F32;
+    --tt-silver: #A8A8A8;
+    --tt-gold: #FFD700;
+    --tt-platinum: #E5E4E2;
+
+    /* Status Colors */
+    --tt-success: #22C55E;
+    --tt-warning: #F59E0B;
+    --tt-error: #EF4444;
+    --tt-info: #3B82F6;
+
+    /* Typography */
+    --tt-font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+    /* Shadows */
+    --tt-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+    --tt-shadow-md: 0 4px 20px rgba(0, 0, 0, 0.08);
+    --tt-shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.12);
+
+    /* Border Radius */
+    --tt-radius-sm: 8px;
+    --tt-radius-md: 12px;
+    --tt-radius-lg: 20px;
+    --tt-radius-xl: 28px;
 }
 
 * {
@@ -54,7 +100,7 @@ html {
 
 /* Focus styles */
 *:focus-visible {
-  outline: 2px solid var(--teeptrak-red);
+  outline: 2px solid var(--tt-red);
   outline-offset: 2px;
 }
 
