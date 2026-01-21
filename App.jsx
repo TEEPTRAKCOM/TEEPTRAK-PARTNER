@@ -1,5 +1,6 @@
 import React, { useState, useEffect, createContext, useContext } from 'react';
-import { LayoutDashboard, GraduationCap, FolderOpen, FileQuestion, FileSignature, Calendar, Settings, LogOut, Bell, Search, ChevronRight, CheckCircle, Circle, Play, Download, Award, MapPin, User, Globe, Menu, X, TrendingUp, Users, Target, Clock, ArrowRight, Star, Zap, Shield, FileText, DollarSign, BarChart3, ChevronDown, ExternalLink, Mail, Phone, Building, Briefcase, Filter, Eye, BookOpen, Trophy, CreditCard, PieChart, Activity, MessageCircle, Key, Lock, Copy, Check } from 'lucide-react';
+import { LayoutDashboard, GraduationCap, FolderOpen, FileQuestion, FileSignature, Calendar, Settings, LogOut, Bell, Search, ChevronRight, CheckCircle, Circle, Play, Download, Award, MapPin, User, Globe, Menu, X, TrendingUp, Users, Target, Clock, ArrowRight, Star, Zap, Shield, FileText, DollarSign, BarChart3, ChevronDown, ExternalLink, Mail, Phone, Building, Briefcase, Filter, Eye, BookOpen, Trophy, CreditCard, PieChart, Activity, MessageCircle, Key, Lock, Copy, Check, AlertCircle, Loader2 } from 'lucide-react';
+import { supabase } from './lib/supabase';
 
 // ============================================
 // TRANSLATIONS - Scalable i18n System
@@ -7,6 +8,7 @@ import { LayoutDashboard, GraduationCap, FolderOpen, FileQuestion, FileSignature
 const translations = {
   en: {
     common: { search: 'Search...', save: 'Save', cancel: 'Cancel', submit: 'Submit', download: 'Download', view: 'View', edit: 'Edit', delete: 'Delete', loading: 'Loading...', noData: 'No data available', copied: 'Copied!', copy: 'Copy' },
+    auth: { login: 'Sign In', logout: 'Sign Out', email: 'Email Address', password: 'Password', forgotPassword: 'Forgot password?', resetPassword: 'Reset Password', backToLogin: 'Back to Sign In', sendResetLink: 'Send Reset Link', resetLinkSent: 'Check your email for the reset link', invalidCredentials: 'Invalid email or password', welcomeBack: 'Welcome back', loginSubtitle: 'Sign in to access your partner portal', partnerPortal: 'Partner Portal', rememberMe: 'Remember me', noAccount: "Don't have an account?", contactUs: 'Contact us', error: 'An error occurred. Please try again.', emailRequired: 'Email is required', passwordRequired: 'Password is required', loggingIn: 'Signing in...', loggingOut: 'Signing out...' },
     nav: { dashboard: 'Dashboard', deals: 'Deal Registration', training: 'Training', academy: 'Academy Access', resources: 'Resources', quiz: 'Certification', agreement: 'Agreement', kickoff: 'Schedule Call', commissions: 'Commissions', analytics: 'Analytics', directory: 'Partner Directory', settings: 'Settings', logout: 'Sign Out', notifications: 'Notifications', chat: 'Chat with Teepy' },
     dashboard: { welcome: 'Welcome back', subtitle: "Here's your partner performance overview", progress: 'Onboarding Progress', tier: 'Partner Tier', region: 'Your Region', head: 'Regional Head', nextStep: 'Next Step', complete: 'Complete', viewAll: 'View All', quickActions: 'Quick Actions', recentActivity: 'Recent Activity', stats: { score: 'Partner Score', deals: 'Active Deals', revenue: 'Pipeline Value', commission: 'Earned Commission' } },
     deals: { title: 'Deal Registration', subtitle: 'Register and track your opportunities', newDeal: 'Register New Deal', pipeline: 'Your Pipeline', status: { registered: 'Registered', qualified: 'Qualified', proposal: 'Proposal', negotiation: 'Negotiation', closed_won: 'Closed Won', closed_lost: 'Closed Lost' }, protection: 'days protection left', value: 'Deal Value' },
@@ -23,6 +25,7 @@ const translations = {
   },
   fr: {
     common: { search: 'Rechercher...', save: 'Enregistrer', cancel: 'Annuler', submit: 'Soumettre', download: 'Télécharger', view: 'Voir', edit: 'Modifier', delete: 'Supprimer', loading: 'Chargement...', noData: 'Aucune donnée', copied: 'Copié!', copy: 'Copier' },
+    auth: { login: 'Connexion', logout: 'Déconnexion', email: 'Adresse e-mail', password: 'Mot de passe', forgotPassword: 'Mot de passe oublié?', resetPassword: 'Réinitialiser le mot de passe', backToLogin: 'Retour à la connexion', sendResetLink: 'Envoyer le lien', resetLinkSent: 'Vérifiez vos e-mails pour le lien de réinitialisation', invalidCredentials: 'E-mail ou mot de passe incorrect', welcomeBack: 'Bienvenue', loginSubtitle: 'Connectez-vous pour accéder à votre portail partenaire', partnerPortal: 'Portail Partenaire', rememberMe: 'Se souvenir de moi', noAccount: "Pas encore de compte?", contactUs: 'Contactez-nous', error: 'Une erreur est survenue. Veuillez réessayer.', emailRequired: "L'e-mail est requis", passwordRequired: 'Le mot de passe est requis', loggingIn: 'Connexion en cours...', loggingOut: 'Déconnexion...' },
     nav: { dashboard: 'Tableau de Bord', deals: 'Enregistrement Deals', training: 'Formation', academy: 'Accès Académie', resources: 'Ressources', quiz: 'Certification', agreement: 'Contrat', kickoff: 'Planifier Appel', commissions: 'Commissions', analytics: 'Analytiques', directory: 'Annuaire Partenaires', settings: 'Paramètres', logout: 'Déconnexion', notifications: 'Notifications', chat: 'Discuter avec Teepy' },
     dashboard: { welcome: 'Bienvenue', subtitle: 'Voici un aperçu de vos performances', progress: 'Progression Onboarding', tier: 'Niveau Partenaire', region: 'Votre Région', head: 'Responsable Régional', nextStep: 'Prochaine Étape', complete: 'Terminé', viewAll: 'Tout Voir', quickActions: 'Actions Rapides', recentActivity: 'Activité Récente', stats: { score: 'Score Partenaire', deals: 'Deals Actifs', revenue: 'Pipeline', commission: 'Commission Gagnée' } },
     deals: { title: 'Enregistrement de Deals', subtitle: 'Enregistrez et suivez vos opportunités', newDeal: 'Nouveau Deal', pipeline: 'Votre Pipeline', status: { registered: 'Enregistré', qualified: 'Qualifié', proposal: 'Proposition', negotiation: 'Négociation', closed_won: 'Gagné', closed_lost: 'Perdu' }, protection: 'jours de protection', value: 'Valeur du Deal' },
@@ -39,6 +42,7 @@ const translations = {
   },
   zh: {
     common: { search: '搜索...', save: '保存', cancel: '取消', submit: '提交', download: '下载', view: '查看', edit: '编辑', delete: '删除', loading: '加载中...', noData: '暂无数据', copied: '已复制!', copy: '复制' },
+    auth: { login: '登录', logout: '退出', email: '电子邮箱', password: '密码', forgotPassword: '忘记密码?', resetPassword: '重置密码', backToLogin: '返回登录', sendResetLink: '发送重置链接', resetLinkSent: '请检查您的电子邮件', invalidCredentials: '电子邮件或密码无效', welcomeBack: '欢迎回来', loginSubtitle: '登录以访问您的合作伙伴门户', partnerPortal: '合作伙伴门户', rememberMe: '记住我', noAccount: '还没有账户?', contactUs: '联系我们', error: '发生错误，请重试', emailRequired: '请输入电子邮箱', passwordRequired: '请输入密码', loggingIn: '登录中...', loggingOut: '退出中...' },
     nav: { dashboard: '仪表板', deals: '商机注册', training: '培训', academy: '学院入口', resources: '资源', quiz: '认证', agreement: '协议', kickoff: '预约会议', commissions: '佣金', analytics: '分析', directory: '合作伙伴目录', settings: '设置', logout: '退出', notifications: '通知', chat: '与Teepy聊天' },
     dashboard: { welcome: '欢迎回来', subtitle: '这是您的合作伙伴绩效概览', progress: '入职进度', tier: '合作伙伴等级', region: '您的区域', head: '区域负责人', nextStep: '下一步', complete: '完成', viewAll: '查看全部', quickActions: '快速操作', recentActivity: '最近活动', stats: { score: '合作伙伴评分', deals: '活跃商机', revenue: '管道价值', commission: '已获佣金' } },
     deals: { title: '商机注册', subtitle: '注册并跟踪您的商机', newDeal: '注册新商机', pipeline: '您的管道', status: { registered: '已注册', qualified: '已确认', proposal: '提案中', negotiation: '谈判中', closed_won: '已成交', closed_lost: '已失败' }, protection: '天保护期', value: '商机价值' },
@@ -55,6 +59,7 @@ const translations = {
   },
   de: {
     common: { search: 'Suchen...', save: 'Speichern', cancel: 'Abbrechen', submit: 'Absenden', download: 'Herunterladen', view: 'Ansehen', edit: 'Bearbeiten', delete: 'Löschen', loading: 'Laden...', noData: 'Keine Daten', copied: 'Kopiert!', copy: 'Kopieren' },
+    auth: { login: 'Anmelden', logout: 'Abmelden', email: 'E-Mail-Adresse', password: 'Passwort', forgotPassword: 'Passwort vergessen?', resetPassword: 'Passwort zurücksetzen', backToLogin: 'Zurück zur Anmeldung', sendResetLink: 'Link senden', resetLinkSent: 'Überprüfen Sie Ihre E-Mails', invalidCredentials: 'Ungültige E-Mail oder Passwort', welcomeBack: 'Willkommen zurück', loginSubtitle: 'Melden Sie sich an, um auf Ihr Partnerportal zuzugreifen', partnerPortal: 'Partner-Portal', rememberMe: 'Angemeldet bleiben', noAccount: 'Noch kein Konto?', contactUs: 'Kontaktieren Sie uns', error: 'Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.', emailRequired: 'E-Mail ist erforderlich', passwordRequired: 'Passwort ist erforderlich', loggingIn: 'Anmeldung...', loggingOut: 'Abmeldung...' },
     nav: { dashboard: 'Dashboard', deals: 'Deal-Registrierung', training: 'Schulung', academy: 'Akademie-Zugang', resources: 'Ressourcen', quiz: 'Zertifizierung', agreement: 'Vereinbarung', kickoff: 'Termin buchen', commissions: 'Provisionen', analytics: 'Analysen', directory: 'Partnerverzeichnis', settings: 'Einstellungen', logout: 'Abmelden', notifications: 'Benachrichtigungen', chat: 'Chat mit Teepy' },
     dashboard: { welcome: 'Willkommen zurück', subtitle: 'Hier ist Ihre Partner-Performance-Übersicht', progress: 'Onboarding-Fortschritt', tier: 'Partner-Stufe', region: 'Ihre Region', head: 'Regionaler Leiter', nextStep: 'Nächster Schritt', complete: 'Abgeschlossen', viewAll: 'Alle anzeigen', quickActions: 'Schnellaktionen', recentActivity: 'Letzte Aktivität', stats: { score: 'Partner-Score', deals: 'Aktive Deals', revenue: 'Pipeline-Wert', commission: 'Verdiente Provision' } },
     academy: { title: 'TeepTrak Akademie-Zugang', subtitle: 'Zugang zu umfassenden Schulungsmaterialien und Zertifizierungen', portalTitle: 'Akademie-Portal', portalDesc: 'Zugang zur vollständigen TeepTrak Akademie mit fortgeschrittenen Kursen und Zertifizierungen.', credentials: 'Ihre Anmeldedaten', username: 'Benutzername', password: 'Passwort', accessPortal: 'Akademie-Portal öffnen', securityNote: 'Bewahren Sie Ihre Anmeldedaten sicher auf.', features: 'Akademie-Funktionen', feature1: 'Produkt-Vertiefung', feature2: 'Verkaufsmethodik', feature3: 'Technische Zertifizierungen', feature4: 'Live-Webinare' },
@@ -64,6 +69,7 @@ const translations = {
   },
   es: {
     common: { search: 'Buscar...', save: 'Guardar', cancel: 'Cancelar', submit: 'Enviar', download: 'Descargar', view: 'Ver', edit: 'Editar', delete: 'Eliminar', loading: 'Cargando...', noData: 'Sin datos', copied: '¡Copiado!', copy: 'Copiar' },
+    auth: { login: 'Iniciar Sesión', logout: 'Cerrar Sesión', email: 'Correo electrónico', password: 'Contraseña', forgotPassword: '¿Olvidaste tu contraseña?', resetPassword: 'Restablecer contraseña', backToLogin: 'Volver al inicio de sesión', sendResetLink: 'Enviar enlace', resetLinkSent: 'Revisa tu correo electrónico', invalidCredentials: 'Correo o contraseña inválidos', welcomeBack: 'Bienvenido de nuevo', loginSubtitle: 'Inicia sesión para acceder a tu portal de socio', partnerPortal: 'Portal de Socios', rememberMe: 'Recordarme', noAccount: '¿No tienes cuenta?', contactUs: 'Contáctanos', error: 'Ocurrió un error. Por favor intenta de nuevo.', emailRequired: 'El correo es requerido', passwordRequired: 'La contraseña es requerida', loggingIn: 'Iniciando sesión...', loggingOut: 'Cerrando sesión...' },
     nav: { dashboard: 'Panel', deals: 'Registro de Deals', training: 'Formación', academy: 'Acceso Academia', resources: 'Recursos', quiz: 'Certificación', agreement: 'Acuerdo', kickoff: 'Programar Llamada', commissions: 'Comisiones', analytics: 'Análisis', directory: 'Directorio de Socios', settings: 'Configuración', logout: 'Cerrar Sesión', notifications: 'Notificaciones', chat: 'Chat con Teepy' },
     dashboard: { welcome: 'Bienvenido', subtitle: 'Aquí está el resumen de tu rendimiento', progress: 'Progreso de Onboarding', tier: 'Nivel de Socio', region: 'Tu Región', head: 'Responsable Regional', nextStep: 'Siguiente Paso', complete: 'Completado', viewAll: 'Ver Todo', quickActions: 'Acciones Rápidas', recentActivity: 'Actividad Reciente', stats: { score: 'Puntuación', deals: 'Deals Activos', revenue: 'Valor Pipeline', commission: 'Comisión Ganada' } },
     academy: { title: 'Acceso Academia TeepTrak', subtitle: 'Accede a materiales de formación y certificaciones', portalTitle: 'Portal Academia', portalDesc: 'Accede a la Academia TeepTrak completa con cursos avanzados y certificaciones.', credentials: 'Tus Credenciales', username: 'Usuario', password: 'Contraseña', accessPortal: 'Acceder al Portal', securityNote: 'Mantén tus credenciales seguras.', features: 'Funcionalidades', feature1: 'Profundización de Producto', feature2: 'Metodología de Ventas', feature3: 'Certificaciones Técnicas', feature4: 'Webinars en Vivo' },
@@ -73,6 +79,7 @@ const translations = {
   },
   pt: {
     common: { search: 'Pesquisar...', save: 'Salvar', cancel: 'Cancelar', submit: 'Enviar', download: 'Baixar', view: 'Ver', edit: 'Editar', delete: 'Excluir', loading: 'Carregando...', noData: 'Sem dados', copied: 'Copiado!', copy: 'Copiar' },
+    auth: { login: 'Entrar', logout: 'Sair', email: 'Endereço de e-mail', password: 'Senha', forgotPassword: 'Esqueceu a senha?', resetPassword: 'Redefinir senha', backToLogin: 'Voltar ao login', sendResetLink: 'Enviar link', resetLinkSent: 'Verifique seu e-mail', invalidCredentials: 'E-mail ou senha inválidos', welcomeBack: 'Bem-vindo de volta', loginSubtitle: 'Entre para acessar seu portal de parceiro', partnerPortal: 'Portal do Parceiro', rememberMe: 'Lembrar-me', noAccount: 'Não tem uma conta?', contactUs: 'Fale conosco', error: 'Ocorreu um erro. Por favor, tente novamente.', emailRequired: 'E-mail é obrigatório', passwordRequired: 'Senha é obrigatória', loggingIn: 'Entrando...', loggingOut: 'Saindo...' },
     nav: { dashboard: 'Painel', deals: 'Registro de Deals', training: 'Treinamento', academy: 'Acesso Academia', resources: 'Recursos', quiz: 'Certificação', agreement: 'Acordo', kickoff: 'Agendar Chamada', commissions: 'Comissões', analytics: 'Análises', directory: 'Diretório de Parceiros', settings: 'Configurações', logout: 'Sair', notifications: 'Notificações', chat: 'Chat com Teepy' },
     dashboard: { welcome: 'Bem-vindo', subtitle: 'Aqui está sua visão geral de desempenho', progress: 'Progresso de Onboarding', tier: 'Nível de Parceiro', region: 'Sua Região', head: 'Responsável Regional', nextStep: 'Próximo Passo', complete: 'Concluído', viewAll: 'Ver Tudo', quickActions: 'Ações Rápidas', recentActivity: 'Atividade Recente', stats: { score: 'Pontuação', deals: 'Deals Ativos', revenue: 'Valor do Pipeline', commission: 'Comissão Ganha' } },
     academy: { title: 'Acesso Academia TeepTrak', subtitle: 'Acesse materiais de treinamento e certificações', portalTitle: 'Portal Academia', portalDesc: 'Acesse a Academia TeepTrak completa com cursos avançados e certificações.', credentials: 'Suas Credenciais', username: 'Usuário', password: 'Senha', accessPortal: 'Acessar Portal', securityNote: 'Mantenha suas credenciais seguras.', features: 'Funcionalidades', feature1: 'Aprofundamento de Produto', feature2: 'Metodologia de Vendas', feature3: 'Certificações Técnicas', feature4: 'Webinars ao Vivo' },
@@ -82,6 +89,7 @@ const translations = {
   },
   ja: {
     common: { search: '検索...', save: '保存', cancel: 'キャンセル', submit: '送信', download: 'ダウンロード', view: '表示', edit: '編集', delete: '削除', loading: '読み込み中...', noData: 'データなし', copied: 'コピーしました!', copy: 'コピー' },
+    auth: { login: 'ログイン', logout: 'ログアウト', email: 'メールアドレス', password: 'パスワード', forgotPassword: 'パスワードをお忘れですか?', resetPassword: 'パスワードをリセット', backToLogin: 'ログインに戻る', sendResetLink: 'リセットリンクを送信', resetLinkSent: 'メールをご確認ください', invalidCredentials: 'メールアドレスまたはパスワードが無効です', welcomeBack: 'おかえりなさい', loginSubtitle: 'パートナーポータルにアクセスするにはログインしてください', partnerPortal: 'パートナーポータル', rememberMe: 'ログイン状態を保持', noAccount: 'アカウントをお持ちでないですか?', contactUs: 'お問い合わせ', error: 'エラーが発生しました。もう一度お試しください。', emailRequired: 'メールアドレスは必須です', passwordRequired: 'パスワードは必須です', loggingIn: 'ログイン中...', loggingOut: 'ログアウト中...' },
     nav: { dashboard: 'ダッシュボード', deals: '案件登録', training: 'トレーニング', academy: 'アカデミー', resources: 'リソース', quiz: '認定試験', agreement: '契約', kickoff: '会議予約', commissions: 'コミッション', analytics: '分析', directory: 'パートナー一覧', settings: '設定', logout: 'ログアウト', notifications: '通知', chat: 'Teepyとチャット' },
     dashboard: { welcome: 'おかえりなさい', subtitle: 'パートナー実績の概要', progress: 'オンボーディング進捗', tier: 'パートナーランク', region: 'リージョン', head: '地域担当', nextStep: '次のステップ', complete: '完了', viewAll: 'すべて表示', quickActions: 'クイックアクション', recentActivity: '最近のアクティビティ', stats: { score: 'スコア', deals: 'アクティブ案件', revenue: 'パイプライン', commission: '獲得コミッション' } },
     academy: { title: 'TeepTrakアカデミー', subtitle: '包括的なトレーニング資料と認定へのアクセス', portalTitle: 'アカデミーポータル', portalDesc: '高度なコースと認定を備えた完全なTeepTrakアカデミーにアクセス。', credentials: '認証情報', username: 'ユーザー名', password: 'パスワード', accessPortal: 'ポータルにアクセス', securityNote: '認証情報を安全に保管してください。', features: 'アカデミー機能', feature1: '製品詳細', feature2: '販売方法論', feature3: '技術認定', feature4: 'ライブウェビナー' },
@@ -174,6 +182,394 @@ const mockCommissions = [
   { id: 2, deal: 'Airbus Toulouse', amount: 12000, status: 'paid', date: '2025-11-20' },
   { id: 3, deal: 'Michelin Clermont', amount: 4000, status: 'pending', date: '2026-01-10' }
 ];
+
+// ============================================
+// AUTHENTICATION COMPONENTS
+// ============================================
+
+// Login Page Component
+const LoginPage = ({ onLogin, lang, setLang }) => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState('');
+  const [showForgotPassword, setShowForgotPassword] = useState(false);
+  const [resetEmailSent, setResetEmailSent] = useState(false);
+
+  const t = (path) => {
+    const keys = path.split('.');
+    let result = translations[lang] || translations.en;
+    for (const key of keys) {
+      result = result?.[key];
+      if (!result) {
+        let fallback = translations.en;
+        for (const k of keys) fallback = fallback?.[k];
+        return fallback || path;
+      }
+    }
+    return result;
+  };
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    setError('');
+
+    if (!email.trim()) {
+      setError(t('auth.emailRequired'));
+      return;
+    }
+    if (!password.trim()) {
+      setError(t('auth.passwordRequired'));
+      return;
+    }
+
+    setIsLoading(true);
+
+    try {
+      const { data, error: authError } = await supabase.auth.signInWithPassword({
+        email: email.trim(),
+        password: password,
+      });
+
+      if (authError) {
+        console.error('Login error:', authError);
+        setError(t('auth.invalidCredentials'));
+        setIsLoading(false);
+        return;
+      }
+
+      if (data?.user) {
+        onLogin(data.user, data.session);
+      }
+    } catch (err) {
+      console.error('Login error:', err);
+      setError(t('auth.error'));
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleForgotPassword = async (e) => {
+    e.preventDefault();
+    setError('');
+
+    if (!email.trim()) {
+      setError(t('auth.emailRequired'));
+      return;
+    }
+
+    setIsLoading(true);
+
+    try {
+      const { error: resetError } = await supabase.auth.resetPasswordForEmail(email.trim(), {
+        redirectTo: `${window.location.origin}/reset-password`,
+      });
+
+      if (resetError) {
+        console.error('Reset error:', resetError);
+        setError(t('auth.error'));
+      } else {
+        setResetEmailSent(true);
+      }
+    } catch (err) {
+      console.error('Reset error:', err);
+      setError(t('auth.error'));
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const supportedLangs = Object.keys(translations);
+  const langLabels = { en: 'EN', fr: 'FR', zh: '中文', de: 'DE', es: 'ES', pt: 'PT', ja: '日本語' };
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 flex">
+      {/* Left side - Branding */}
+      <div className="hidden lg:flex lg:w-1/2 bg-[#eb352b] relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <defs>
+              <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
+                <path d="M 10 0 L 0 0 0 10" fill="none" stroke="white" strokeWidth="0.5"/>
+              </pattern>
+            </defs>
+            <rect width="100" height="100" fill="url(#grid)"/>
+          </svg>
+        </div>
+        <div className="relative z-10 flex flex-col justify-center px-16">
+          <div className="flex items-center gap-3 mb-8">
+            <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
+              <svg viewBox="0 0 32 32" className="w-8 h-8">
+                <circle cx="16" cy="10" r="3" fill="white" opacity="0.9"/>
+                <line x1="16" y1="13" x2="6" y2="26" stroke="white" strokeWidth="2" opacity="0.7"/>
+                <line x1="16" y1="13" x2="26" y2="26" stroke="white" strokeWidth="2" opacity="0.7"/>
+                <line x1="16" y1="13" x2="16" y2="28" stroke="white" strokeWidth="2" opacity="0.7"/>
+                <line x1="16" y1="10" x2="8" y2="4" stroke="white" strokeWidth="2" opacity="0.7"/>
+                <line x1="16" y1="10" x2="24" y2="4" stroke="white" strokeWidth="2" opacity="0.7"/>
+              </svg>
+            </div>
+            <div>
+              <span className="text-3xl font-bold text-white">teep</span>
+              <span className="text-3xl font-bold text-white/80">trak</span>
+            </div>
+          </div>
+          <h1 className="text-4xl font-bold text-white mb-4">{t('auth.partnerPortal')}</h1>
+          <p className="text-white/80 text-lg max-w-md">
+            Manage your deals, track commissions, access training materials and grow your partnership with TeepTrak.
+          </p>
+          <div className="mt-12 flex gap-6">
+            <div className="flex items-center gap-2 text-white/80">
+              <Target className="w-5 h-5" />
+              <span>Deal Registration</span>
+            </div>
+            <div className="flex items-center gap-2 text-white/80">
+              <GraduationCap className="w-5 h-5" />
+              <span>Training</span>
+            </div>
+            <div className="flex items-center gap-2 text-white/80">
+              <DollarSign className="w-5 h-5" />
+              <span>Commissions</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Right side - Login Form */}
+      <div className="flex-1 flex flex-col">
+        {/* Language Switcher */}
+        <div className="flex justify-end p-4">
+          <div className="flex items-center gap-1 bg-white rounded-lg border border-gray-200 p-1">
+            {supportedLangs.map((l) => (
+              <button
+                key={l}
+                onClick={() => setLang(l)}
+                className={`px-3 py-1.5 rounded-md text-sm font-medium transition-colors ${
+                  lang === l ? 'bg-[#eb352b] text-white' : 'text-gray-600 hover:bg-gray-100'
+                }`}
+              >
+                {langLabels[l]}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="flex-1 flex items-center justify-center px-8">
+          <div className="w-full max-w-md">
+            {/* Mobile Logo */}
+            <div className="lg:hidden flex items-center justify-center gap-2 mb-8">
+              <div className="w-10 h-10 bg-[#eb352b] rounded-xl flex items-center justify-center">
+                <svg viewBox="0 0 32 32" className="w-6 h-6">
+                  <circle cx="16" cy="10" r="3" fill="white" opacity="0.9"/>
+                  <line x1="16" y1="13" x2="6" y2="26" stroke="white" strokeWidth="2" opacity="0.7"/>
+                  <line x1="16" y1="13" x2="26" y2="26" stroke="white" strokeWidth="2" opacity="0.7"/>
+                  <line x1="16" y1="13" x2="16" y2="28" stroke="white" strokeWidth="2" opacity="0.7"/>
+                  <line x1="16" y1="10" x2="8" y2="4" stroke="white" strokeWidth="2" opacity="0.7"/>
+                  <line x1="16" y1="10" x2="24" y2="4" stroke="white" strokeWidth="2" opacity="0.7"/>
+                </svg>
+              </div>
+              <div>
+                <span className="text-2xl font-bold text-[#232120]">teep</span>
+                <span className="text-2xl font-bold text-[#eb352b]">trak</span>
+              </div>
+            </div>
+
+            {!showForgotPassword ? (
+              <>
+                <div className="text-center mb-8">
+                  <h2 className="text-2xl font-bold text-[#232120]">{t('auth.welcomeBack')}</h2>
+                  <p className="text-gray-500 mt-2">{t('auth.loginSubtitle')}</p>
+                </div>
+
+                <form onSubmit={handleLogin} className="space-y-5">
+                  {error && (
+                    <div className="flex items-center gap-2 p-3 bg-red-50 border border-red-200 rounded-xl text-red-700 text-sm">
+                      <AlertCircle className="w-4 h-4 flex-shrink-0" />
+                      {error}
+                    </div>
+                  )}
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      {t('auth.email')}
+                    </label>
+                    <div className="relative">
+                      <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                      <input
+                        type="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        className="w-full pl-10 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-[#eb352b] focus:ring-2 focus:ring-[#eb352b]/20 transition-all"
+                        placeholder="partner@company.com"
+                        autoComplete="email"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      {t('auth.password')}
+                    </label>
+                    <div className="relative">
+                      <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                      <input
+                        type={showPassword ? 'text' : 'password'}
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        className="w-full pl-10 pr-12 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-[#eb352b] focus:ring-2 focus:ring-[#eb352b]/20 transition-all"
+                        placeholder="••••••••"
+                        autoComplete="current-password"
+                      />
+                      <button
+                        type="button"
+                        onClick={() => setShowPassword(!showPassword)}
+                        className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
+                      >
+                        {showPassword ? <Eye className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
+                      </button>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center justify-between">
+                    <label className="flex items-center gap-2 cursor-pointer">
+                      <input type="checkbox" className="w-4 h-4 rounded border-gray-300 text-[#eb352b] focus:ring-[#eb352b]" />
+                      <span className="text-sm text-gray-600">{t('auth.rememberMe')}</span>
+                    </label>
+                    <button
+                      type="button"
+                      onClick={() => setShowForgotPassword(true)}
+                      className="text-sm text-[#eb352b] hover:underline font-medium"
+                    >
+                      {t('auth.forgotPassword')}
+                    </button>
+                  </div>
+
+                  <button
+                    type="submit"
+                    disabled={isLoading}
+                    className="w-full py-3 bg-[#eb352b] text-white rounded-xl font-semibold hover:bg-[#d42d24] transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                  >
+                    {isLoading ? (
+                      <>
+                        <Loader2 className="w-5 h-5 animate-spin" />
+                        {t('auth.loggingIn')}
+                      </>
+                    ) : (
+                      t('auth.login')
+                    )}
+                  </button>
+                </form>
+
+                <p className="text-center mt-6 text-sm text-gray-500">
+                  {t('auth.noAccount')}{' '}
+                  <a href="mailto:partners@teeptrak.com" className="text-[#eb352b] hover:underline font-medium">
+                    {t('auth.contactUs')}
+                  </a>
+                </p>
+              </>
+            ) : (
+              <>
+                <div className="text-center mb-8">
+                  <h2 className="text-2xl font-bold text-[#232120]">{t('auth.resetPassword')}</h2>
+                  <p className="text-gray-500 mt-2">
+                    {resetEmailSent ? t('auth.resetLinkSent') : "Enter your email and we'll send you a reset link."}
+                  </p>
+                </div>
+
+                {!resetEmailSent ? (
+                  <form onSubmit={handleForgotPassword} className="space-y-5">
+                    {error && (
+                      <div className="flex items-center gap-2 p-3 bg-red-50 border border-red-200 rounded-xl text-red-700 text-sm">
+                        <AlertCircle className="w-4 h-4 flex-shrink-0" />
+                        {error}
+                      </div>
+                    )}
+
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        {t('auth.email')}
+                      </label>
+                      <div className="relative">
+                        <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                        <input
+                          type="email"
+                          value={email}
+                          onChange={(e) => setEmail(e.target.value)}
+                          className="w-full pl-10 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-[#eb352b] focus:ring-2 focus:ring-[#eb352b]/20 transition-all"
+                          placeholder="partner@company.com"
+                          autoComplete="email"
+                        />
+                      </div>
+                    </div>
+
+                    <button
+                      type="submit"
+                      disabled={isLoading}
+                      className="w-full py-3 bg-[#eb352b] text-white rounded-xl font-semibold hover:bg-[#d42d24] transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                    >
+                      {isLoading ? (
+                        <>
+                          <Loader2 className="w-5 h-5 animate-spin" />
+                          {t('common.loading')}
+                        </>
+                      ) : (
+                        t('auth.sendResetLink')
+                      )}
+                    </button>
+                  </form>
+                ) : (
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <CheckCircle className="w-8 h-8 text-green-600" />
+                    </div>
+                    <p className="text-gray-600 mb-6">{t('auth.resetLinkSent')}</p>
+                  </div>
+                )}
+
+                <button
+                  onClick={() => { setShowForgotPassword(false); setResetEmailSent(false); setError(''); }}
+                  className="w-full mt-4 py-3 border border-gray-200 text-gray-600 rounded-xl font-medium hover:bg-gray-50 transition-colors flex items-center justify-center gap-2"
+                >
+                  <ArrowRight className="w-4 h-4 rotate-180" />
+                  {t('auth.backToLogin')}
+                </button>
+              </>
+            )}
+          </div>
+        </div>
+
+        <div className="p-4 text-center text-sm text-gray-400">
+          © {new Date().getFullYear()} TeepTrak. All rights reserved.
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// Loading Screen Component
+const LoadingScreen = () => (
+  <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center">
+    <div className="text-center">
+      <div className="flex items-center justify-center gap-2 mb-4">
+        <div className="w-10 h-10 bg-[#eb352b] rounded-xl flex items-center justify-center">
+          <svg viewBox="0 0 32 32" className="w-6 h-6">
+            <circle cx="16" cy="10" r="3" fill="white" opacity="0.9"/>
+            <line x1="16" y1="13" x2="6" y2="26" stroke="white" strokeWidth="2" opacity="0.7"/>
+            <line x1="16" y1="13" x2="26" y2="26" stroke="white" strokeWidth="2" opacity="0.7"/>
+            <line x1="16" y1="13" x2="16" y2="28" stroke="white" strokeWidth="2" opacity="0.7"/>
+            <line x1="16" y1="10" x2="8" y2="4" stroke="white" strokeWidth="2" opacity="0.7"/>
+            <line x1="16" y1="10" x2="24" y2="4" stroke="white" strokeWidth="2" opacity="0.7"/>
+          </svg>
+        </div>
+        <div>
+          <span className="text-2xl font-bold text-[#232120]">teep</span>
+          <span className="text-2xl font-bold text-[#eb352b]">trak</span>
+        </div>
+      </div>
+      <Loader2 className="w-8 h-8 animate-spin text-[#eb352b] mx-auto" />
+    </div>
+  </div>
+);
 
 // Components
 const TeepTrakLogo = ({ size = 'md' }) => {
@@ -350,8 +746,10 @@ const TeepyFloatingButton = ({ onClick }) => {
 };
 
 // Sidebar
-const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen }) => {
+const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen, partner, onLogout }) => {
   const t = useT();
+  const [isLoggingOut, setIsLoggingOut] = useState(false);
+
   const navItems = [
     { id: 'dashboard', icon: LayoutDashboard, label: t('nav.dashboard') },
     { id: 'deals', icon: Target, label: t('nav.deals') },
@@ -364,6 +762,19 @@ const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen }) => {
     { id: 'commissions', icon: DollarSign, label: t('nav.commissions') }
   ];
 
+  const handleLogout = async () => {
+    setIsLoggingOut(true);
+    try {
+      await onLogout();
+    } finally {
+      setIsLoggingOut(false);
+    }
+  };
+
+  // Use partner data if available, otherwise fall back to mockPartner
+  const displayPartner = partner || mockPartner;
+  const initials = displayPartner.name ? displayPartner.name.split(' ').map(n => n[0]).join('') : '??';
+
   return (
     <>
       {isOpen && <div className="lg:hidden fixed inset-0 bg-black/20 z-40" onClick={() => setIsOpen(false)} />}
@@ -375,7 +786,7 @@ const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen }) => {
           </div>
           <div className="mt-1 text-xs text-gray-400 font-medium">Partner Portal</div>
         </div>
-        
+
         <nav className="flex-1 p-4 space-y-1 overflow-y-auto">
           {navItems.map(item => (
             <button key={item.id} onClick={() => { setCurrentPage(item.id); setIsOpen(false); }} className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all ${currentPage === item.id ? 'bg-red-50 text-[#eb352b] font-medium' : 'text-gray-600 hover:bg-gray-50'}`}>
@@ -387,20 +798,28 @@ const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen }) => {
             </button>
           ))}
         </nav>
-        
+
         <div className="p-4 border-t border-gray-100">
           <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-xl">
             <div className="w-10 h-10 bg-[#eb352b] rounded-xl flex items-center justify-center text-white font-bold text-sm">
-              {mockPartner.name.split(' ').map(n => n[0]).join('')}
+              {initials}
             </div>
             <div className="flex-1 min-w-0">
-              <div className="text-sm font-semibold text-[#232120] truncate">{mockPartner.name}</div>
-              <div className="text-xs text-gray-500 truncate">{mockPartner.company}</div>
+              <div className="text-sm font-semibold text-[#232120] truncate">{displayPartner.name}</div>
+              <div className="text-xs text-gray-500 truncate">{displayPartner.company}</div>
             </div>
           </div>
-          <button className="w-full flex items-center gap-3 px-4 py-3 mt-2 rounded-xl text-gray-600 hover:bg-gray-50 transition-colors">
-            <LogOut className="w-5 h-5" />
-            <span>{t('nav.logout')}</span>
+          <button
+            onClick={handleLogout}
+            disabled={isLoggingOut}
+            className="w-full flex items-center gap-3 px-4 py-3 mt-2 rounded-xl text-gray-600 hover:bg-gray-50 transition-colors disabled:opacity-50"
+          >
+            {isLoggingOut ? (
+              <Loader2 className="w-5 h-5 animate-spin" />
+            ) : (
+              <LogOut className="w-5 h-5" />
+            )}
+            <span>{isLoggingOut ? t('auth.loggingOut') : t('nav.logout')}</span>
           </button>
         </div>
       </aside>
@@ -984,6 +1403,137 @@ export default function App() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [chatOpen, setChatOpen] = useState(false);
 
+  // Authentication state
+  const [user, setUser] = useState(null);
+  const [session, setSession] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [partner, setPartner] = useState(null);
+
+  // Check for existing session on mount
+  useEffect(() => {
+    const initAuth = async () => {
+      try {
+        // Get current session
+        const { data: { session: currentSession } } = await supabase.auth.getSession();
+
+        if (currentSession) {
+          setSession(currentSession);
+          setUser(currentSession.user);
+          await fetchPartnerData(currentSession.user.id);
+        }
+      } catch (error) {
+        console.error('Auth init error:', error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    initAuth();
+
+    // Listen for auth changes
+    const { data: { subscription } } = supabase.auth.onAuthStateChange(async (event, newSession) => {
+      console.log('Auth state changed:', event);
+
+      if (event === 'SIGNED_IN' && newSession) {
+        setSession(newSession);
+        setUser(newSession.user);
+        await fetchPartnerData(newSession.user.id);
+      } else if (event === 'SIGNED_OUT') {
+        setSession(null);
+        setUser(null);
+        setPartner(null);
+        setCurrentPage('dashboard');
+      } else if (event === 'TOKEN_REFRESHED' && newSession) {
+        setSession(newSession);
+      }
+    });
+
+    return () => {
+      subscription?.unsubscribe();
+    };
+  }, []);
+
+  // Fetch partner data from database
+  const fetchPartnerData = async (userId) => {
+    try {
+      // Try to fetch profile first
+      const { data: profile, error: profileError } = await supabase
+        .from('profiles')
+        .select('*')
+        .eq('id', userId)
+        .single();
+
+      if (profileError && profileError.code !== 'PGRST116') {
+        console.error('Error fetching profile:', profileError);
+      }
+
+      // Try to fetch partner data
+      const { data: partnerData, error: partnerError } = await supabase
+        .from('partners')
+        .select('*, organizations(*)')
+        .eq('profile_id', userId)
+        .single();
+
+      if (partnerError && partnerError.code !== 'PGRST116') {
+        console.error('Error fetching partner:', partnerError);
+      }
+
+      // Combine data or use mock data as fallback
+      if (profile || partnerData) {
+        setPartner({
+          id: partnerData?.id || userId,
+          name: profile?.full_name || user?.email?.split('@')[0] || 'Partner',
+          company: partnerData?.organizations?.name || profile?.company || 'Partner Company',
+          email: profile?.email || user?.email || '',
+          region: partnerData?.region || 'us',
+          tier: partnerData?.tier || 'bronze',
+          score: partnerData?.partner_score || 0,
+          currentStep: partnerData?.onboarding_completed ? 7 : 1,
+          stats: { deals: 0, pipeline: 0, commission: 0 },
+          onboarding: [true, false, false, false, false, false, false],
+          academyCredentials: {
+            username: partnerData?.academy_username || profile?.email || '',
+            password: '••••••••' // Never expose actual password
+          }
+        });
+      } else {
+        // Use mock data with user email
+        setPartner({
+          ...mockPartner,
+          email: user?.email || mockPartner.email,
+          name: user?.email?.split('@')[0] || mockPartner.name
+        });
+      }
+    } catch (error) {
+      console.error('Error fetching partner data:', error);
+      // Fallback to mock data
+      setPartner({
+        ...mockPartner,
+        email: user?.email || mockPartner.email
+      });
+    }
+  };
+
+  // Handle login
+  const handleLogin = async (loggedInUser, newSession) => {
+    setUser(loggedInUser);
+    setSession(newSession);
+    await fetchPartnerData(loggedInUser.id);
+  };
+
+  // Handle logout
+  const handleLogout = async () => {
+    try {
+      const { error } = await supabase.auth.signOut();
+      if (error) {
+        console.error('Logout error:', error);
+      }
+      // State will be cleared by onAuthStateChange listener
+    } catch (error) {
+      console.error('Logout error:', error);
+    }
+  };
+
   useEffect(() => {
     const detected = detectLanguage();
     setLang(detected);
@@ -1009,11 +1559,29 @@ export default function App() {
 
   const CurrentPage = pages[currentPage] || (() => <DashboardPage setCurrentPage={setCurrentPage} />);
 
+  // Show loading screen while checking auth
+  if (isLoading) {
+    return <LoadingScreen />;
+  }
+
+  // Show login page if not authenticated
+  if (!session || !user) {
+    return <LoginPage onLogin={handleLogin} lang={lang} setLang={setLang} />;
+  }
+
+  // Show main app if authenticated
   return (
-    <AppContext.Provider value={{ lang, setLang }}>
+    <AppContext.Provider value={{ lang, setLang, user, partner }}>
       <div className="min-h-screen bg-[#f8fafc]">
         <div className="flex">
-          <Sidebar currentPage={currentPage} setCurrentPage={setCurrentPage} isOpen={sidebarOpen} setIsOpen={setSidebarOpen} />
+          <Sidebar
+            currentPage={currentPage}
+            setCurrentPage={setCurrentPage}
+            isOpen={sidebarOpen}
+            setIsOpen={setSidebarOpen}
+            partner={partner}
+            onLogout={handleLogout}
+          />
           <div className="flex-1 flex flex-col min-h-screen">
             <Header setIsOpen={setSidebarOpen} />
             <main className="flex-1 p-4 lg:p-8">
@@ -1021,10 +1589,10 @@ export default function App() {
             </main>
           </div>
         </div>
-        
+
         {/* Teepy Floating Button */}
         <TeepyFloatingButton onClick={() => setChatOpen(true)} />
-        
+
         {/* Teepy Chatbot Modal */}
         <TeepyChatbot isOpen={chatOpen} onClose={() => setChatOpen(false)} />
       </div>
