@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Academy Access - TeepTrak Partner Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/teeptrak-design-system.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <div class="tt-portal">
+    <!-- Sidebar -->
+    <aside class="tt-sidebar">
+      <div class="tt-sidebar-header">
+        <div class="tt-logo">
+          <div class="tt-logo-icon">
+            <svg viewBox="0 0 32 32" fill="none">
+              <circle cx="16" cy="10" r="3" fill="white" opacity="0.9"/>
+              <line x1="16" y1="13" x2="6" y2="26" stroke="white" stroke-width="2" opacity="0.7"/>
+              <line x1="16" y1="13" x2="26" y2="26" stroke="white" stroke-width="2" opacity="0.7"/>
+              <line x1="16" y1="13" x2="16" y2="28" stroke="white" stroke-width="2" opacity="0.7"/>
+              <line x1="16" y1="10" x2="8" y2="4" stroke="white" stroke-width="2" opacity="0.7"/>
+              <line x1="16" y1="10" x2="24" y2="4" stroke="white" stroke-width="2" opacity="0.7"/>
+            </svg>
+          </div>
+          <div class="tt-logo-text">
+            <span>teep</span><span>trak</span>
+          </div>
+        </div>
+        <div class="tt-logo-subtitle">Partner Portal</div>
+      </div>
+
+      <nav class="tt-sidebar-nav">
+        <div class="tt-nav">
+          <a href="01-dashboard.html" class="tt-nav-item">
+            <i data-lucide="layout-dashboard"></i>
+            <span>Dashboard</span>
+          </a>
+          <a href="02-deals.html" class="tt-nav-item">
+            <i data-lucide="target"></i>
+            <span>Deal Registration</span>
+          </a>
+          <a href="04-training.html" class="tt-nav-item">
+            <i data-lucide="graduation-cap"></i>
+            <span>Training</span>
+          </a>
+          <a href="05-academy.html" class="tt-nav-item active">
+            <i data-lucide="book-open"></i>
+            <span>Academy Access</span>
+            <span class="tt-nav-badge">NEW</span>
+          </a>
+          <a href="06-resources.html" class="tt-nav-item">
+            <i data-lucide="folder-open"></i>
+            <span>Resources</span>
+          </a>
+          <a href="09-quiz.html" class="tt-nav-item">
+            <i data-lucide="trophy"></i>
+            <span>Certification</span>
+          </a>
+          <a href="08-agreement.html" class="tt-nav-item">
+            <i data-lucide="file-signature"></i>
+            <span>Agreement</span>
+          </a>
+          <a href="10-schedule.html" class="tt-nav-item">
+            <i data-lucide="calendar"></i>
+            <span>Schedule Call</span>
+          </a>
+          <a href="07-commissions.html" class="tt-nav-item">
+            <i data-lucide="dollar-sign"></i>
+            <span>Commissions</span>
+          </a>
+        </div>
+      </nav>
+
+      <div class="tt-sidebar-footer">
+        <div class="tt-user-card">
+          <div class="tt-avatar tt-avatar-md">JD</div>
+          <div class="tt-user-info">
+            <div class="tt-user-name">Jean Dupont</div>
+            <div class="tt-user-company">Actemium Bordeaux</div>
+          </div>
+        </div>
+        <a href="#" class="tt-nav-item tt-mt-2">
+          <i data-lucide="log-out"></i>
+          <span>Sign Out</span>
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="tt-main">
+      <!-- Header -->
+      <header class="tt-header">
+        <div class="tt-flex tt-items-center tt-gap-4">
+          <button class="tt-btn tt-btn-ghost tt-lg-hidden" id="menu-toggle">
+            <i data-lucide="menu"></i>
+          </button>
+          <div class="tt-flex-1"></div>
+          <div class="tt-flex tt-items-center tt-gap-2 tt-ml-auto">
+            <button class="tt-btn tt-btn-ghost">
+              <i data-lucide="globe"></i>
+              <span class="tt-sm-hidden">EN</span>
+            </button>
+            <button class="tt-btn tt-btn-ghost" style="position: relative;">
+              <i data-lucide="bell"></i>
+              <span style="position: absolute; top: 4px; right: 4px; width: 8px; height: 8px; background: var(--tt-red); border-radius: 50%;"></span>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <!-- Content -->
+      <div class="tt-content">
+        <div style="max-width: 900px; margin: 0 auto;">
+          <!-- Page Header -->
+          <div class="tt-mb-8">
+            <h1>TeepTrak Academy Access</h1>
+            <p class="text-gray-500 tt-mt-1">Access comprehensive training materials and certifications</p>
+          </div>
+
+          <!-- Main Grid -->
+          <div class="tt-grid tt-grid-2 tt-gap-6 tt-mb-8">
+            <!-- Credentials Card -->
+            <div class="tt-card tt-p-6">
+              <div class="tt-flex tt-items-center tt-gap-3 tt-mb-6">
+                <div style="width: 48px; height: 48px; background: rgba(235, 53, 43, 0.1); border-radius: var(--tt-radius-xl); display: flex; align-items: center; justify-content: center;">
+                  <i data-lucide="key" style="width: 24px; height: 24px; color: var(--tt-red);"></i>
+                </div>
+                <div>
+                  <h2 class="font-semibold">Your Credentials</h2>
+                  <p class="text-sm text-gray-500">academy.teeptrak.net</p>
+                </div>
+              </div>
+
+              <div class="tt-flex tt-flex-col tt-gap-4">
+                <div>
+                  <label class="tt-label">Username</label>
+                  <div class="tt-flex tt-items-center tt-gap-2">
+                    <div class="tt-flex-1 tt-p-3" style="background: var(--tt-gray-50); border-radius: var(--tt-radius-xl); border: 1px solid var(--tt-gray-100); font-family: monospace; font-size: 0.875rem;">
+                      jean.dupont@partner.teeptrak.net
+                    </div>
+                    <button class="tt-btn tt-btn-secondary tt-btn-sm" onclick="copyToClipboard('jean.dupont@partner.teeptrak.net', this)">
+                      <i data-lucide="copy"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <div>
+                  <label class="tt-label">Password</label>
+                  <div class="tt-flex tt-items-center tt-gap-2">
+                    <div class="tt-flex-1 tt-p-3 tt-flex tt-items-center tt-justify-between" style="background: var(--tt-gray-50); border-radius: var(--tt-radius-xl); border: 1px solid var(--tt-gray-100); font-family: monospace; font-size: 0.875rem;">
+                      <span id="passwordDisplay">****************</span>
+                      <button class="tt-btn tt-btn-ghost tt-btn-sm" onclick="togglePassword()" style="padding: 0;">
+                        <i data-lucide="eye" id="eyeIcon"></i>
+                      </button>
+                    </div>
+                    <button class="tt-btn tt-btn-secondary tt-btn-sm" onclick="copyToClipboard('TT-Partner-2025-JD', this)">
+                      <i data-lucide="copy"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="tt-alert tt-alert-warning tt-mt-6">
+                <i data-lucide="lock"></i>
+                <p class="text-sm">Keep your credentials secure. Do not share them with others.</p>
+              </div>
+
+              <a href="https://academy.teeptrak.net" target="_blank" rel="noopener noreferrer" class="tt-btn tt-btn-primary tt-btn-block tt-mt-6">
+                <i data-lucide="external-link"></i>
+                Access Academy Portal
+              </a>
+            </div>
+
+            <!-- Features Card -->
+            <div class="tt-card tt-p-6">
+              <h2 class="font-semibold tt-mb-6">Academy Features</h2>
+              <div class="tt-flex tt-flex-col tt-gap-4">
+                <div class="tt-flex tt-items-center tt-gap-4 tt-p-4" style="background: var(--tt-gray-50); border-radius: var(--tt-radius-xl);">
+                  <div style="width: 48px; height: 48px; background: white; border-radius: var(--tt-radius-xl); display: flex; align-items: center; justify-content: center; box-shadow: var(--tt-shadow-sm);">
+                    <i data-lucide="book-open" style="width: 24px; height: 24px; color: var(--tt-red);"></i>
+                  </div>
+                  <div>
+                    <div class="font-medium">Product Deep Dives</div>
+                    <div class="text-sm text-gray-500">15+ in-depth courses</div>
+                  </div>
+                </div>
+
+                <div class="tt-flex tt-items-center tt-gap-4 tt-p-4" style="background: var(--tt-gray-50); border-radius: var(--tt-radius-xl);">
+                  <div style="width: 48px; height: 48px; background: white; border-radius: var(--tt-radius-xl); display: flex; align-items: center; justify-content: center; box-shadow: var(--tt-shadow-sm);">
+                    <i data-lucide="target" style="width: 24px; height: 24px; color: var(--tt-red);"></i>
+                  </div>
+                  <div>
+                    <div class="font-medium">Sales Methodology</div>
+                    <div class="text-sm text-gray-500">Sales certification path</div>
+                  </div>
+                </div>
+
+                <div class="tt-flex tt-items-center tt-gap-4 tt-p-4" style="background: var(--tt-gray-50); border-radius: var(--tt-radius-xl);">
+                  <div style="width: 48px; height: 48px; background: white; border-radius: var(--tt-radius-xl); display: flex; align-items: center; justify-content: center; box-shadow: var(--tt-shadow-sm);">
+                    <i data-lucide="award" style="width: 24px; height: 24px; color: var(--tt-red);"></i>
+                  </div>
+                  <div>
+                    <div class="font-medium">Technical Certifications</div>
+                    <div class="text-sm text-gray-500">Expert-level badges</div>
+                  </div>
+                </div>
+
+                <div class="tt-flex tt-items-center tt-gap-4 tt-p-4" style="background: var(--tt-gray-50); border-radius: var(--tt-radius-xl);">
+                  <div style="width: 48px; height: 48px; background: white; border-radius: var(--tt-radius-xl); display: flex; align-items: center; justify-content: center; box-shadow: var(--tt-shadow-sm);">
+                    <i data-lucide="users" style="width: 24px; height: 24px; color: var(--tt-red);"></i>
+                  </div>
+                  <div>
+                    <div class="font-medium">Live Webinars</div>
+                    <div class="text-sm text-gray-500">Weekly sessions</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Academy Preview -->
+          <div class="tt-card tt-p-6">
+            <h2 class="font-semibold tt-mb-4">Academy Portal</h2>
+            <p class="text-gray-500 tt-mb-6">Access the full TeepTrak Academy with advanced courses, certifications, and learning paths.</p>
+
+            <div style="background: var(--tt-gray-100); border-radius: var(--tt-radius-xl); overflow: hidden; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; position: relative;">
+              <div style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(235, 53, 43, 0.05) 0%, rgba(255, 103, 76, 0.05) 100%);"></div>
+              <div class="tt-text-center" style="position: relative; z-index: 1;">
+                <div style="width: 80px; height: 80px; background: white; border-radius: var(--tt-radius-2xl); box-shadow: var(--tt-shadow-lg); display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+                  <i data-lucide="graduation-cap" style="width: 40px; height: 40px; color: var(--tt-red);"></i>
+                </div>
+                <h3 class="text-xl font-bold tt-mb-2">TeepTrak Academy</h3>
+                <p class="text-gray-500 tt-mb-6">Comprehensive training platform</p>
+                <a href="https://academy.teeptrak.net" target="_blank" rel="noopener noreferrer" class="tt-btn tt-btn-primary">
+                  <i data-lucide="play"></i>
+                  Launch Academy
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Certification Badges -->
+          <div class="tt-card tt-p-6 tt-mt-6">
+            <h2 class="font-semibold tt-mb-6">Your Certifications</h2>
+            <div class="tt-grid tt-grid-3 tt-gap-4">
+              <div class="tt-text-center tt-p-4" style="background: var(--tt-success-light); border-radius: var(--tt-radius-xl);">
+                <div style="width: 60px; height: 60px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 0.75rem; box-shadow: var(--tt-shadow-sm);">
+                  <i data-lucide="award" style="width: 30px; height: 30px; color: var(--tt-success);"></i>
+                </div>
+                <div class="font-medium text-sm">Product Certified</div>
+                <div class="text-xs text-gray-500 tt-mt-1">Earned Dec 2025</div>
+              </div>
+
+              <div class="tt-text-center tt-p-4" style="background: var(--tt-success-light); border-radius: var(--tt-radius-xl);">
+                <div style="width: 60px; height: 60px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 0.75rem; box-shadow: var(--tt-shadow-sm);">
+                  <i data-lucide="award" style="width: 30px; height: 30px; color: var(--tt-success);"></i>
+                </div>
+                <div class="font-medium text-sm">Sales Certified</div>
+                <div class="text-xs text-gray-500 tt-mt-1">Earned Jan 2026</div>
+              </div>
+
+              <div class="tt-text-center tt-p-4" style="background: var(--tt-gray-100); border-radius: var(--tt-radius-xl); opacity: 0.6;">
+                <div style="width: 60px; height: 60px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 0.75rem;">
+                  <i data-lucide="lock" style="width: 30px; height: 30px; color: var(--tt-gray-400);"></i>
+                </div>
+                <div class="font-medium text-sm">Technical Expert</div>
+                <div class="text-xs text-gray-500 tt-mt-1">Not yet earned</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Floating Chat Button -->
+  <button class="tt-chat-button">
+    <i data-lucide="message-circle"></i>
+    <span class="tt-sm-hidden">Chat with Teepy</span>
+  </button>
+
+  <script>
+    lucide.createIcons();
+
+    // Mobile menu toggle
+    document.getElementById('menu-toggle')?.addEventListener('click', function() {
+      document.querySelector('.tt-sidebar').classList.toggle('active');
+    });
+
+    // Password toggle
+    let passwordVisible = false;
+    function togglePassword() {
+      passwordVisible = !passwordVisible;
+      document.getElementById('passwordDisplay').textContent = passwordVisible ? 'TT-Partner-2025-JD' : '****************';
+    }
+
+    // Copy to clipboard
+    function copyToClipboard(text, button) {
+      navigator.clipboard.writeText(text);
+      const icon = button.querySelector('i');
+      icon.setAttribute('data-lucide', 'check');
+      lucide.createIcons();
+      setTimeout(() => {
+        icon.setAttribute('data-lucide', 'copy');
+        lucide.createIcons();
+      }, 2000);
+    }
+  </script>
+</body>
+</html>

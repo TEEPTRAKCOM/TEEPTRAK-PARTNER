@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resource Center - TeepTrak Partner Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/teeptrak-design-system.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <div class="tt-portal">
+    <!-- Sidebar -->
+    <aside class="tt-sidebar">
+      <div class="tt-sidebar-header">
+        <div class="tt-logo">
+          <div class="tt-logo-icon">
+            <svg viewBox="0 0 32 32" fill="none">
+              <circle cx="16" cy="10" r="3" fill="white" opacity="0.9"/>
+              <line x1="16" y1="13" x2="6" y2="26" stroke="white" stroke-width="2" opacity="0.7"/>
+              <line x1="16" y1="13" x2="26" y2="26" stroke="white" stroke-width="2" opacity="0.7"/>
+              <line x1="16" y1="13" x2="16" y2="28" stroke="white" stroke-width="2" opacity="0.7"/>
+              <line x1="16" y1="10" x2="8" y2="4" stroke="white" stroke-width="2" opacity="0.7"/>
+              <line x1="16" y1="10" x2="24" y2="4" stroke="white" stroke-width="2" opacity="0.7"/>
+            </svg>
+          </div>
+          <div class="tt-logo-text">
+            <span>teep</span><span>trak</span>
+          </div>
+        </div>
+        <div class="tt-logo-subtitle">Partner Portal</div>
+      </div>
+
+      <nav class="tt-sidebar-nav">
+        <div class="tt-nav">
+          <a href="01-dashboard.html" class="tt-nav-item">
+            <i data-lucide="layout-dashboard"></i>
+            <span>Dashboard</span>
+          </a>
+          <a href="02-deals.html" class="tt-nav-item">
+            <i data-lucide="target"></i>
+            <span>Deal Registration</span>
+          </a>
+          <a href="04-training.html" class="tt-nav-item">
+            <i data-lucide="graduation-cap"></i>
+            <span>Training</span>
+          </a>
+          <a href="05-academy.html" class="tt-nav-item">
+            <i data-lucide="book-open"></i>
+            <span>Academy Access</span>
+            <span class="tt-nav-badge">NEW</span>
+          </a>
+          <a href="06-resources.html" class="tt-nav-item active">
+            <i data-lucide="folder-open"></i>
+            <span>Resources</span>
+          </a>
+          <a href="09-quiz.html" class="tt-nav-item">
+            <i data-lucide="trophy"></i>
+            <span>Certification</span>
+          </a>
+          <a href="08-agreement.html" class="tt-nav-item">
+            <i data-lucide="file-signature"></i>
+            <span>Agreement</span>
+          </a>
+          <a href="10-schedule.html" class="tt-nav-item">
+            <i data-lucide="calendar"></i>
+            <span>Schedule Call</span>
+          </a>
+          <a href="07-commissions.html" class="tt-nav-item">
+            <i data-lucide="dollar-sign"></i>
+            <span>Commissions</span>
+          </a>
+        </div>
+      </nav>
+
+      <div class="tt-sidebar-footer">
+        <div class="tt-user-card">
+          <div class="tt-avatar tt-avatar-md">JD</div>
+          <div class="tt-user-info">
+            <div class="tt-user-name">Jean Dupont</div>
+            <div class="tt-user-company">Actemium Bordeaux</div>
+          </div>
+        </div>
+        <a href="#" class="tt-nav-item tt-mt-2">
+          <i data-lucide="log-out"></i>
+          <span>Sign Out</span>
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="tt-main">
+      <!-- Header -->
+      <header class="tt-header">
+        <div class="tt-flex tt-items-center tt-gap-4">
+          <button class="tt-btn tt-btn-ghost tt-lg-hidden" id="menu-toggle">
+            <i data-lucide="menu"></i>
+          </button>
+          <div class="tt-flex-1" style="max-width: 400px;">
+            <div class="tt-input-icon">
+              <i data-lucide="search"></i>
+              <input type="text" class="tt-input" placeholder="Search resources...">
+            </div>
+          </div>
+          <div class="tt-flex tt-items-center tt-gap-2 tt-ml-auto">
+            <button class="tt-btn tt-btn-ghost">
+              <i data-lucide="globe"></i>
+              <span class="tt-sm-hidden">EN</span>
+            </button>
+            <button class="tt-btn tt-btn-ghost" style="position: relative;">
+              <i data-lucide="bell"></i>
+              <span style="position: absolute; top: 4px; right: 4px; width: 8px; height: 8px; background: var(--tt-red); border-radius: 50%;"></span>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <!-- Content -->
+      <div class="tt-content">
+        <!-- Page Header -->
+        <div class="tt-mb-8">
+          <h1>Resource Center</h1>
+          <p class="text-gray-500 tt-mt-1">Sales tools, marketing assets, and documentation</p>
+        </div>
+
+        <!-- Category Tabs -->
+        <div class="tt-tabs tt-mb-6">
+          <button class="tt-tab active" data-category="all">All Resources</button>
+          <button class="tt-tab" data-category="sales">Sales Materials</button>
+          <button class="tt-tab" data-category="marketing">Marketing Assets</button>
+          <button class="tt-tab" data-category="technical">Technical Docs</button>
+          <button class="tt-tab" data-category="legal">Legal</button>
+        </div>
+
+        <!-- Resources Grid -->
+        <div class="tt-grid tt-grid-3 tt-gap-4">
+          <!-- Resource 1 -->
+          <div class="tt-card tt-card-hover tt-p-5">
+            <div class="tt-flex tt-items-start tt-gap-4">
+              <div style="width: 48px; height: 48px; background: var(--tt-gray-100); border-radius: var(--tt-radius-xl); display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                &#128202;
+              </div>
+              <div class="tt-flex-1" style="min-width: 0;">
+                <h3 class="font-semibold tt-truncate">Sales Presentation 2025</h3>
+                <p class="text-sm text-gray-500">PPTX &bull; 5.2 MB</p>
+                <p class="text-xs text-gray-400 tt-mt-1">234 downloads</p>
+              </div>
+            </div>
+            <button class="tt-btn tt-btn-secondary tt-btn-block tt-mt-4">
+              <i data-lucide="download"></i>
+              Download
+            </button>
+          </div>
+
+          <!-- Resource 2 -->
+          <div class="tt-card tt-card-hover tt-p-5">
+            <div class="tt-flex tt-items-start tt-gap-4">
+              <div style="width: 48px; height: 48px; background: var(--tt-gray-100); border-radius: var(--tt-radius-xl); display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                &#9876;&#65039;
+              </div>
+              <div class="tt-flex-1" style="min-width: 0;">
+                <h3 class="font-semibold tt-truncate">Competitive Battlecards</h3>
+                <p class="text-sm text-gray-500">PDF &bull; 1.8 MB</p>
+                <p class="text-xs text-gray-400 tt-mt-1">189 downloads</p>
+              </div>
+            </div>
+            <button class="tt-btn tt-btn-secondary tt-btn-block tt-mt-4">
+              <i data-lucide="download"></i>
+              Download
+            </button>
+          </div>
+
+          <!-- Resource 3 -->
+          <div class="tt-card tt-card-hover tt-p-5">
+            <div class="tt-flex tt-items-start tt-gap-4">
+              <div style="width: 48px; height: 48px; background: var(--tt-gray-100); border-radius: var(--tt-radius-xl); display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                &#128200;
+              </div>
+              <div class="tt-flex-1" style="min-width: 0;">
+                <h3 class="font-semibold tt-truncate">ROI Calculator</h3>
+                <p class="text-sm text-gray-500">XLSX &bull; 890 KB</p>
+                <p class="text-xs text-gray-400 tt-mt-1">312 downloads</p>
+              </div>
+            </div>
+            <button class="tt-btn tt-btn-secondary tt-btn-block tt-mt-4">
+              <i data-lucide="download"></i>
+              Download
+            </button>
+          </div>
+
+          <!-- Resource 4 -->
+          <div class="tt-card tt-card-hover tt-p-5">
+            <div class="tt-flex tt-items-start tt-gap-4">
+              <div style="width: 48px; height: 48px; background: var(--tt-gray-100); border-radius: var(--tt-radius-xl); display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                &#127912;
+              </div>
+              <div class="tt-flex-1" style="min-width: 0;">
+                <h3 class="font-semibold tt-truncate">Brand Guidelines</h3>
+                <p class="text-sm text-gray-500">PDF &bull; 12 MB</p>
+                <p class="text-xs text-gray-400 tt-mt-1">98 downloads</p>
+              </div>
+            </div>
+            <button class="tt-btn tt-btn-secondary tt-btn-block tt-mt-4">
+              <i data-lucide="download"></i>
+              Download
+            </button>
+          </div>
+
+          <!-- Resource 5 -->
+          <div class="tt-card tt-card-hover tt-p-5">
+            <div class="tt-flex tt-items-start tt-gap-4">
+              <div style="width: 48px; height: 48px; background: var(--tt-gray-100); border-radius: var(--tt-radius-xl); display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                &#128240;
+              </div>
+              <div class="tt-flex-1" style="min-width: 0;">
+                <h3 class="font-semibold tt-truncate">Product Brochure</h3>
+                <p class="text-sm text-gray-500">PDF &bull; 4.5 MB</p>
+                <p class="text-xs text-gray-400 tt-mt-1">267 downloads</p>
+              </div>
+            </div>
+            <button class="tt-btn tt-btn-secondary tt-btn-block tt-mt-4">
+              <i data-lucide="download"></i>
+              Download
+            </button>
+          </div>
+
+          <!-- Resource 6 -->
+          <div class="tt-card tt-card-hover tt-p-5">
+            <div class="tt-flex tt-items-start tt-gap-4">
+              <div style="width: 48px; height: 48px; background: var(--tt-gray-100); border-radius: var(--tt-radius-xl); display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                &#9881;&#65039;
+              </div>
+              <div class="tt-flex-1" style="min-width: 0;">
+                <h3 class="font-semibold tt-truncate">Technical Specifications</h3>
+                <p class="text-sm text-gray-500">PDF &bull; 2.1 MB</p>
+                <p class="text-xs text-gray-400 tt-mt-1">156 downloads</p>
+              </div>
+            </div>
+            <button class="tt-btn tt-btn-secondary tt-btn-block tt-mt-4">
+              <i data-lucide="download"></i>
+              Download
+            </button>
+          </div>
+
+          <!-- Resource 7 -->
+          <div class="tt-card tt-card-hover tt-p-5">
+            <div class="tt-flex tt-items-start tt-gap-4">
+              <div style="width: 48px; height: 48px; background: var(--tt-gray-100); border-radius: var(--tt-radius-xl); display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                &#128295;
+              </div>
+              <div class="tt-flex-1" style="min-width: 0;">
+                <h3 class="font-semibold tt-truncate">Integration Guide</h3>
+                <p class="text-sm text-gray-500">PDF &bull; 3.2 MB</p>
+                <p class="text-xs text-gray-400 tt-mt-1">89 downloads</p>
+              </div>
+            </div>
+            <button class="tt-btn tt-btn-secondary tt-btn-block tt-mt-4">
+              <i data-lucide="download"></i>
+              Download
+            </button>
+          </div>
+
+          <!-- Resource 8 -->
+          <div class="tt-card tt-card-hover tt-p-5">
+            <div class="tt-flex tt-items-start tt-gap-4">
+              <div style="width: 48px; height: 48px; background: var(--tt-gray-100); border-radius: var(--tt-radius-xl); display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                &#128220;
+              </div>
+              <div class="tt-flex-1" style="min-width: 0;">
+                <h3 class="font-semibold tt-truncate">Partner Agreement Template</h3>
+                <p class="text-sm text-gray-500">PDF &bull; 450 KB</p>
+                <p class="text-xs text-gray-400 tt-mt-1">45 downloads</p>
+              </div>
+            </div>
+            <button class="tt-btn tt-btn-secondary tt-btn-block tt-mt-4">
+              <i data-lucide="download"></i>
+              Download
+            </button>
+          </div>
+
+          <!-- Resource 9 -->
+          <div class="tt-card tt-card-hover tt-p-5">
+            <div class="tt-flex tt-items-start tt-gap-4">
+              <div style="width: 48px; height: 48px; background: var(--tt-gray-100); border-radius: var(--tt-radius-xl); display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                &#127909;
+              </div>
+              <div class="tt-flex-1" style="min-width: 0;">
+                <h3 class="font-semibold tt-truncate">Demo Video Package</h3>
+                <p class="text-sm text-gray-500">ZIP &bull; 245 MB</p>
+                <p class="text-xs text-gray-400 tt-mt-1">78 downloads</p>
+              </div>
+            </div>
+            <button class="tt-btn tt-btn-secondary tt-btn-block tt-mt-4">
+              <i data-lucide="download"></i>
+              Download
+            </button>
+          </div>
+
+          <!-- Resource 10 -->
+          <div class="tt-card tt-card-hover tt-p-5">
+            <div class="tt-flex tt-items-start tt-gap-4">
+              <div style="width: 48px; height: 48px; background: var(--tt-gray-100); border-radius: var(--tt-radius-xl); display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                &#128187;
+              </div>
+              <div class="tt-flex-1" style="min-width: 0;">
+                <h3 class="font-semibold tt-truncate">Case Study: Automotive</h3>
+                <p class="text-sm text-gray-500">PDF &bull; 2.8 MB</p>
+                <p class="text-xs text-gray-400 tt-mt-1">134 downloads</p>
+              </div>
+            </div>
+            <button class="tt-btn tt-btn-secondary tt-btn-block tt-mt-4">
+              <i data-lucide="download"></i>
+              Download
+            </button>
+          </div>
+
+          <!-- Resource 11 -->
+          <div class="tt-card tt-card-hover tt-p-5">
+            <div class="tt-flex tt-items-start tt-gap-4">
+              <div style="width: 48px; height: 48px; background: var(--tt-gray-100); border-radius: var(--tt-radius-xl); display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                &#128187;
+              </div>
+              <div class="tt-flex-1" style="min-width: 0;">
+                <h3 class="font-semibold tt-truncate">Case Study: Food & Beverage</h3>
+                <p class="text-sm text-gray-500">PDF &bull; 3.1 MB</p>
+                <p class="text-xs text-gray-400 tt-mt-1">112 downloads</p>
+              </div>
+            </div>
+            <button class="tt-btn tt-btn-secondary tt-btn-block tt-mt-4">
+              <i data-lucide="download"></i>
+              Download
+            </button>
+          </div>
+
+          <!-- Resource 12 -->
+          <div class="tt-card tt-card-hover tt-p-5">
+            <div class="tt-flex tt-items-start tt-gap-4">
+              <div style="width: 48px; height: 48px; background: var(--tt-gray-100); border-radius: var(--tt-radius-xl); display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                &#128221;
+              </div>
+              <div class="tt-flex-1" style="min-width: 0;">
+                <h3 class="font-semibold tt-truncate">Email Templates</h3>
+                <p class="text-sm text-gray-500">DOCX &bull; 156 KB</p>
+                <p class="text-xs text-gray-400 tt-mt-1">203 downloads</p>
+              </div>
+            </div>
+            <button class="tt-btn tt-btn-secondary tt-btn-block tt-mt-4">
+              <i data-lucide="download"></i>
+              Download
+            </button>
+          </div>
+        </div>
+
+        <!-- Request Resource -->
+        <div class="tt-card tt-card-gradient-dark tt-p-8 tt-mt-8">
+          <div class="tt-flex tt-items-center tt-justify-between" style="flex-wrap: wrap; gap: 1.5rem;">
+            <div>
+              <h3 class="text-xl font-bold text-white tt-mb-2">Need Something Else?</h3>
+              <p class="text-gray-400">Can't find what you're looking for? Request a specific resource from our team.</p>
+            </div>
+            <button class="tt-btn tt-btn-white">
+              <i data-lucide="message-square"></i>
+              Request Resource
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Floating Chat Button -->
+  <button class="tt-chat-button">
+    <i data-lucide="message-circle"></i>
+    <span class="tt-sm-hidden">Chat with Teepy</span>
+  </button>
+
+  <script>
+    lucide.createIcons();
+
+    // Mobile menu toggle
+    document.getElementById('menu-toggle')?.addEventListener('click', function() {
+      document.querySelector('.tt-sidebar').classList.toggle('active');
+    });
+
+    // Tab switching
+    document.querySelectorAll('.tt-tab').forEach(tab => {
+      tab.addEventListener('click', function() {
+        document.querySelectorAll('.tt-tab').forEach(t => t.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>

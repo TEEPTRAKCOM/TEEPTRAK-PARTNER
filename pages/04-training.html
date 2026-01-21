@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Training Academy - TeepTrak Partner Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/teeptrak-design-system.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <div class="tt-portal">
+    <!-- Sidebar -->
+    <aside class="tt-sidebar">
+      <div class="tt-sidebar-header">
+        <div class="tt-logo">
+          <div class="tt-logo-icon">
+            <svg viewBox="0 0 32 32" fill="none">
+              <circle cx="16" cy="10" r="3" fill="white" opacity="0.9"/>
+              <line x1="16" y1="13" x2="6" y2="26" stroke="white" stroke-width="2" opacity="0.7"/>
+              <line x1="16" y1="13" x2="26" y2="26" stroke="white" stroke-width="2" opacity="0.7"/>
+              <line x1="16" y1="13" x2="16" y2="28" stroke="white" stroke-width="2" opacity="0.7"/>
+              <line x1="16" y1="10" x2="8" y2="4" stroke="white" stroke-width="2" opacity="0.7"/>
+              <line x1="16" y1="10" x2="24" y2="4" stroke="white" stroke-width="2" opacity="0.7"/>
+            </svg>
+          </div>
+          <div class="tt-logo-text">
+            <span>teep</span><span>trak</span>
+          </div>
+        </div>
+        <div class="tt-logo-subtitle">Partner Portal</div>
+      </div>
+
+      <nav class="tt-sidebar-nav">
+        <div class="tt-nav">
+          <a href="01-dashboard.html" class="tt-nav-item">
+            <i data-lucide="layout-dashboard"></i>
+            <span>Dashboard</span>
+          </a>
+          <a href="02-deals.html" class="tt-nav-item">
+            <i data-lucide="target"></i>
+            <span>Deal Registration</span>
+          </a>
+          <a href="04-training.html" class="tt-nav-item active">
+            <i data-lucide="graduation-cap"></i>
+            <span>Training</span>
+          </a>
+          <a href="05-academy.html" class="tt-nav-item">
+            <i data-lucide="book-open"></i>
+            <span>Academy Access</span>
+            <span class="tt-nav-badge">NEW</span>
+          </a>
+          <a href="06-resources.html" class="tt-nav-item">
+            <i data-lucide="folder-open"></i>
+            <span>Resources</span>
+          </a>
+          <a href="09-quiz.html" class="tt-nav-item">
+            <i data-lucide="trophy"></i>
+            <span>Certification</span>
+          </a>
+          <a href="08-agreement.html" class="tt-nav-item">
+            <i data-lucide="file-signature"></i>
+            <span>Agreement</span>
+          </a>
+          <a href="10-schedule.html" class="tt-nav-item">
+            <i data-lucide="calendar"></i>
+            <span>Schedule Call</span>
+          </a>
+          <a href="07-commissions.html" class="tt-nav-item">
+            <i data-lucide="dollar-sign"></i>
+            <span>Commissions</span>
+          </a>
+        </div>
+      </nav>
+
+      <div class="tt-sidebar-footer">
+        <div class="tt-user-card">
+          <div class="tt-avatar tt-avatar-md">JD</div>
+          <div class="tt-user-info">
+            <div class="tt-user-name">Jean Dupont</div>
+            <div class="tt-user-company">Actemium Bordeaux</div>
+          </div>
+        </div>
+        <a href="#" class="tt-nav-item tt-mt-2">
+          <i data-lucide="log-out"></i>
+          <span>Sign Out</span>
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="tt-main">
+      <!-- Header -->
+      <header class="tt-header">
+        <div class="tt-flex tt-items-center tt-gap-4">
+          <button class="tt-btn tt-btn-ghost tt-lg-hidden" id="menu-toggle">
+            <i data-lucide="menu"></i>
+          </button>
+          <div class="tt-flex-1" style="max-width: 400px;">
+            <div class="tt-input-icon">
+              <i data-lucide="search"></i>
+              <input type="text" class="tt-input" placeholder="Search courses...">
+            </div>
+          </div>
+          <div class="tt-flex tt-items-center tt-gap-2 tt-ml-auto">
+            <button class="tt-btn tt-btn-ghost">
+              <i data-lucide="globe"></i>
+              <span class="tt-sm-hidden">EN</span>
+            </button>
+            <button class="tt-btn tt-btn-ghost" style="position: relative;">
+              <i data-lucide="bell"></i>
+              <span style="position: absolute; top: 4px; right: 4px; width: 8px; height: 8px; background: var(--tt-red); border-radius: 50%;"></span>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <!-- Content -->
+      <div class="tt-content">
+        <!-- Page Header -->
+        <div class="tt-mb-8">
+          <h1>Training Academy</h1>
+          <p class="text-gray-500 tt-mt-1">Master TeepTrak and boost your sales</p>
+        </div>
+
+        <!-- Progress Overview -->
+        <div class="tt-card tt-p-6 tt-mb-8">
+          <div class="tt-flex tt-items-center tt-justify-between tt-mb-4" style="flex-wrap: wrap; gap: 1rem;">
+            <div>
+              <span class="text-gray-500">Your Progress</span>
+              <div class="tt-flex tt-items-center tt-gap-4 tt-mt-2">
+                <span class="font-semibold text-lg">3/6 Completed</span>
+                <span class="tt-badge tt-badge-success">50%</span>
+              </div>
+            </div>
+            <div class="tt-flex tt-gap-6">
+              <div class="tt-text-center">
+                <div class="text-2xl font-bold text-green-600">3</div>
+                <div class="text-xs text-gray-500">Completed</div>
+              </div>
+              <div class="tt-text-center">
+                <div class="text-2xl font-bold text-red-500">1</div>
+                <div class="text-xs text-gray-500">In Progress</div>
+              </div>
+              <div class="tt-text-center">
+                <div class="text-2xl font-bold text-gray-400">2</div>
+                <div class="text-xs text-gray-500">Not Started</div>
+              </div>
+            </div>
+          </div>
+          <div class="tt-progress" style="height: 12px;">
+            <div class="tt-progress-bar tt-progress-bar-success" style="width: 50%;"></div>
+          </div>
+        </div>
+
+        <!-- Course Categories -->
+        <div class="tt-tabs tt-mb-6">
+          <button class="tt-tab active">All Courses</button>
+          <button class="tt-tab">Onboarding</button>
+          <button class="tt-tab">Product</button>
+          <button class="tt-tab">Sales</button>
+          <button class="tt-tab">Technical</button>
+        </div>
+
+        <!-- Training Modules -->
+        <div class="tt-flex tt-flex-col tt-gap-4">
+          <!-- Module 1 - Completed -->
+          <div class="tt-card tt-card-hover tt-p-5">
+            <div class="tt-flex tt-items-center tt-gap-5" style="flex-wrap: wrap;">
+              <div style="width: 56px; height: 56px; border-radius: var(--tt-radius-xl); background: var(--tt-success-light); display: flex; align-items: center; justify-content: center;">
+                <i data-lucide="check-circle" style="width: 28px; height: 28px; color: var(--tt-success);"></i>
+              </div>
+              <div class="tt-flex-1">
+                <div class="tt-flex tt-items-center tt-gap-2 tt-mb-1">
+                  <h3 class="font-semibold">Welcome to TeepTrak</h3>
+                  <span class="tt-badge tt-badge-gray">Onboarding</span>
+                </div>
+                <div class="tt-flex tt-items-center tt-gap-3 text-sm text-gray-500">
+                  <span class="tt-flex tt-items-center tt-gap-1">
+                    <i data-lucide="clock" style="width: 14px; height: 14px;"></i>
+                    5 min
+                  </span>
+                  <span class="tt-badge tt-badge-success">Completed</span>
+                </div>
+              </div>
+              <button class="tt-btn tt-btn-secondary">
+                <i data-lucide="rotate-ccw"></i>
+                Review
+              </button>
+            </div>
+          </div>
+
+          <!-- Module 2 - Completed -->
+          <div class="tt-card tt-card-hover tt-p-5">
+            <div class="tt-flex tt-items-center tt-gap-5" style="flex-wrap: wrap;">
+              <div style="width: 56px; height: 56px; border-radius: var(--tt-radius-xl); background: var(--tt-success-light); display: flex; align-items: center; justify-content: center;">
+                <i data-lucide="check-circle" style="width: 28px; height: 28px; color: var(--tt-success);"></i>
+              </div>
+              <div class="tt-flex-1">
+                <div class="tt-flex tt-items-center tt-gap-2 tt-mb-1">
+                  <h3 class="font-semibold">Product Deep Dive</h3>
+                  <span class="tt-badge tt-badge-info">Product</span>
+                </div>
+                <div class="tt-flex tt-items-center tt-gap-3 text-sm text-gray-500">
+                  <span class="tt-flex tt-items-center tt-gap-1">
+                    <i data-lucide="clock" style="width: 14px; height: 14px;"></i>
+                    25 min
+                  </span>
+                  <span class="tt-badge tt-badge-success">Completed</span>
+                </div>
+              </div>
+              <button class="tt-btn tt-btn-secondary">
+                <i data-lucide="rotate-ccw"></i>
+                Review
+              </button>
+            </div>
+          </div>
+
+          <!-- Module 3 - Completed -->
+          <div class="tt-card tt-card-hover tt-p-5">
+            <div class="tt-flex tt-items-center tt-gap-5" style="flex-wrap: wrap;">
+              <div style="width: 56px; height: 56px; border-radius: var(--tt-radius-xl); background: var(--tt-success-light); display: flex; align-items: center; justify-content: center;">
+                <i data-lucide="check-circle" style="width: 28px; height: 28px; color: var(--tt-success);"></i>
+              </div>
+              <div class="tt-flex-1">
+                <div class="tt-flex tt-items-center tt-gap-2 tt-mb-1">
+                  <h3 class="font-semibold">OEE Fundamentals</h3>
+                  <span class="tt-badge tt-badge-info">Product</span>
+                </div>
+                <div class="tt-flex tt-items-center tt-gap-3 text-sm text-gray-500">
+                  <span class="tt-flex tt-items-center tt-gap-1">
+                    <i data-lucide="clock" style="width: 14px; height: 14px;"></i>
+                    20 min
+                  </span>
+                  <span class="tt-badge tt-badge-success">Completed</span>
+                </div>
+              </div>
+              <button class="tt-btn tt-btn-secondary">
+                <i data-lucide="rotate-ccw"></i>
+                Review
+              </button>
+            </div>
+          </div>
+
+          <!-- Module 4 - In Progress -->
+          <div class="tt-card tt-card-hover tt-p-5" style="border: 2px solid rgba(235, 53, 43, 0.2);">
+            <div class="tt-flex tt-items-center tt-gap-5" style="flex-wrap: wrap;">
+              <div style="width: 56px; height: 56px; border-radius: var(--tt-radius-xl); background: rgba(235, 53, 43, 0.1); display: flex; align-items: center; justify-content: center;">
+                <i data-lucide="play" style="width: 28px; height: 28px; color: var(--tt-red);"></i>
+              </div>
+              <div class="tt-flex-1">
+                <div class="tt-flex tt-items-center tt-gap-2 tt-mb-1">
+                  <h3 class="font-semibold">Sales Methodology</h3>
+                  <span class="tt-badge tt-badge-purple">Sales</span>
+                </div>
+                <div class="tt-flex tt-items-center tt-gap-3 text-sm text-gray-500 tt-mb-2">
+                  <span class="tt-flex tt-items-center tt-gap-1">
+                    <i data-lucide="clock" style="width: 14px; height: 14px;"></i>
+                    30 min
+                  </span>
+                  <span class="text-red font-medium">65% complete</span>
+                </div>
+                <div class="tt-progress" style="height: 6px; max-width: 200px;">
+                  <div class="tt-progress-bar" style="width: 65%;"></div>
+                </div>
+              </div>
+              <button class="tt-btn tt-btn-primary">
+                <i data-lucide="play"></i>
+                Continue
+              </button>
+            </div>
+          </div>
+
+          <!-- Module 5 - Not Started -->
+          <div class="tt-card tt-card-hover tt-p-5" style="opacity: 0.8;">
+            <div class="tt-flex tt-items-center tt-gap-5" style="flex-wrap: wrap;">
+              <div style="width: 56px; height: 56px; border-radius: var(--tt-radius-xl); background: var(--tt-gray-100); display: flex; align-items: center; justify-content: center;">
+                <i data-lucide="play" style="width: 28px; height: 28px; color: var(--tt-gray-400);"></i>
+              </div>
+              <div class="tt-flex-1">
+                <div class="tt-flex tt-items-center tt-gap-2 tt-mb-1">
+                  <h3 class="font-semibold">ROI Calculator Training</h3>
+                  <span class="tt-badge tt-badge-purple">Sales</span>
+                </div>
+                <div class="tt-flex tt-items-center tt-gap-3 text-sm text-gray-500">
+                  <span class="tt-flex tt-items-center tt-gap-1">
+                    <i data-lucide="clock" style="width: 14px; height: 14px;"></i>
+                    15 min
+                  </span>
+                  <span class="tt-badge tt-badge-gray">Not Started</span>
+                </div>
+              </div>
+              <button class="tt-btn tt-btn-primary">
+                <i data-lucide="play"></i>
+                Start Course
+              </button>
+            </div>
+          </div>
+
+          <!-- Module 6 - Not Started -->
+          <div class="tt-card tt-card-hover tt-p-5" style="opacity: 0.8;">
+            <div class="tt-flex tt-items-center tt-gap-5" style="flex-wrap: wrap;">
+              <div style="width: 56px; height: 56px; border-radius: var(--tt-radius-xl); background: var(--tt-gray-100); display: flex; align-items: center; justify-content: center;">
+                <i data-lucide="play" style="width: 28px; height: 28px; color: var(--tt-gray-400);"></i>
+              </div>
+              <div class="tt-flex-1">
+                <div class="tt-flex tt-items-center tt-gap-2 tt-mb-1">
+                  <h3 class="font-semibold">Technical Implementation</h3>
+                  <span class="tt-badge tt-badge-warning">Technical</span>
+                </div>
+                <div class="tt-flex tt-items-center tt-gap-3 text-sm text-gray-500">
+                  <span class="tt-flex tt-items-center tt-gap-1">
+                    <i data-lucide="clock" style="width: 14px; height: 14px;"></i>
+                    40 min
+                  </span>
+                  <span class="tt-badge tt-badge-gray">Not Started</span>
+                </div>
+              </div>
+              <button class="tt-btn tt-btn-primary">
+                <i data-lucide="play"></i>
+                Start Course
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Certification CTA -->
+        <div class="tt-card tt-card-gradient-dark tt-p-8 tt-mt-8">
+          <div class="tt-flex tt-items-center tt-justify-between" style="flex-wrap: wrap; gap: 1.5rem;">
+            <div>
+              <h3 class="text-xl font-bold text-white tt-mb-2">Ready for Certification?</h3>
+              <p class="text-gray-400">Complete all training modules and take the certification quiz to earn your TeepTrak Partner badge.</p>
+            </div>
+            <a href="09-quiz.html" class="tt-btn tt-btn-white">
+              <i data-lucide="trophy"></i>
+              Take Certification Quiz
+            </a>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Floating Chat Button -->
+  <button class="tt-chat-button">
+    <i data-lucide="message-circle"></i>
+    <span class="tt-sm-hidden">Chat with Teepy</span>
+  </button>
+
+  <script>
+    lucide.createIcons();
+
+    // Mobile menu toggle
+    document.getElementById('menu-toggle')?.addEventListener('click', function() {
+      document.querySelector('.tt-sidebar').classList.toggle('active');
+    });
+
+    // Tab switching
+    document.querySelectorAll('.tt-tab').forEach(tab => {
+      tab.addEventListener('click', function() {
+        document.querySelectorAll('.tt-tab').forEach(t => t.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>

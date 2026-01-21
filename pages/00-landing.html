@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Partner Program - TeepTrak</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/teeptrak-design-system.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <!-- Header -->
+  <header style="position: sticky; top: 0; z-index: 50; background: white; border-bottom: 1px solid var(--tt-gray-100);">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 1rem 2rem; display: flex; align-items: center; justify-content: space-between;">
+      <div class="tt-logo">
+        <div class="tt-logo-icon">
+          <svg viewBox="0 0 32 32" fill="none">
+            <circle cx="16" cy="10" r="3" fill="white" opacity="0.9"/>
+            <line x1="16" y1="13" x2="6" y2="26" stroke="white" stroke-width="2" opacity="0.7"/>
+            <line x1="16" y1="13" x2="26" y2="26" stroke="white" stroke-width="2" opacity="0.7"/>
+            <line x1="16" y1="13" x2="16" y2="28" stroke="white" stroke-width="2" opacity="0.7"/>
+            <line x1="16" y1="10" x2="8" y2="4" stroke="white" stroke-width="2" opacity="0.7"/>
+            <line x1="16" y1="10" x2="24" y2="4" stroke="white" stroke-width="2" opacity="0.7"/>
+          </svg>
+        </div>
+        <div class="tt-logo-text">
+          <span>teep</span><span>trak</span>
+        </div>
+      </div>
+      <nav class="tt-flex tt-items-center tt-gap-6 tt-md-hidden">
+        <a href="#benefits" class="text-gray-600 font-medium" style="text-decoration: none;">Benefits</a>
+        <a href="#tiers" class="text-gray-600 font-medium" style="text-decoration: none;">Partner Tiers</a>
+        <a href="#how-it-works" class="text-gray-600 font-medium" style="text-decoration: none;">How It Works</a>
+      </nav>
+      <div class="tt-flex tt-items-center tt-gap-3">
+        <a href="01-dashboard.html" class="tt-btn tt-btn-ghost">Partner Login</a>
+        <a href="12-become-partner.html" class="tt-btn tt-btn-primary">Become a Partner</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="tt-hero">
+    <div class="tt-hero-content">
+      <div>
+        <h1 class="tt-hero-title">Grow Your Business with <span>TeepTrak</span></h1>
+        <p class="tt-hero-text">Join our partner program and help manufacturers improve their OEE. Earn competitive commissions while delivering real value to your customers.</p>
+        <div class="tt-flex tt-gap-4" style="flex-wrap: wrap;">
+          <a href="12-become-partner.html" class="tt-btn tt-btn-primary tt-btn-lg">
+            <i data-lucide="rocket"></i>
+            Apply Now
+          </a>
+          <a href="#how-it-works" class="tt-btn tt-btn-outline tt-btn-lg">
+            Learn More
+          </a>
+        </div>
+        <div class="tt-hero-stats">
+          <div>
+            <div class="tt-hero-stat-value">150+</div>
+            <div class="tt-hero-stat-label">Active Partners</div>
+          </div>
+          <div>
+            <div class="tt-hero-stat-value">30%</div>
+            <div class="tt-hero-stat-label">Max Commission</div>
+          </div>
+          <div>
+            <div class="tt-hero-stat-value">45</div>
+            <div class="tt-hero-stat-label">Countries</div>
+          </div>
+        </div>
+      </div>
+      <div style="display: flex; justify-content: center;">
+        <div style="background: linear-gradient(135deg, var(--tt-gray-100) 0%, var(--tt-gray-50) 100%); border-radius: var(--tt-radius-2xl); padding: 2rem; width: 100%; max-width: 500px; position: relative; overflow: hidden;">
+          <div style="position: absolute; top: -50px; right: -50px; width: 200px; height: 200px; background: rgba(235, 53, 43, 0.1); border-radius: 50%;"></div>
+          <div style="position: absolute; bottom: -30px; left: -30px; width: 150px; height: 150px; background: rgba(235, 53, 43, 0.05); border-radius: 50%;"></div>
+          <div style="position: relative; z-index: 1;">
+            <div class="tt-card tt-p-6 tt-mb-4" style="box-shadow: var(--tt-shadow-lg);">
+              <div class="tt-flex tt-items-center tt-gap-4 tt-mb-4">
+                <div class="tt-avatar tt-avatar-md">SP</div>
+                <div>
+                  <div class="font-semibold">Sophie Petit</div>
+                  <span class="tt-tier-badge tt-tier-platinum" style="font-size: 0.65rem; padding: 0.15rem 0.5rem;">
+                    <span>&#128142;</span> Platinum
+                  </span>
+                </div>
+              </div>
+              <div class="tt-grid tt-grid-2 tt-gap-3">
+                <div class="tt-p-3" style="background: var(--tt-gray-50); border-radius: var(--tt-radius-lg);">
+                  <div class="text-xs text-gray-500">This Year</div>
+                  <div class="font-bold">&euro;124K</div>
+                </div>
+                <div class="tt-p-3" style="background: var(--tt-success-light); border-radius: var(--tt-radius-lg);">
+                  <div class="text-xs text-gray-500">Commission</div>
+                  <div class="font-bold text-green-600">&euro;37.2K</div>
+                </div>
+              </div>
+            </div>
+            <div class="tt-flex tt-gap-2">
+              <div class="tt-card tt-p-4 tt-flex-1 tt-text-center" style="box-shadow: var(--tt-shadow-md);">
+                <div class="text-2xl font-bold text-red">18</div>
+                <div class="text-xs text-gray-500">Deals Closed</div>
+              </div>
+              <div class="tt-card tt-p-4 tt-flex-1 tt-text-center" style="box-shadow: var(--tt-shadow-md);">
+                <div class="text-2xl font-bold">92</div>
+                <div class="text-xs text-gray-500">Partner Score</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Client Logos -->
+  <section style="padding: 3rem 2rem; background: white; border-bottom: 1px solid var(--tt-gray-100);">
+    <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
+      <p class="text-sm text-gray-500 tt-mb-6">Trusted by partners working with leading manufacturers</p>
+      <div class="tt-flex tt-items-center tt-justify-center tt-gap-8" style="flex-wrap: wrap; opacity: 0.5;">
+        <span class="font-bold text-xl text-gray-400">Stellantis</span>
+        <span class="font-bold text-xl text-gray-400">Airbus</span>
+        <span class="font-bold text-xl text-gray-400">Safran</span>
+        <span class="font-bold text-xl text-gray-400">Danone</span>
+        <span class="font-bold text-xl text-gray-400">L'Oreal</span>
+        <span class="font-bold text-xl text-gray-400">Michelin</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section id="benefits" class="tt-benefits">
+    <div class="tt-section-header">
+      <h2 class="tt-section-title">Why Partner With Us?</h2>
+      <p class="tt-section-text">Everything you need to succeed in selling TeepTrak solutions</p>
+    </div>
+    <div class="tt-benefits-grid">
+      <div class="tt-card tt-benefit-card">
+        <div class="tt-benefit-icon">
+          <i data-lucide="dollar-sign"></i>
+        </div>
+        <h3 class="tt-benefit-title">Competitive Commissions</h3>
+        <p class="tt-benefit-text">Earn 15-30% commission on every deal. The more you sell, the higher your tier and commission rate.</p>
+      </div>
+      <div class="tt-card tt-benefit-card">
+        <div class="tt-benefit-icon">
+          <i data-lucide="shield"></i>
+        </div>
+        <h3 class="tt-benefit-title">Deal Protection</h3>
+        <p class="tt-benefit-text">90-day exclusive protection on registered deals. Your opportunities are protected from competition.</p>
+      </div>
+      <div class="tt-card tt-benefit-card">
+        <div class="tt-benefit-icon">
+          <i data-lucide="graduation-cap"></i>
+        </div>
+        <h3 class="tt-benefit-title">Training & Certification</h3>
+        <p class="tt-benefit-text">Access comprehensive training programs, sales methodologies, and earn certifications.</p>
+      </div>
+      <div class="tt-card tt-benefit-card">
+        <div class="tt-benefit-icon">
+          <i data-lucide="folder-open"></i>
+        </div>
+        <h3 class="tt-benefit-title">Sales Resources</h3>
+        <p class="tt-benefit-text">Presentations, battlecards, ROI calculators, and marketing materials at your fingertips.</p>
+      </div>
+      <div class="tt-card tt-benefit-card">
+        <div class="tt-benefit-icon">
+          <i data-lucide="users"></i>
+        </div>
+        <h3 class="tt-benefit-title">Dedicated Support</h3>
+        <p class="tt-benefit-text">Personal Partner Success Manager to help you close deals and grow your business.</p>
+      </div>
+      <div class="tt-card tt-benefit-card">
+        <div class="tt-benefit-icon">
+          <i data-lucide="bar-chart-3"></i>
+        </div>
+        <h3 class="tt-benefit-title">Partner Portal</h3>
+        <p class="tt-benefit-text">Track deals, commissions, training progress, and access resources all in one place.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Partner Tiers Section -->
+  <section id="tiers" class="tt-tiers">
+    <div class="tt-section-header">
+      <h2 class="tt-section-title">Partner Tiers</h2>
+      <p class="tt-section-text">Progress through tiers to unlock higher commission rates and exclusive benefits</p>
+    </div>
+    <div class="tt-tiers-grid">
+      <!-- Bronze -->
+      <div class="tt-tier-card">
+        <div class="tt-tier-card-header">
+          <div class="tt-tier-card-icon">&#129353;</div>
+          <div class="tt-tier-card-name">Bronze</div>
+          <div class="tt-tier-card-commission">15% <span>commission</span></div>
+        </div>
+        <ul class="tt-tier-features">
+          <li class="tt-tier-feature"><i data-lucide="check"></i> Partner Portal Access</li>
+          <li class="tt-tier-feature"><i data-lucide="check"></i> Basic Training</li>
+          <li class="tt-tier-feature"><i data-lucide="check"></i> Sales Resources</li>
+          <li class="tt-tier-feature"><i data-lucide="check"></i> Email Support</li>
+          <li class="tt-tier-feature"><i data-lucide="check"></i> 90-Day Deal Protection</li>
+        </ul>
+      </div>
+
+      <!-- Silver -->
+      <div class="tt-tier-card">
+        <div class="tt-tier-card-header">
+          <div class="tt-tier-card-icon">&#129352;</div>
+          <div class="tt-tier-card-name">Silver</div>
+          <div class="tt-tier-card-commission">20% <span>commission</span></div>
+        </div>
+        <ul class="tt-tier-features">
+          <li class="tt-tier-feature"><i data-lucide="check"></i> Everything in Bronze</li>
+          <li class="tt-tier-feature"><i data-lucide="check"></i> Advanced Training</li>
+          <li class="tt-tier-feature"><i data-lucide="check"></i> Co-Marketing Support</li>
+          <li class="tt-tier-feature"><i data-lucide="check"></i> Priority Support</li>
+          <li class="tt-tier-feature"><i data-lucide="check"></i> Quarterly Business Reviews</li>
+        </ul>
+      </div>
+
+      <!-- Gold -->
+      <div class="tt-tier-card tt-tier-card-featured">
+        <div class="tt-tier-card-header">
+          <div class="tt-tier-card-icon">&#129351;</div>
+          <div class="tt-tier-card-name">Gold</div>
+          <div class="tt-tier-card-commission">25% <span>commission</span></div>
+        </div>
+        <ul class="tt-tier-features">
+          <li class="tt-tier-feature"><i data-lucide="check"></i> Everything in Silver</li>
+          <li class="tt-tier-feature"><i data-lucide="check"></i> Technical Certification</li>
+          <li class="tt-tier-feature"><i data-lucide="check"></i> Joint Sales Calls</li>
+          <li class="tt-tier-feature"><i data-lucide="check"></i> Dedicated PSM</li>
+          <li class="tt-tier-feature"><i data-lucide="check"></i> Lead Sharing Program</li>
+        </ul>
+      </div>
+
+      <!-- Platinum -->
+      <div class="tt-tier-card">
+        <div class="tt-tier-card-header">
+          <div class="tt-tier-card-icon">&#128142;</div>
+          <div class="tt-tier-card-name">Platinum</div>
+          <div class="tt-tier-card-commission">30% <span>commission</span></div>
+        </div>
+        <ul class="tt-tier-features">
+          <li class="tt-tier-feature"><i data-lucide="check"></i> Everything in Gold</li>
+          <li class="tt-tier-feature"><i data-lucide="check"></i> Executive Sponsorship</li>
+          <li class="tt-tier-feature"><i data-lucide="check"></i> Custom Pricing Authority</li>
+          <li class="tt-tier-feature"><i data-lucide="check"></i> Early Access Program</li>
+          <li class="tt-tier-feature"><i data-lucide="check"></i> Annual Partner Summit</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section id="how-it-works" style="padding: 5rem 2rem; background: white;">
+    <div class="tt-section-header">
+      <h2 class="tt-section-title">How It Works</h2>
+      <p class="tt-section-text">Get started in 4 simple steps</p>
+    </div>
+    <div style="max-width: 900px; margin: 0 auto;">
+      <div class="tt-flex tt-flex-col tt-gap-6">
+        <!-- Step 1 -->
+        <div class="tt-card tt-p-6 tt-flex tt-items-start tt-gap-6" style="flex-wrap: wrap;">
+          <div style="width: 56px; height: 56px; background: linear-gradient(135deg, var(--tt-red) 0%, var(--tt-coral) 100%); border-radius: var(--tt-radius-xl); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; font-weight: 700; flex-shrink: 0;">1</div>
+          <div class="tt-flex-1">
+            <h3 class="font-semibold tt-mb-2">Apply to the Program</h3>
+            <p class="text-gray-500">Fill out our partner application form. We review applications within 48 hours and get back to qualified candidates.</p>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="tt-card tt-p-6 tt-flex tt-items-start tt-gap-6" style="flex-wrap: wrap;">
+          <div style="width: 56px; height: 56px; background: linear-gradient(135deg, var(--tt-red) 0%, var(--tt-coral) 100%); border-radius: var(--tt-radius-xl); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; font-weight: 700; flex-shrink: 0;">2</div>
+          <div class="tt-flex-1">
+            <h3 class="font-semibold tt-mb-2">Complete Onboarding</h3>
+            <p class="text-gray-500">Access the partner portal, complete required training modules, and get certified on TeepTrak products.</p>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="tt-card tt-p-6 tt-flex tt-items-start tt-gap-6" style="flex-wrap: wrap;">
+          <div style="width: 56px; height: 56px; background: linear-gradient(135deg, var(--tt-red) 0%, var(--tt-coral) 100%); border-radius: var(--tt-radius-xl); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; font-weight: 700; flex-shrink: 0;">3</div>
+          <div class="tt-flex-1">
+            <h3 class="font-semibold tt-mb-2">Register Deals</h3>
+            <p class="text-gray-500">When you find an opportunity, register it in the portal. Get 90-day protection and track progress through the sales cycle.</p>
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="tt-card tt-p-6 tt-flex tt-items-start tt-gap-6" style="flex-wrap: wrap;">
+          <div style="width: 56px; height: 56px; background: linear-gradient(135deg, var(--tt-red) 0%, var(--tt-coral) 100%); border-radius: var(--tt-radius-xl); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; font-weight: 700; flex-shrink: 0;">4</div>
+          <div class="tt-flex-1">
+            <h3 class="font-semibold tt-mb-2">Earn Commissions</h3>
+            <p class="text-gray-500">Close deals and earn your commission. Payment within 30 days of customer payment. Track everything in the portal.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section style="padding: 5rem 2rem; background: var(--tt-gray-50);">
+    <div class="tt-section-header">
+      <h2 class="tt-section-title">What Partners Say</h2>
+      <p class="tt-section-text">Hear from our successful partner community</p>
+    </div>
+    <div style="max-width: 1200px; margin: 0 auto;" class="tt-grid tt-grid-3 tt-gap-6">
+      <div class="tt-card tt-p-6">
+        <div class="tt-flex tt-items-center tt-gap-1 tt-mb-4">
+          <i data-lucide="star" style="width: 16px; height: 16px; fill: var(--tt-warning); color: var(--tt-warning);"></i>
+          <i data-lucide="star" style="width: 16px; height: 16px; fill: var(--tt-warning); color: var(--tt-warning);"></i>
+          <i data-lucide="star" style="width: 16px; height: 16px; fill: var(--tt-warning); color: var(--tt-warning);"></i>
+          <i data-lucide="star" style="width: 16px; height: 16px; fill: var(--tt-warning); color: var(--tt-warning);"></i>
+          <i data-lucide="star" style="width: 16px; height: 16px; fill: var(--tt-warning); color: var(--tt-warning);"></i>
+        </div>
+        <p class="text-gray-600 tt-mb-4">"The partner program has transformed our business. The training and resources are excellent, and the commissions are very competitive."</p>
+        <div class="tt-flex tt-items-center tt-gap-3">
+          <div class="tt-avatar tt-avatar-sm">ML</div>
+          <div>
+            <div class="font-medium text-sm">Marie Laurent</div>
+            <div class="text-xs text-gray-500">Actemium Paris</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tt-card tt-p-6">
+        <div class="tt-flex tt-items-center tt-gap-1 tt-mb-4">
+          <i data-lucide="star" style="width: 16px; height: 16px; fill: var(--tt-warning); color: var(--tt-warning);"></i>
+          <i data-lucide="star" style="width: 16px; height: 16px; fill: var(--tt-warning); color: var(--tt-warning);"></i>
+          <i data-lucide="star" style="width: 16px; height: 16px; fill: var(--tt-warning); color: var(--tt-warning);"></i>
+          <i data-lucide="star" style="width: 16px; height: 16px; fill: var(--tt-warning); color: var(--tt-warning);"></i>
+          <i data-lucide="star" style="width: 16px; height: 16px; fill: var(--tt-warning); color: var(--tt-warning);"></i>
+        </div>
+        <p class="text-gray-600 tt-mb-4">"90-day deal protection gives us confidence to invest time in opportunities. The dedicated support team has been invaluable."</p>
+        <div class="tt-flex tt-items-center tt-gap-3">
+          <div class="tt-avatar tt-avatar-sm">PM</div>
+          <div>
+            <div class="font-medium text-sm">Pierre Martin</div>
+            <div class="text-xs text-gray-500">Siemens Partner</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tt-card tt-p-6">
+        <div class="tt-flex tt-items-center tt-gap-1 tt-mb-4">
+          <i data-lucide="star" style="width: 16px; height: 16px; fill: var(--tt-warning); color: var(--tt-warning);"></i>
+          <i data-lucide="star" style="width: 16px; height: 16px; fill: var(--tt-warning); color: var(--tt-warning);"></i>
+          <i data-lucide="star" style="width: 16px; height: 16px; fill: var(--tt-warning); color: var(--tt-warning);"></i>
+          <i data-lucide="star" style="width: 16px; height: 16px; fill: var(--tt-warning); color: var(--tt-warning);"></i>
+          <i data-lucide="star" style="width: 16px; height: 16px; fill: var(--tt-warning); color: var(--tt-warning);"></i>
+        </div>
+        <p class="text-gray-600 tt-mb-4">"We went from Bronze to Gold tier in 8 months. TeepTrak is easy to sell because the ROI for customers is so clear."</p>
+        <div class="tt-flex tt-items-center tt-gap-3">
+          <div class="tt-avatar tt-avatar-sm">SD</div>
+          <div>
+            <div class="font-medium text-sm">Sophie Dubois</div>
+            <div class="text-xs text-gray-500">Rockwell Integrator</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="tt-cta">
+    <div class="tt-cta-content">
+      <h2 class="tt-cta-title">Ready to Grow Your Business?</h2>
+      <p class="tt-cta-text">Join 150+ partners already earning commissions with TeepTrak. Apply today and start closing deals.</p>
+      <div class="tt-flex tt-gap-4 tt-justify-center" style="flex-wrap: wrap;">
+        <a href="12-become-partner.html" class="tt-btn tt-btn-white tt-btn-lg">
+          <i data-lucide="rocket"></i>
+          Apply Now
+        </a>
+        <a href="#" class="tt-btn tt-btn-lg" style="background: rgba(255,255,255,0.2); color: white;">
+          <i data-lucide="calendar"></i>
+          Schedule a Call
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="tt-footer">
+    <div class="tt-footer-content">
+      <div class="tt-footer-brand">
+        <div class="tt-logo">
+          <div class="tt-logo-icon">
+            <svg viewBox="0 0 32 32" fill="none">
+              <circle cx="16" cy="10" r="3" fill="white" opacity="0.9"/>
+              <line x1="16" y1="13" x2="6" y2="26" stroke="white" stroke-width="2" opacity="0.7"/>
+              <line x1="16" y1="13" x2="26" y2="26" stroke="white" stroke-width="2" opacity="0.7"/>
+              <line x1="16" y1="13" x2="16" y2="28" stroke="white" stroke-width="2" opacity="0.7"/>
+              <line x1="16" y1="10" x2="8" y2="4" stroke="white" stroke-width="2" opacity="0.7"/>
+              <line x1="16" y1="10" x2="24" y2="4" stroke="white" stroke-width="2" opacity="0.7"/>
+            </svg>
+          </div>
+          <div class="tt-logo-text">
+            <span style="color: white;">teep</span><span>trak</span>
+          </div>
+        </div>
+        <p>Empowering manufacturers with real-time production monitoring and OEE optimization.</p>
+      </div>
+      <div>
+        <h4 class="tt-footer-heading">Company</h4>
+        <ul class="tt-footer-links">
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="tt-footer-heading">Resources</h4>
+        <ul class="tt-footer-links">
+          <li><a href="#">Documentation</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Case Studies</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="tt-footer-heading">Partners</h4>
+        <ul class="tt-footer-links">
+          <li><a href="12-become-partner.html">Become a Partner</a></li>
+          <li><a href="01-dashboard.html">Partner Portal</a></li>
+          <li><a href="#">Partner Resources</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="tt-footer-bottom">
+      <p class="tt-footer-copyright">&copy; 2026 TeepTrak. All rights reserved.</p>
+      <div class="tt-footer-social">
+        <a href="#"><i data-lucide="linkedin"></i></a>
+        <a href="#"><i data-lucide="youtube"></i></a>
+        <a href="#"><i data-lucide="twitter"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Become a Partner - TeepTrak</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/teeptrak-design-system.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <!-- Public Header -->
+  <header style="position: sticky; top: 0; z-index: 50; background: white; border-bottom: 1px solid var(--tt-gray-100);">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 1rem 2rem; display: flex; align-items: center; justify-content: space-between;">
+      <a href="00-landing.html" class="tt-logo">
+        <div class="tt-logo-icon">
+          <svg viewBox="0 0 32 32" fill="none">
+            <circle cx="16" cy="10" r="3" fill="white" opacity="0.9"/>
+            <line x1="16" y1="13" x2="6" y2="26" stroke="white" stroke-width="2" opacity="0.7"/>
+            <line x1="16" y1="13" x2="26" y2="26" stroke="white" stroke-width="2" opacity="0.7"/>
+            <line x1="16" y1="13" x2="16" y2="28" stroke="white" stroke-width="2" opacity="0.7"/>
+            <line x1="16" y1="10" x2="8" y2="4" stroke="white" stroke-width="2" opacity="0.7"/>
+            <line x1="16" y1="10" x2="24" y2="4" stroke="white" stroke-width="2" opacity="0.7"/>
+          </svg>
+        </div>
+        <div class="tt-logo-text">
+          <span>teep</span><span>trak</span>
+        </div>
+      </a>
+      <div class="tt-flex tt-items-center tt-gap-4">
+        <a href="00-landing.html" class="tt-btn tt-btn-ghost">Back to Home</a>
+        <a href="#" class="tt-btn tt-btn-secondary">Partner Login</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Hero -->
+    <section style="padding: 4rem 2rem; background: linear-gradient(135deg, var(--tt-gray-50) 0%, white 100%);">
+      <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+        <h1 class="text-4xl font-bold tt-mb-4">Join the TeepTrak Partner Program</h1>
+        <p class="text-lg text-gray-500 tt-mb-8">Grow your business by helping manufacturers improve their OEE. Earn competitive commissions and access exclusive resources.</p>
+      </div>
+    </section>
+
+    <!-- Application Form -->
+    <section style="padding: 4rem 2rem;">
+      <div style="max-width: 800px; margin: 0 auto;">
+        <div class="tt-card tt-p-8">
+          <h2 class="text-xl font-bold tt-mb-2">Partner Application</h2>
+          <p class="text-gray-500 tt-mb-8">Fill out the form below to apply for our partner program. We'll review your application and get back to you within 48 hours.</p>
+
+          <form>
+            <!-- Contact Information -->
+            <h3 class="font-semibold tt-mb-4 tt-flex tt-items-center tt-gap-2">
+              <i data-lucide="user" style="width: 20px; height: 20px; color: var(--tt-red);"></i>
+              Contact Information
+            </h3>
+            <div class="tt-grid tt-grid-2 tt-gap-4 tt-mb-8">
+              <div class="tt-form-group">
+                <label class="tt-label">First Name *</label>
+                <input type="text" class="tt-input" placeholder="Enter your first name" required>
+              </div>
+              <div class="tt-form-group">
+                <label class="tt-label">Last Name *</label>
+                <input type="text" class="tt-input" placeholder="Enter your last name" required>
+              </div>
+              <div class="tt-form-group">
+                <label class="tt-label">Email Address *</label>
+                <input type="email" class="tt-input" placeholder="you@company.com" required>
+              </div>
+              <div class="tt-form-group">
+                <label class="tt-label">Phone Number *</label>
+                <input type="tel" class="tt-input" placeholder="+33 1 23 45 67 89" required>
+              </div>
+              <div class="tt-form-group">
+                <label class="tt-label">Job Title *</label>
+                <input type="text" class="tt-input" placeholder="e.g. Sales Director" required>
+              </div>
+              <div class="tt-form-group">
+                <label class="tt-label">LinkedIn Profile</label>
+                <input type="url" class="tt-input" placeholder="https://linkedin.com/in/yourprofile">
+              </div>
+            </div>
+
+            <!-- Company Information -->
+            <h3 class="font-semibold tt-mb-4 tt-flex tt-items-center tt-gap-2">
+              <i data-lucide="building" style="width: 20px; height: 20px; color: var(--tt-red);"></i>
+              Company Information
+            </h3>
+            <div class="tt-grid tt-grid-2 tt-gap-4 tt-mb-8">
+              <div class="tt-form-group">
+                <label class="tt-label">Company Name *</label>
+                <input type="text" class="tt-input" placeholder="Enter company name" required>
+              </div>
+              <div class="tt-form-group">
+                <label class="tt-label">Website *</label>
+                <input type="url" class="tt-input" placeholder="https://yourcompany.com" required>
+              </div>
+              <div class="tt-form-group">
+                <label class="tt-label">Company Size *</label>
+                <select class="tt-select" required>
+                  <option value="">Select size</option>
+                  <option value="1-10">1-10 employees</option>
+                  <option value="11-50">11-50 employees</option>
+                  <option value="51-200">51-200 employees</option>
+                  <option value="201-500">201-500 employees</option>
+                  <option value="500+">500+ employees</option>
+                </select>
+              </div>
+              <div class="tt-form-group">
+                <label class="tt-label">Business Type *</label>
+                <select class="tt-select" required>
+                  <option value="">Select type</option>
+                  <option value="system-integrator">System Integrator</option>
+                  <option value="consulting">Consulting Firm</option>
+                  <option value="software">Software Vendor</option>
+                  <option value="hardware">Hardware Vendor</option>
+                  <option value="distributor">Distributor</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div class="tt-form-group" style="grid-column: span 2;">
+                <label class="tt-label">Country / Region *</label>
+                <select class="tt-select" required>
+                  <option value="">Select country</option>
+                  <option value="france">France</option>
+                  <option value="germany">Germany</option>
+                  <option value="uk">United Kingdom</option>
+                  <option value="spain">Spain</option>
+                  <option value="italy">Italy</option>
+                  <option value="netherlands">Netherlands</option>
+                  <option value="belgium">Belgium</option>
+                  <option value="usa">United States</option>
+                  <option value="canada">Canada</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Experience & Goals -->
+            <h3 class="font-semibold tt-mb-4 tt-flex tt-items-center tt-gap-2">
+              <i data-lucide="target" style="width: 20px; height: 20px; color: var(--tt-red);"></i>
+              Experience & Goals
+            </h3>
+            <div class="tt-mb-8">
+              <div class="tt-form-group">
+                <label class="tt-label">Industries You Serve *</label>
+                <div class="tt-flex tt-gap-4" style="flex-wrap: wrap;">
+                  <label class="tt-checkbox-wrapper">
+                    <input type="checkbox" class="tt-checkbox">
+                    <span class="text-sm">Automotive</span>
+                  </label>
+                  <label class="tt-checkbox-wrapper">
+                    <input type="checkbox" class="tt-checkbox">
+                    <span class="text-sm">Aerospace</span>
+                  </label>
+                  <label class="tt-checkbox-wrapper">
+                    <input type="checkbox" class="tt-checkbox">
+                    <span class="text-sm">Food & Beverage</span>
+                  </label>
+                  <label class="tt-checkbox-wrapper">
+                    <input type="checkbox" class="tt-checkbox">
+                    <span class="text-sm">Pharmaceutical</span>
+                  </label>
+                  <label class="tt-checkbox-wrapper">
+                    <input type="checkbox" class="tt-checkbox">
+                    <span class="text-sm">Electronics</span>
+                  </label>
+                  <label class="tt-checkbox-wrapper">
+                    <input type="checkbox" class="tt-checkbox">
+                    <span class="text-sm">General Manufacturing</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="tt-form-group">
+                <label class="tt-label">Experience with OEE / MES Solutions</label>
+                <select class="tt-select">
+                  <option value="">Select experience level</option>
+                  <option value="none">No prior experience</option>
+                  <option value="some">Some experience (1-2 years)</option>
+                  <option value="moderate">Moderate experience (3-5 years)</option>
+                  <option value="extensive">Extensive experience (5+ years)</option>
+                </select>
+              </div>
+
+              <div class="tt-form-group">
+                <label class="tt-label">Expected Annual Deal Volume</label>
+                <select class="tt-select">
+                  <option value="">Select expected volume</option>
+                  <option value="1-5">1-5 deals per year</option>
+                  <option value="6-15">6-15 deals per year</option>
+                  <option value="16-30">16-30 deals per year</option>
+                  <option value="30+">30+ deals per year</option>
+                </select>
+              </div>
+
+              <div class="tt-form-group">
+                <label class="tt-label">Why do you want to partner with TeepTrak?</label>
+                <textarea class="tt-textarea" placeholder="Tell us about your interest in the partnership and how you plan to promote TeepTrak..."></textarea>
+              </div>
+            </div>
+
+            <!-- How did you hear about us -->
+            <div class="tt-form-group tt-mb-8">
+              <label class="tt-label">How did you hear about us?</label>
+              <select class="tt-select">
+                <option value="">Select an option</option>
+                <option value="linkedin">LinkedIn</option>
+                <option value="google">Google Search</option>
+                <option value="referral">Referral</option>
+                <option value="event">Trade Show / Event</option>
+                <option value="content">Blog / Content</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <!-- Terms Agreement -->
+            <div class="tt-p-4 tt-mb-6" style="background: var(--tt-gray-50); border-radius: var(--tt-radius-xl);">
+              <label class="tt-checkbox-wrapper">
+                <input type="checkbox" class="tt-checkbox" required>
+                <div>
+                  <span class="text-sm">I agree to the <a href="#" class="text-red">Partner Program Terms</a> and <a href="#" class="text-red">Privacy Policy</a>. I understand that TeepTrak will review my application and contact me within 48 hours.</span>
+                </div>
+              </label>
+            </div>
+
+            <!-- Submit -->
+            <button type="submit" class="tt-btn tt-btn-primary tt-btn-lg tt-btn-block">
+              <i data-lucide="send"></i>
+              Submit Application
+            </button>
+          </form>
+        </div>
+
+        <!-- Benefits Reminder -->
+        <div class="tt-card tt-card-gradient-red tt-p-8 tt-mt-8">
+          <h3 class="text-xl font-bold text-white tt-mb-4">What You'll Get as a Partner</h3>
+          <div class="tt-grid tt-grid-2 tt-gap-4">
+            <div class="tt-flex tt-items-center tt-gap-3">
+              <i data-lucide="check-circle" style="width: 20px; height: 20px; color: white; opacity: 0.9;"></i>
+              <span class="text-white" style="opacity: 0.9;">15-30% commission on all deals</span>
+            </div>
+            <div class="tt-flex tt-items-center tt-gap-3">
+              <i data-lucide="check-circle" style="width: 20px; height: 20px; color: white; opacity: 0.9;"></i>
+              <span class="text-white" style="opacity: 0.9;">90-day deal protection</span>
+            </div>
+            <div class="tt-flex tt-items-center tt-gap-3">
+              <i data-lucide="check-circle" style="width: 20px; height: 20px; color: white; opacity: 0.9;"></i>
+              <span class="text-white" style="opacity: 0.9;">Dedicated partner manager</span>
+            </div>
+            <div class="tt-flex tt-items-center tt-gap-3">
+              <i data-lucide="check-circle" style="width: 20px; height: 20px; color: white; opacity: 0.9;"></i>
+              <span class="text-white" style="opacity: 0.9;">Sales & technical training</span>
+            </div>
+            <div class="tt-flex tt-items-center tt-gap-3">
+              <i data-lucide="check-circle" style="width: 20px; height: 20px; color: white; opacity: 0.9;"></i>
+              <span class="text-white" style="opacity: 0.9;">Marketing resources & co-branding</span>
+            </div>
+            <div class="tt-flex tt-items-center tt-gap-3">
+              <i data-lucide="check-circle" style="width: 20px; height: 20px; color: white; opacity: 0.9;"></i>
+              <span class="text-white" style="opacity: 0.9;">Partner portal access</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="tt-footer">
+    <div class="tt-footer-content">
+      <div class="tt-footer-brand">
+        <div class="tt-logo">
+          <div class="tt-logo-icon">
+            <svg viewBox="0 0 32 32" fill="none">
+              <circle cx="16" cy="10" r="3" fill="white" opacity="0.9"/>
+              <line x1="16" y1="13" x2="6" y2="26" stroke="white" stroke-width="2" opacity="0.7"/>
+              <line x1="16" y1="13" x2="26" y2="26" stroke="white" stroke-width="2" opacity="0.7"/>
+              <line x1="16" y1="13" x2="16" y2="28" stroke="white" stroke-width="2" opacity="0.7"/>
+              <line x1="16" y1="10" x2="8" y2="4" stroke="white" stroke-width="2" opacity="0.7"/>
+              <line x1="16" y1="10" x2="24" y2="4" stroke="white" stroke-width="2" opacity="0.7"/>
+            </svg>
+          </div>
+          <div class="tt-logo-text">
+            <span style="color: white;">teep</span><span>trak</span>
+          </div>
+        </div>
+        <p>Empowering manufacturers with real-time production monitoring and OEE optimization.</p>
+      </div>
+      <div>
+        <h4 class="tt-footer-heading">Company</h4>
+        <ul class="tt-footer-links">
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="tt-footer-heading">Resources</h4>
+        <ul class="tt-footer-links">
+          <li><a href="#">Documentation</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Case Studies</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="tt-footer-heading">Legal</h4>
+        <ul class="tt-footer-links">
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Partner Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="tt-footer-bottom">
+      <p class="tt-footer-copyright">&copy; 2026 TeepTrak. All rights reserved.</p>
+      <div class="tt-footer-social">
+        <a href="#"><i data-lucide="linkedin"></i></a>
+        <a href="#"><i data-lucide="youtube"></i></a>
+        <a href="#"><i data-lucide="twitter"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>
