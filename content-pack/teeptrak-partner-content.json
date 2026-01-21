@@ -1,0 +1,1051 @@
+{
+  "meta": {
+    "project": "TeepTrak Partner Portal",
+    "version": "1.0",
+    "created": "2026-01-21",
+    "author": "Expert Industrial Copywriter"
+  },
+  "brand": {
+    "name": "TeepTrak",
+    "tagline": "Industrial IoT for Manufacturing Performance",
+    "clients": ["Stellantis", "Alstom", "Thales", "Renault", "Airbus", "Hutchinson"],
+    "stats": {
+      "plants": "360+",
+      "countries": "30+",
+      "productivity_gain": "5-30%",
+      "roi_timeline": "6-12 months",
+      "customer_retention": "98%"
+    },
+    "colors": {
+      "primary": "#E63946",
+      "coral": "#FF6B6B",
+      "dark": "#1D3557",
+      "success": "#22C55E",
+      "warning": "#F59E0B",
+      "info": "#3B82F6",
+      "error": "#DC2626"
+    }
+  },
+  "pages": {
+    "front_page": {
+      "slug": "/",
+      "template": "front-page.php",
+      "access": "public",
+      "seo": {
+        "title": "Become a TeepTrak Partner | Industrial IoT Partner Program",
+        "description": "Join TeepTrak's partner ecosystem. Earn up to 30% commission helping manufacturers achieve 5-30% productivity gains with proven OEE solutions."
+      },
+      "sections": {
+        "hero": {
+          "headline": "Become a TeepTrak Partner",
+          "subheadline": "Join our partner ecosystem and help manufacturers achieve 5-30% productivity gains with proven Industrial IoT solutions deployed in 360+ plants worldwide.",
+          "cta_primary": {
+            "text": "Apply Now",
+            "url": "wp_registration_url()"
+          },
+          "cta_secondary": {
+            "text": "Partner Login",
+            "url": "wp_login_url()"
+          }
+        },
+        "client_logos": {
+          "label": "TRUSTED BY INDUSTRY LEADERS",
+          "logos": ["STELLANTIS", "ALSTOM", "THALES", "RENAULT", "AIRBUS", "HUTCHINSON"]
+        },
+        "benefits": {
+          "title": "Partner Benefits",
+          "subtitle": "Everything you need to sell, implement, and support TeepTrak solutions",
+          "items": [
+            {
+              "icon": "dollar-sign",
+              "bg_color": "#FEE2E2",
+              "icon_color": "#E63946",
+              "title": "Attractive Commissions",
+              "description": "Earn 15-30% commission on every deal based on your partner tier"
+            },
+            {
+              "icon": "shield",
+              "bg_color": "#DBEAFE",
+              "icon_color": "#3B82F6",
+              "title": "90-Day Deal Protection",
+              "description": "Your registered opportunities are protected for 90 days—no channel conflict"
+            },
+            {
+              "icon": "graduation-cap",
+              "bg_color": "#DCFCE7",
+              "icon_color": "#22C55E",
+              "title": "Complete Certification",
+              "description": "Free training program covering OEE fundamentals, product features, and sales methodology"
+            },
+            {
+              "icon": "folder",
+              "bg_color": "#FEF3C7",
+              "icon_color": "#F59E0B",
+              "title": "Sales Enablement",
+              "description": "Brochures, case studies, ROI calculators, and ready-to-use email templates"
+            },
+            {
+              "icon": "users",
+              "bg_color": "#F3E8FF",
+              "icon_color": "#9333EA",
+              "title": "Dedicated Support",
+              "description": "Personal Partner Success Manager for Gold and Platinum partners"
+            },
+            {
+              "icon": "activity",
+              "bg_color": "#CFFAFE",
+              "icon_color": "#0891B2",
+              "title": "Real-Time Dashboard",
+              "description": "Track deals, commissions, training progress, and performance in one place"
+            }
+          ]
+        },
+        "tiers": {
+          "title": "Partner Tiers",
+          "subtitle": "Grow with us and unlock more benefits at every level",
+          "items": [
+            {
+              "name": "Bronze",
+              "commission_rate": 15,
+              "gradient": "linear-gradient(135deg, #CD7F32, #8B4513)",
+              "color": "#CD7F32",
+              "requirements": "Complete basic certification",
+              "benefits": [
+                "Deal Registration & Protection",
+                "Basic Training Access",
+                "Sales Resource Library",
+                "Email Support (48h response)"
+              ]
+            },
+            {
+              "name": "Silver",
+              "commission_rate": 20,
+              "gradient": "linear-gradient(135deg, #C0C0C0, #A8A8A8)",
+              "color": "#A8A8A8",
+              "requirements": "2+ closed deals, advanced certification",
+              "benefits": [
+                "Everything in Bronze",
+                "Co-Marketing Materials",
+                "Priority Technical Support",
+                "Quarterly Business Reviews"
+              ]
+            },
+            {
+              "name": "Gold",
+              "commission_rate": 25,
+              "featured": true,
+              "gradient": "linear-gradient(135deg, #FFD700, #FFA500)",
+              "color": "#FFA500",
+              "requirements": "5+ deals, €100K+ pipeline, full certification",
+              "benefits": [
+                "Everything in Silver",
+                "Dedicated Partner Success Manager",
+                "Lead Sharing from TeepTrak Marketing",
+                "Joint Customer Presentations",
+                "Early Access to New Features"
+              ]
+            },
+            {
+              "name": "Platinum",
+              "commission_rate": 30,
+              "gradient": "linear-gradient(135deg, #E5E4E2, #B4B4B4)",
+              "color": "#6B7280",
+              "requirements": "10+ deals, €250K+ pipeline, strategic alignment",
+              "benefits": [
+                "Everything in Gold",
+                "Strategic Planning Sessions",
+                "Executive Access & Sponsorship",
+                "Custom Marketing Campaigns",
+                "Preferred Implementation Partner Status"
+              ]
+            }
+          ]
+        },
+        "process": {
+          "title": "How the Program Works",
+          "steps": [
+            {
+              "number": 1,
+              "icon": "clipboard",
+              "title": "Apply",
+              "description": "Submit your application with company details and target industries"
+            },
+            {
+              "number": 2,
+              "icon": "rocket",
+              "title": "Onboard",
+              "description": "Complete certification training and access the partner portal"
+            },
+            {
+              "number": 3,
+              "icon": "file-plus",
+              "title": "Register Deals",
+              "description": "Submit opportunities through the portal for 90-day protection"
+            },
+            {
+              "number": 4,
+              "icon": "handshake",
+              "title": "Close & Earn",
+              "description": "Work with our sales team to close deals and earn commissions"
+            },
+            {
+              "number": 5,
+              "icon": "trending-up",
+              "title": "Grow",
+              "description": "Hit milestones to advance tiers and unlock more benefits"
+            },
+            {
+              "number": 6,
+              "icon": "refresh-cw",
+              "title": "Renew",
+              "description": "Annual renewal with performance review and tier assessment"
+            }
+          ]
+        },
+        "ideal_partners": {
+          "title": "Who We're Looking For",
+          "subtitle": "We partner with organizations that understand manufacturing operations",
+          "types": [
+            {
+              "title": "Systems Integrators",
+              "criteria": [
+                "MES/ERP implementation specialists",
+                "Industrial automation companies",
+                "Smart factory consultants",
+                "Minimum 3+ years in manufacturing IT"
+              ]
+            },
+            {
+              "title": "Value-Added Resellers",
+              "criteria": [
+                "Industrial equipment distributors",
+                "Technology solution providers",
+                "Regional IT specialists",
+                "Strong manufacturing client base"
+              ]
+            },
+            {
+              "title": "Consultants & Advisors",
+              "criteria": [
+                "Lean/Six Sigma practitioners",
+                "Operations excellence consultants",
+                "Industry 4.0 advisors",
+                "OEE/TPM specialists"
+              ]
+            }
+          ]
+        },
+        "results": {
+          "title": "Results Our Partners Deliver",
+          "stats": [
+            {
+              "value": "+23%",
+              "label": "Average OEE improvement",
+              "sublabel": "Across partner-led implementations"
+            },
+            {
+              "value": "<6 months",
+              "label": "Average ROI timeline",
+              "sublabel": "From deployment to payback"
+            },
+            {
+              "value": "360+",
+              "label": "Plants worldwide",
+              "sublabel": "In 30+ countries"
+            },
+            {
+              "value": "98%",
+              "label": "Customer retention",
+              "sublabel": "Annual renewal rate"
+            }
+          ]
+        },
+        "cta_bottom": {
+          "background": "#1D3557",
+          "headline": "Ready to Partner with TeepTrak?",
+          "subheadline": "Join 50+ partners across 30+ countries helping manufacturers achieve operational excellence.",
+          "cta_text": "Apply to Become a Partner",
+          "secondary_text": "Questions? Contact our partner team at partners@teeptrak.com"
+        }
+      }
+    },
+    "dashboard": {
+      "slug": "/dashboard/",
+      "template": "page-dashboard.php",
+      "access": "authenticated",
+      "sections": {
+        "welcome": {
+          "headline_template": "Welcome back, {first_name}!",
+          "subheadline": "Here's what's happening with your partner account."
+        },
+        "kpi_cards": [
+          {
+            "label": "Partner Score",
+            "key": "partner_score",
+            "type": "progress",
+            "color": "red",
+            "tooltip": "Your overall partner health score based on training, deal activity, and engagement"
+          },
+          {
+            "label": "Active Deals",
+            "key": "active_deals",
+            "type": "number",
+            "color": "blue",
+            "link": {
+              "text": "Register deal →",
+              "url": "/deals/"
+            }
+          },
+          {
+            "label": "Training Progress",
+            "key": "training_progress",
+            "type": "progress",
+            "color": "amber",
+            "subtext_template": "{completed} of {total} modules completed"
+          },
+          {
+            "label": "Commission Rate",
+            "key": "commission_rate",
+            "type": "percentage",
+            "color": "green",
+            "subtext_template": "{tier_name} Tier"
+          }
+        ],
+        "onboarding_steps": [
+          { "number": 1, "title": "Application", "key": "application" },
+          { "number": 2, "title": "Agreement", "key": "agreement" },
+          { "number": 3, "title": "Account", "key": "account" },
+          { "number": 4, "title": "Training", "key": "training" },
+          { "number": 5, "title": "First Deal", "key": "first_deal" },
+          { "number": 6, "title": "Certified", "key": "certified" },
+          { "number": 7, "title": "First Close", "key": "first_close" }
+        ],
+        "quick_actions": [
+          {
+            "title": "Register a Deal",
+            "description": "Get 90-day deal protection",
+            "icon": "file-plus",
+            "bg_color": "#FEE2E2",
+            "icon_color": "#E63946",
+            "url": "/deals/"
+          },
+          {
+            "title": "Continue Training",
+            "description_template": "{completed}/{total} modules completed",
+            "icon": "graduation-cap",
+            "bg_color": "#DBEAFE",
+            "icon_color": "#3B82F6",
+            "url": "/training/"
+          },
+          {
+            "title": "Download Resources",
+            "description": "Sales materials, case studies",
+            "icon": "download",
+            "bg_color": "#DCFCE7",
+            "icon_color": "#22C55E",
+            "url": "/resources/"
+          },
+          {
+            "title": "View Commissions",
+            "description": "Track your earnings",
+            "icon": "dollar-sign",
+            "bg_color": "#FEF3C7",
+            "icon_color": "#F59E0B",
+            "url": "/commissions/"
+          }
+        ]
+      }
+    },
+    "deals": {
+      "slug": "/deals/",
+      "template": "page-deals.php",
+      "access": "authenticated",
+      "content": {
+        "headline": "Deal Registration",
+        "subheadline": "Register opportunities and get 90-day deal protection",
+        "cta_text": "+ Register New Deal"
+      },
+      "stats": [
+        { "label": "Total Deals", "key": "total_deals" },
+        { "label": "Active Deals", "key": "active_deals", "color": "blue" },
+        { "label": "Pipeline Value", "key": "pipeline_value", "color": "green", "format": "currency" }
+      ],
+      "table_columns": ["Company", "Contact", "Value", "Stage", "Protection", "Actions"],
+      "stages": {
+        "registered": { "label": "Registered", "color": "#9CA3AF" },
+        "qualified": { "label": "Qualified", "color": "#3B82F6" },
+        "demo_scheduled": { "label": "Demo Scheduled", "color": "#F59E0B" },
+        "proposal_sent": { "label": "Proposal Sent", "color": "#8B5CF6" },
+        "negotiation": { "label": "Negotiation", "color": "#F97316" },
+        "closed_won": { "label": "Closed Won", "color": "#22C55E" },
+        "closed_lost": { "label": "Closed Lost", "color": "#DC2626" }
+      },
+      "form_fields": [
+        {
+          "name": "company_name",
+          "label": "Company Name",
+          "type": "text",
+          "required": true,
+          "placeholder": "e.g., Acme Manufacturing"
+        },
+        {
+          "name": "industry",
+          "label": "Industry",
+          "type": "select",
+          "options": [
+            "Automotive",
+            "Aerospace & Defense",
+            "Food & Beverage",
+            "Pharmaceuticals",
+            "Electronics",
+            "Machinery & Equipment",
+            "Packaging",
+            "Other Manufacturing"
+          ]
+        },
+        {
+          "name": "company_size",
+          "label": "Company Size",
+          "type": "select",
+          "options": [
+            "SME (<250 employees)",
+            "Mid-Market (250-1000)",
+            "Enterprise (1000+)"
+          ]
+        },
+        {
+          "name": "num_plants",
+          "label": "Number of Plants",
+          "type": "number",
+          "placeholder": "1"
+        },
+        {
+          "name": "contact_name",
+          "label": "Contact Name",
+          "type": "text",
+          "placeholder": "e.g., Jean Dupont"
+        },
+        {
+          "name": "contact_title",
+          "label": "Contact Title",
+          "type": "text",
+          "placeholder": "e.g., Plant Manager"
+        },
+        {
+          "name": "contact_email",
+          "label": "Contact Email",
+          "type": "email",
+          "placeholder": "jean.dupont@company.com"
+        },
+        {
+          "name": "contact_phone",
+          "label": "Contact Phone",
+          "type": "tel",
+          "placeholder": "+33 X XX XX XX XX"
+        },
+        {
+          "name": "deal_value",
+          "label": "Estimated Deal Value (€)",
+          "type": "number",
+          "placeholder": "50000",
+          "helper": "Estimated annual contract value"
+        },
+        {
+          "name": "expected_close",
+          "label": "Expected Close Date",
+          "type": "date"
+        },
+        {
+          "name": "notes",
+          "label": "Notes",
+          "type": "textarea",
+          "placeholder": "Brief description of the opportunity, pain points, current solutions...",
+          "maxlength": 500
+        }
+      ],
+      "empty_state": {
+        "headline": "No deals registered yet",
+        "subheadline": "Register your first opportunity to get 90-day protection",
+        "cta_text": "+ Register New Deal"
+      }
+    },
+    "training": {
+      "slug": "/training/",
+      "template": "page-training.php",
+      "access": "authenticated",
+      "content": {
+        "headline": "Training Center",
+        "subheadline_template": "{completed} of {total} modules completed"
+      },
+      "modules": [
+        {
+          "id": 1,
+          "title": "Introduction to TeepTrak",
+          "duration": 15,
+          "level": "Basic",
+          "description": "Learn about TeepTrak's mission, history, and position in the Industrial IoT market.",
+          "topics": [
+            "Company overview and market position",
+            "Target customers and industries",
+            "Partner program structure"
+          ],
+          "certification_level": 1
+        },
+        {
+          "id": 2,
+          "title": "OEE Fundamentals",
+          "duration": 30,
+          "level": "Basic",
+          "description": "Master the principles of Overall Equipment Effectiveness—the key metric our solutions optimize.",
+          "topics": [
+            "What is OEE and why it matters",
+            "Availability, Performance, Quality components",
+            "Common OEE benchmarks by industry",
+            "Calculating and interpreting OEE"
+          ],
+          "certification_level": 1
+        },
+        {
+          "id": 3,
+          "title": "TeepTrak Product Features",
+          "duration": 45,
+          "level": "Basic",
+          "description": "Deep dive into TeepTrak's product capabilities, dashboards, and customer-facing features.",
+          "topics": [
+            "Real-time monitoring dashboard",
+            "Alert and notification system",
+            "Reporting and analytics",
+            "Mobile app capabilities",
+            "Integration options"
+          ],
+          "certification_level": 1
+        },
+        {
+          "id": 4,
+          "title": "Sales Methodology",
+          "duration": 60,
+          "level": "Intermediate",
+          "description": "Learn how to identify, qualify, and close TeepTrak opportunities.",
+          "topics": [
+            "Ideal customer profile (ICP)",
+            "Discovery questions and pain point identification",
+            "Solution mapping and demo best practices",
+            "Objection handling",
+            "Proposal and pricing structure"
+          ],
+          "certification_level": 2,
+          "prerequisite": 1
+        },
+        {
+          "id": 5,
+          "title": "Competitive Positioning",
+          "duration": 45,
+          "level": "Intermediate",
+          "description": "Understand the competitive landscape and how to position TeepTrak against alternatives.",
+          "topics": [
+            "Market landscape: MES vs. OEE software vs. TeepTrak",
+            "Key differentiators",
+            "Competitive battle cards",
+            "Win/loss analysis insights"
+          ],
+          "certification_level": 2,
+          "prerequisite": 1
+        },
+        {
+          "id": 6,
+          "title": "ROI & Business Case",
+          "duration": 45,
+          "level": "Intermediate",
+          "description": "Build compelling business cases that justify investment to CFOs and plant managers.",
+          "topics": [
+            "ROI calculator walkthrough",
+            "Cost-benefit analysis framework",
+            "Case study examples with real numbers",
+            "Presenting to financial stakeholders"
+          ],
+          "certification_level": 2,
+          "prerequisite": 1
+        },
+        {
+          "id": 7,
+          "title": "Technical Architecture",
+          "duration": 60,
+          "level": "Advanced",
+          "description": "Understand TeepTrak's technical infrastructure for implementation discussions.",
+          "topics": [
+            "System architecture overview",
+            "Data flow and connectivity",
+            "Security and compliance",
+            "Integration with MES/ERP systems"
+          ],
+          "certification_level": 3,
+          "prerequisite": 2
+        },
+        {
+          "id": 8,
+          "title": "Installation & Configuration",
+          "duration": 90,
+          "level": "Advanced",
+          "description": "Hands-on guide to deploying TeepTrak at customer sites.",
+          "topics": [
+            "Hardware requirements and setup",
+            "Software installation steps",
+            "Configuration and customization",
+            "Go-live checklist"
+          ],
+          "certification_level": 3,
+          "prerequisite": 2
+        }
+      ],
+      "certification_levels": [
+        {
+          "level": 1,
+          "name": "Certified Partner",
+          "tier_requirement": "Bronze",
+          "modules": 3,
+          "est_hours": 2,
+          "passing_score": 70
+        },
+        {
+          "level": 2,
+          "name": "Certified Sales Partner",
+          "tier_requirement": "Silver",
+          "modules": 3,
+          "est_hours": 3,
+          "passing_score": 80
+        },
+        {
+          "level": 3,
+          "name": "Certified Implementation Partner",
+          "tier_requirement": "Gold",
+          "modules": 4,
+          "est_hours": 4,
+          "passing_score": 85
+        }
+      ]
+    },
+    "resources": {
+      "slug": "/resources/",
+      "template": "page-resources.php",
+      "access": "authenticated",
+      "content": {
+        "headline": "Resource Library",
+        "subheadline": "Sales materials, technical docs, and marketing assets"
+      },
+      "categories": [
+        { "slug": "", "label": "All" },
+        { "slug": "sales", "label": "Sales" },
+        { "slug": "technical", "label": "Technical" },
+        { "slug": "marketing", "label": "Marketing" },
+        { "slug": "case_study", "label": "Case Studies" }
+      ],
+      "file_types": {
+        "PDF": { "color": "#DC2626", "bg": "#FEE2E2" },
+        "XLSX": { "color": "#16A34A", "bg": "#DCFCE7" },
+        "ZIP": { "color": "#2563EB", "bg": "#DBEAFE" },
+        "PPTX": { "color": "#F59E0B", "bg": "#FEF3C7" },
+        "VIDEO": { "color": "#9333EA", "bg": "#F3E8FF" }
+      },
+      "resources": [
+        {
+          "title": "TeepTrak Product Brochure (2026)",
+          "description": "Complete product overview with features, benefits, and use cases",
+          "type": "PDF",
+          "size": "2.4 MB",
+          "category": "sales",
+          "min_tier": "bronze"
+        },
+        {
+          "title": "Partner Sales Deck",
+          "description": "Customizable presentation for customer meetings",
+          "type": "PPTX",
+          "size": "8.1 MB",
+          "category": "sales",
+          "min_tier": "bronze"
+        },
+        {
+          "title": "OEE ROI Calculator",
+          "description": "Interactive spreadsheet to calculate customer ROI",
+          "type": "XLSX",
+          "size": "1.1 MB",
+          "category": "sales",
+          "min_tier": "bronze"
+        },
+        {
+          "title": "Pricing Guide (Partner)",
+          "description": "Current pricing, discounts, and deal structure",
+          "type": "PDF",
+          "size": "450 KB",
+          "category": "sales",
+          "min_tier": "bronze"
+        },
+        {
+          "title": "Competitive Battle Cards",
+          "description": "Positioning against MES, manual tracking, competitors",
+          "type": "PDF",
+          "size": "1.8 MB",
+          "category": "sales",
+          "min_tier": "silver"
+        },
+        {
+          "title": "Discovery Call Script",
+          "description": "Qualifying questions and call framework",
+          "type": "PDF",
+          "size": "380 KB",
+          "category": "sales",
+          "min_tier": "silver"
+        },
+        {
+          "title": "Technical Specifications",
+          "description": "Hardware requirements, connectivity, and system architecture",
+          "type": "PDF",
+          "size": "3.8 MB",
+          "category": "technical",
+          "min_tier": "bronze"
+        },
+        {
+          "title": "Integration Guide",
+          "description": "Connecting TeepTrak with MES, ERP, and SCADA systems",
+          "type": "PDF",
+          "size": "5.2 MB",
+          "category": "technical",
+          "min_tier": "silver"
+        },
+        {
+          "title": "API Documentation",
+          "description": "REST API reference for custom integrations",
+          "type": "PDF",
+          "size": "2.1 MB",
+          "category": "technical",
+          "min_tier": "gold"
+        },
+        {
+          "title": "Installation Checklist",
+          "description": "Site readiness and deployment checklist",
+          "type": "PDF",
+          "size": "680 KB",
+          "category": "technical",
+          "min_tier": "silver"
+        },
+        {
+          "title": "Co-Branded Email Templates",
+          "description": "Ready-to-use outreach emails with customization spots",
+          "type": "ZIP",
+          "size": "850 KB",
+          "category": "marketing",
+          "min_tier": "silver"
+        },
+        {
+          "title": "Social Media Assets",
+          "description": "LinkedIn posts, banners, and graphics",
+          "type": "ZIP",
+          "size": "12.4 MB",
+          "category": "marketing",
+          "min_tier": "silver"
+        },
+        {
+          "title": "Partner Logo Kit",
+          "description": "TeepTrak Partner badges and logo files",
+          "type": "ZIP",
+          "size": "4.2 MB",
+          "category": "marketing",
+          "min_tier": "bronze"
+        },
+        {
+          "title": "Webinar Slides Template",
+          "description": "Presentation template for partner webinars",
+          "type": "PPTX",
+          "size": "6.8 MB",
+          "category": "marketing",
+          "min_tier": "gold"
+        },
+        {
+          "title": "Stellantis Case Study",
+          "description": "How Stellantis achieved 23% OEE improvement across 12 plants",
+          "type": "PDF",
+          "size": "1.8 MB",
+          "category": "case_study",
+          "min_tier": "bronze"
+        },
+        {
+          "title": "Alstom Case Study",
+          "description": "Railway component manufacturing optimization",
+          "type": "PDF",
+          "size": "1.5 MB",
+          "category": "case_study",
+          "min_tier": "bronze"
+        },
+        {
+          "title": "Thales Case Study",
+          "description": "Defense electronics assembly line transformation",
+          "type": "PDF",
+          "size": "1.6 MB",
+          "category": "case_study",
+          "min_tier": "bronze"
+        },
+        {
+          "title": "Mid-Market Success Stories",
+          "description": "Compilation of SME implementations",
+          "type": "PDF",
+          "size": "2.8 MB",
+          "category": "case_study",
+          "min_tier": "silver"
+        },
+        {
+          "title": "Product Demo Video",
+          "description": "Overview demo suitable for sharing with prospects",
+          "type": "VIDEO",
+          "size": "5:23",
+          "category": "sales",
+          "min_tier": "bronze"
+        },
+        {
+          "title": "Customer Testimonial Reel",
+          "description": "Plant managers sharing their TeepTrak experience",
+          "type": "VIDEO",
+          "size": "3:45",
+          "category": "marketing",
+          "min_tier": "bronze"
+        },
+        {
+          "title": "Technical Deep Dive Webinar",
+          "description": "Recorded session on architecture and integrations",
+          "type": "VIDEO",
+          "size": "45:00",
+          "category": "technical",
+          "min_tier": "silver"
+        }
+      ]
+    },
+    "commissions": {
+      "slug": "/commissions/",
+      "template": "page-commissions.php",
+      "access": "authenticated",
+      "content": {
+        "headline": "My Commissions",
+        "subheadline": "Track your earnings and request withdrawals"
+      },
+      "summary_cards": [
+        {
+          "label": "Available Balance",
+          "key": "available_balance",
+          "style": "gradient_green",
+          "format": "currency",
+          "subtext": "Ready for withdrawal",
+          "action": "Request Withdrawal"
+        },
+        {
+          "label": "Pending Commissions",
+          "key": "pending_commissions",
+          "color": "warning",
+          "format": "currency",
+          "subtext": "Awaiting deal closure or approval"
+        },
+        {
+          "label": "Total Paid (All Time)",
+          "key": "total_paid",
+          "format": "currency",
+          "subtext_template": "Since {join_date}"
+        }
+      ],
+      "commission_structure": {
+        "tiers": [
+          { "name": "Bronze", "rate": 15, "requirements": "Complete basic certification" },
+          { "name": "Silver", "rate": 20, "requirements": "2+ deals, advanced certification" },
+          { "name": "Gold", "rate": 25, "requirements": "5+ deals, €100K+ pipeline" },
+          { "name": "Platinum", "rate": 30, "requirements": "10+ deals, €250K+ pipeline" }
+        ],
+        "notes": [
+          "Commissions calculated on net contract value",
+          "Paid within 30 days of deal closure confirmation",
+          "Recurring commissions for multi-year contracts (at 50% rate in years 2+)"
+        ]
+      },
+      "transaction_types": {
+        "commission": { "label": "Commission", "icon": "↓", "color": "green" },
+        "withdrawal": { "label": "Withdrawal", "icon": "↑", "color": "red" }
+      },
+      "transaction_statuses": {
+        "paid": { "label": "Paid", "color": "green" },
+        "pending": { "label": "Pending", "color": "amber" },
+        "processing": { "label": "Processing", "color": "blue" }
+      },
+      "withdrawal": {
+        "minimum": 500,
+        "currency": "EUR",
+        "processing_time": "5 business days"
+      },
+      "empty_state": {
+        "headline": "No commissions yet",
+        "subheadline": "Close your first deal to start earning commissions",
+        "cta_text": "Register a Deal",
+        "cta_url": "/deals/"
+      }
+    }
+  },
+  "navigation": {
+    "portal": {
+      "sections": [
+        {
+          "label": "Main",
+          "items": [
+            { "label": "Dashboard", "url": "/dashboard/", "icon": "grid", "page": "dashboard" },
+            { "label": "Deal Registration", "url": "/deals/", "icon": "file-plus", "page": "deals" }
+          ]
+        },
+        {
+          "label": "Learning",
+          "items": [
+            { "label": "Training", "url": "/training/", "icon": "graduation-cap", "page": "training" },
+            { "label": "Resources", "url": "/resources/", "icon": "folder", "page": "resources" }
+          ]
+        },
+        {
+          "label": "Finance",
+          "items": [
+            { "label": "Commissions", "url": "/commissions/", "icon": "dollar-sign", "page": "commissions" }
+          ]
+        }
+      ],
+      "footer": [
+        { "label": "Logout", "url": "wp_logout_url()", "icon": "log-out" }
+      ]
+    },
+    "landing": {
+      "links": [
+        { "label": "Benefits", "url": "#benefits" },
+        { "label": "Partner Tiers", "url": "#tiers" },
+        { "label": "How It Works", "url": "#process" }
+      ],
+      "auth": {
+        "login": { "label": "Login", "url": "wp_login_url()" },
+        "register": { "label": "Become a Partner", "url": "wp_registration_url()", "style": "primary" }
+      }
+    }
+  },
+  "footer": {
+    "columns": [
+      {
+        "title": "TeepTrak",
+        "content": "Industrial IoT solutions for manufacturing performance.",
+        "subtext": "Offices: Paris | Shenzhen | Chicago"
+      },
+      {
+        "title": "Partner Program",
+        "links": [
+          { "label": "Benefits", "url": "#benefits" },
+          { "label": "Tiers", "url": "#tiers" },
+          { "label": "Resources", "url": "/resources/" },
+          { "label": "Training", "url": "/training/" },
+          { "label": "FAQ", "url": "/faq/" }
+        ]
+      },
+      {
+        "title": "Resources",
+        "links": [
+          { "label": "Partner Portal Login", "url": "wp_login_url()" },
+          { "label": "Case Studies", "url": "/resources/?cat=case_study" },
+          { "label": "Product Brochures", "url": "/resources/?cat=sales" },
+          { "label": "ROI Calculator", "url": "/resources/" }
+        ]
+      },
+      {
+        "title": "Contact",
+        "content": "partners@teeptrak.com\n+33 X XX XX XX XX",
+        "social": [
+          { "platform": "LinkedIn", "url": "https://linkedin.com/company/teeptrak" },
+          { "platform": "YouTube", "url": "https://youtube.com/@teeptrak" }
+        ]
+      }
+    ],
+    "copyright": "© 2026 TeepTrak. All rights reserved.",
+    "legal_links": [
+      { "label": "Privacy Policy", "url": "/privacy/" },
+      { "label": "Terms of Service", "url": "/terms/" },
+      { "label": "Partner Agreement", "url": "/partner-agreement/" }
+    ]
+  },
+  "demo_data": {
+    "partner": {
+      "tier": "gold",
+      "partner_score": 78,
+      "commission_rate": 25,
+      "onboarding_step": 5,
+      "deals_count": 6,
+      "active_deals": 3,
+      "pipeline_value": 145000,
+      "available_balance": 4500,
+      "pending_commissions": 2800,
+      "total_paid": 18500
+    },
+    "deals": [
+      {
+        "id": "deal_001",
+        "company_name": "Acme Manufacturing",
+        "industry": "Automotive",
+        "contact_name": "Pierre Martin",
+        "contact_email": "p.martin@acme.fr",
+        "deal_value": 45000,
+        "stage": "proposal_sent",
+        "protection_end": "2026-03-15",
+        "created_at": "2025-12-15"
+      },
+      {
+        "id": "deal_002",
+        "company_name": "TechParts GmbH",
+        "industry": "Electronics",
+        "contact_name": "Hans Schmidt",
+        "contact_email": "h.schmidt@techparts.de",
+        "deal_value": 72000,
+        "stage": "demo_scheduled",
+        "protection_end": "2026-04-01",
+        "created_at": "2026-01-02"
+      }
+    ],
+    "transactions": [
+      {
+        "date": "2026-01-15",
+        "type": "commission",
+        "description": "Stellantis Plant Lyon - Deal #1234",
+        "amount": 3200,
+        "status": "paid"
+      },
+      {
+        "date": "2026-01-10",
+        "type": "withdrawal",
+        "description": "Bank Transfer to ****1234",
+        "amount": 2500,
+        "status": "paid"
+      },
+      {
+        "date": "2025-12-28",
+        "type": "commission",
+        "description": "Renault Flins - Deal #1189",
+        "amount": 1800,
+        "status": "paid"
+      },
+      {
+        "date": "2025-12-20",
+        "type": "commission",
+        "description": "Alstom Belfort - Deal #1156",
+        "amount": 4500,
+        "status": "pending"
+      }
+    ],
+    "training_progress": {
+      "completed_courses": 3,
+      "total_courses": 8,
+      "overall_progress": 45,
+      "modules": [
+        { "id": 1, "progress": 100 },
+        { "id": 2, "progress": 100 },
+        { "id": 3, "progress": 100 },
+        { "id": 4, "progress": 60 },
+        { "id": 5, "progress": 0 },
+        { "id": 6, "progress": 0 },
+        { "id": 7, "progress": 0 },
+        { "id": 8, "progress": 0 }
+      ]
+    }
+  }
+}
