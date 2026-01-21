@@ -34,3 +34,6 @@ next-env.d.ts
 
 # Vercel
 .vercel
+
+# Figma exports (can be regenerated)
+figma-exports/
