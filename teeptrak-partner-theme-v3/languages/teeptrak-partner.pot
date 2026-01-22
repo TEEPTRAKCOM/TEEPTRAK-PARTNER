@@ -1,0 +1,821 @@
+# Copyright (C) 2026 TeepTrak
+# This file is distributed under the same license as the TeepTrak Partner Theme V3 package.
+msgid ""
+msgstr ""
+"Project-Id-Version: TeepTrak Partner Theme V3 3.0.0\n"
+"Report-Msgid-Bugs-To: https://teeptrak.com/support\n"
+"POT-Creation-Date: 2026-01-22 00:00+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2026-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: Navigation
+msgid "Dashboard"
+msgstr ""
+
+msgid "Deals"
+msgstr ""
+
+msgid "Commissions"
+msgstr ""
+
+msgid "Training"
+msgstr ""
+
+msgid "Resources"
+msgstr ""
+
+msgid "Support"
+msgstr ""
+
+msgid "Profile"
+msgstr ""
+
+msgid "Settings"
+msgstr ""
+
+msgid "Sign Out"
+msgstr ""
+
+msgid "My Profile"
+msgstr ""
+
+#: Dashboard
+msgid "Welcome back, %s"
+msgstr ""
+
+msgid "Here's your partner performance overview"
+msgstr ""
+
+msgid "Register Deal"
+msgstr ""
+
+msgid "Getting Started"
+msgstr ""
+
+msgid "Complete"
+msgstr ""
+
+msgid "Complete Your Profile"
+msgstr ""
+
+msgid "Add your company details and contact information"
+msgstr ""
+
+msgid "Start Training"
+msgstr ""
+
+msgid "Complete at least one training module"
+msgstr ""
+
+msgid "Start"
+msgstr ""
+
+msgid "Register Your First Deal"
+msgstr ""
+
+msgid "Submit a deal for registration"
+msgstr ""
+
+msgid "Register"
+msgstr ""
+
+msgid "Total Deals"
+msgstr ""
+
+msgid "this month"
+msgstr ""
+
+msgid "Pipeline Value"
+msgstr ""
+
+msgid "Commissions Earned"
+msgstr ""
+
+msgid "pending"
+msgstr ""
+
+msgid "Win Rate"
+msgstr ""
+
+msgid "won"
+msgstr ""
+
+msgid "closed"
+msgstr ""
+
+msgid "Pipeline by Stage"
+msgstr ""
+
+msgid "Commission Trend"
+msgstr ""
+
+msgid "Last 6 months"
+msgstr ""
+
+msgid "Last 12 months"
+msgstr ""
+
+msgid "Recent Deals"
+msgstr ""
+
+msgid "View All"
+msgstr ""
+
+msgid "No deals yet"
+msgstr ""
+
+msgid "Training Progress"
+msgstr ""
+
+msgid "Completed"
+msgstr ""
+
+msgid "In Progress"
+msgstr ""
+
+msgid "Certificates"
+msgstr ""
+
+msgid "Continue Learning"
+msgstr ""
+
+msgid "Partner Status"
+msgstr ""
+
+msgid "Commission Rate"
+msgstr ""
+
+msgid "Progress to %s"
+msgstr ""
+
+msgid "Quick Actions"
+msgstr ""
+
+msgid "Register New Deal"
+msgstr ""
+
+msgid "Download Resources"
+msgstr ""
+
+msgid "Request Payout"
+msgstr ""
+
+msgid "Contact Support"
+msgstr ""
+
+#: Deals
+msgid "Deal Pipeline"
+msgstr ""
+
+msgid "Manage and track your registered deals"
+msgstr ""
+
+msgid "Kanban"
+msgstr ""
+
+msgid "List"
+msgstr ""
+
+msgid "Search deals..."
+msgstr ""
+
+msgid "All Stages"
+msgstr ""
+
+msgid "Lead"
+msgstr ""
+
+msgid "Qualified"
+msgstr ""
+
+msgid "Proposal"
+msgstr ""
+
+msgid "Negotiation"
+msgstr ""
+
+msgid "Won"
+msgstr ""
+
+msgid "Lost"
+msgstr ""
+
+msgid "%d deal"
+msgid_plural "%d deals"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "No deals registered yet"
+msgstr ""
+
+msgid "Start by registering your first deal to secure protection"
+msgstr ""
+
+msgid "Company"
+msgstr ""
+
+msgid "Contact"
+msgstr ""
+
+msgid "Value"
+msgstr ""
+
+msgid "Stage"
+msgstr ""
+
+msgid "Protection"
+msgstr ""
+
+msgid "Expected Close"
+msgstr ""
+
+msgid "Actions"
+msgstr ""
+
+msgid "View"
+msgstr ""
+
+msgid "Edit"
+msgstr ""
+
+msgid "Register New Deal"
+msgstr ""
+
+msgid "Company Information"
+msgstr ""
+
+msgid "Company Name"
+msgstr ""
+
+msgid "Enter the prospect company name"
+msgstr ""
+
+msgid "Industry"
+msgstr ""
+
+msgid "Select industry"
+msgstr ""
+
+msgid "Automotive"
+msgstr ""
+
+msgid "Aerospace"
+msgstr ""
+
+msgid "Food & Beverage"
+msgstr ""
+
+msgid "Pharmaceutical"
+msgstr ""
+
+msgid "Packaging"
+msgstr ""
+
+msgid "Electronics"
+msgstr ""
+
+msgid "Other"
+msgstr ""
+
+msgid "Company Size"
+msgstr ""
+
+msgid "Select size"
+msgstr ""
+
+msgid "Small (1-50)"
+msgstr ""
+
+msgid "Medium (51-250)"
+msgstr ""
+
+msgid "Large (251-1000)"
+msgstr ""
+
+msgid "Enterprise (1000+)"
+msgstr ""
+
+msgid "Contact Information"
+msgstr ""
+
+msgid "Contact Name"
+msgstr ""
+
+msgid "Job Title"
+msgstr ""
+
+msgid "Email"
+msgstr ""
+
+msgid "Phone"
+msgstr ""
+
+msgid "Deal Information"
+msgstr ""
+
+msgid "Estimated Value"
+msgstr ""
+
+msgid "Expected Close Date"
+msgstr ""
+
+msgid "Products of Interest"
+msgstr ""
+
+msgid "TeepTrak Box"
+msgstr ""
+
+msgid "TeepTrak Analytics"
+msgstr ""
+
+msgid "TeepTrak Alerts"
+msgstr ""
+
+msgid "TeepTrak Reports"
+msgstr ""
+
+msgid "Number of Machines"
+msgstr ""
+
+msgid "Notes"
+msgstr ""
+
+msgid "Add any additional context about this opportunity..."
+msgstr ""
+
+msgid "90-Day Deal Protection"
+msgstr ""
+
+msgid "Once approved, this deal will be protected for 90 days, ensuring you receive the commission if it closes."
+msgstr ""
+
+msgid "Cancel"
+msgstr ""
+
+msgid "Deal registered successfully!"
+msgstr ""
+
+msgid "Error registering deal"
+msgstr ""
+
+#: Commissions
+msgid "Track your earnings and request payouts"
+msgstr ""
+
+msgid "Total Earned"
+msgstr ""
+
+msgid "Pending"
+msgstr ""
+
+msgid "Awaiting deal closure"
+msgstr ""
+
+msgid "Available"
+msgstr ""
+
+msgid "Ready for payout"
+msgstr ""
+
+msgid "Min. payout: %s"
+msgstr ""
+
+msgid "Paid Out"
+msgstr ""
+
+msgid "Commission History"
+msgstr ""
+
+msgid "All Commissions"
+msgstr ""
+
+msgid "Earned"
+msgstr ""
+
+msgid "Paid"
+msgstr ""
+
+msgid "No commissions yet"
+msgstr ""
+
+msgid "Close your first deal to start earning commissions"
+msgstr ""
+
+msgid "Date"
+msgstr ""
+
+msgid "Deal"
+msgstr ""
+
+msgid "Deal Value"
+msgstr ""
+
+msgid "Rate"
+msgstr ""
+
+msgid "Commission"
+msgstr ""
+
+msgid "Status"
+msgstr ""
+
+msgid "Commission Forecast"
+msgstr ""
+
+msgid "This Quarter"
+msgstr ""
+
+msgid "Based on pipeline"
+msgstr ""
+
+msgid "This Year"
+msgstr ""
+
+msgid "Projected"
+msgstr ""
+
+msgid "By Stage"
+msgstr ""
+
+msgid "Payout Requests"
+msgstr ""
+
+msgid "Amount"
+msgstr ""
+
+msgid "Method"
+msgstr ""
+
+msgid "Reference"
+msgstr ""
+
+msgid "Available Balance"
+msgstr ""
+
+msgid "Amount to Withdraw"
+msgstr ""
+
+msgid "Minimum payout: %s"
+msgstr ""
+
+msgid "Payment Method"
+msgstr ""
+
+msgid "Bank Transfer"
+msgstr ""
+
+msgid "PayPal"
+msgstr ""
+
+msgid "Bank Details"
+msgstr ""
+
+msgid "Update bank details"
+msgstr ""
+
+msgid "Please add your bank details in your profile before requesting a payout."
+msgstr ""
+
+msgid "Add Bank Details"
+msgstr ""
+
+msgid "Processing Time"
+msgstr ""
+
+msgid "Payout requests are typically processed within 5-7 business days after approval."
+msgstr ""
+
+msgid "Payout request submitted!"
+msgstr ""
+
+msgid "Error submitting request"
+msgstr ""
+
+#: Landing Page
+msgid "Partner Program"
+msgstr ""
+
+msgid "Grow Your Business with %s"
+msgstr ""
+
+msgid "Join our network of successful partners delivering industrial IoT solutions to manufacturers worldwide. Earn competitive commissions while helping factories optimize their operations."
+msgstr ""
+
+msgid "Become a Partner"
+msgstr ""
+
+msgid "Learn More"
+msgstr ""
+
+msgid "Factories Powered"
+msgstr ""
+
+msgid "Active Partners"
+msgstr ""
+
+msgid "Avg. OEE Improvement"
+msgstr ""
+
+msgid "Why Partner With Us?"
+msgstr ""
+
+msgid "Access exclusive benefits designed to help you succeed"
+msgstr ""
+
+msgid "Competitive Commissions"
+msgstr ""
+
+msgid "Earn up to 20% commission on every deal. Premium and Elite partners receive enhanced rates and recurring revenue opportunities."
+msgstr ""
+
+msgid "Deal Protection"
+msgstr ""
+
+msgid "90-day deal registration protection ensures your leads are secured. Focus on closing without worrying about competition."
+msgstr ""
+
+msgid "Comprehensive Training"
+msgstr ""
+
+msgid "Access our complete training library with technical certifications, sales playbooks, and product deep-dives."
+msgstr ""
+
+msgid "Dedicated Support"
+msgstr ""
+
+msgid "Get assigned partner manager support, priority technical assistance, and access to co-selling opportunities."
+msgstr ""
+
+msgid "Sales Resources"
+msgstr ""
+
+msgid "Download professional presentations, case studies, ROI calculators, and customizable proposals."
+msgstr ""
+
+msgid "Market Opportunity"
+msgstr ""
+
+msgid "Tap into the growing Industry 4.0 market. Our solutions address real pain points with proven ROI."
+msgstr ""
+
+msgid "Partner Tiers"
+msgstr ""
+
+msgid "Unlock more benefits as you grow"
+msgstr ""
+
+msgid "Registered"
+msgstr ""
+
+msgid "Certified"
+msgstr ""
+
+msgid "Premium"
+msgstr ""
+
+msgid "Elite"
+msgstr ""
+
+msgid "Popular"
+msgstr ""
+
+msgid "Deal registration"
+msgstr ""
+
+msgid "Basic training access"
+msgstr ""
+
+msgid "Sales materials"
+msgstr ""
+
+msgid "Email support"
+msgstr ""
+
+msgid "Entry level"
+msgstr ""
+
+msgid "Everything in Registered"
+msgstr ""
+
+msgid "Full training library"
+msgstr ""
+
+msgid "Technical certification"
+msgstr ""
+
+msgid "Priority support"
+msgstr ""
+
+msgid "Requires: 3 closed deals"
+msgstr ""
+
+msgid "Everything in Certified"
+msgstr ""
+
+msgid "Dedicated partner manager"
+msgstr ""
+
+msgid "Co-selling support"
+msgstr ""
+
+msgid "Lead sharing"
+msgstr ""
+
+msgid "Quarterly business reviews"
+msgstr ""
+
+msgid "Requires: €100K annual revenue"
+msgstr ""
+
+msgid "Everything in Premium"
+msgstr ""
+
+msgid "MDF (Marketing Development Funds)"
+msgstr ""
+
+msgid "Joint marketing campaigns"
+msgstr ""
+
+msgid "Executive sponsorship"
+msgstr ""
+
+msgid "Early product access"
+msgstr ""
+
+msgid "Requires: €250K annual revenue"
+msgstr ""
+
+msgid "How It Works"
+msgstr ""
+
+msgid "Get started in three simple steps"
+msgstr ""
+
+msgid "Apply & Get Approved"
+msgstr ""
+
+msgid "Submit your application. Our team will review and approve qualified partners within 48 hours."
+msgstr ""
+
+msgid "Complete Training"
+msgstr ""
+
+msgid "Access our training platform to learn about our products, sales methodology, and technical requirements."
+msgstr ""
+
+msgid "Start Selling"
+msgstr ""
+
+msgid "Register deals, track your pipeline, and earn commissions on closed business."
+msgstr ""
+
+msgid "Ready to Grow Your Business?"
+msgstr ""
+
+msgid "Join our partner network and start earning commissions on industrial IoT solutions."
+msgstr ""
+
+msgid "Apply Now"
+msgstr ""
+
+msgid "Contact Sales"
+msgstr ""
+
+#: Footer
+msgid "All rights reserved."
+msgstr ""
+
+msgid "Privacy Policy"
+msgstr ""
+
+msgid "Terms of Service"
+msgstr ""
+
+msgid "Cookie Policy"
+msgstr ""
+
+msgid "Industrial IoT solutions powering 360+ factories worldwide."
+msgstr ""
+
+msgid "Training Center"
+msgstr ""
+
+msgid "FAQ"
+msgstr ""
+
+msgid "About Us"
+msgstr ""
+
+msgid "Products"
+msgstr ""
+
+msgid "Case Studies"
+msgstr ""
+
+#: Notifications
+msgid "Notifications"
+msgstr ""
+
+msgid "Mark all as read"
+msgstr ""
+
+msgid "View all notifications"
+msgstr ""
+
+msgid "No notifications"
+msgstr ""
+
+#: Common
+msgid "Save"
+msgstr ""
+
+msgid "Close"
+msgstr ""
+
+msgid "Confirm"
+msgstr ""
+
+msgid "Loading..."
+msgstr ""
+
+msgid "Error"
+msgstr ""
+
+msgid "Success"
+msgstr ""
+
+msgid "Warning"
+msgstr ""
+
+msgid "Info"
+msgstr ""
+
+msgid "required"
+msgstr ""
+
+msgid "This field is required"
+msgstr ""
+
+msgid "Please enter a valid email"
+msgstr ""
+
+msgid "Please enter a valid phone number"
+msgstr ""
+
+msgid "Copied to clipboard"
+msgstr ""
+
+msgid "No results found"
+msgstr ""
+
+msgid "Just now"
+msgstr ""
+
+msgid "minutes ago"
+msgstr ""
+
+msgid "hours ago"
+msgstr ""
+
+msgid "days ago"
+msgstr ""
+
+#: PWA
+msgid "Install App"
+msgstr ""
+
+msgid "Add to your home screen for quick access"
+msgstr ""
+
+msgid "Install"
+msgstr ""
+
+msgid "You're Offline"
+msgstr ""
+
+msgid "It looks like you've lost your internet connection. Please check your connection and try again."
+msgstr ""
+
+msgid "Try Again"
+msgstr ""
+
+#: Search
+msgid "Search deals, resources..."
+msgstr ""
+
+msgid "Toggle menu"
+msgstr ""
+
+#: Language Names
+msgid "English"
+msgstr ""
+
+msgid "French"
+msgstr ""
+
+msgid "Chinese"
+msgstr ""
